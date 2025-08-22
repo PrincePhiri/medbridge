@@ -1,0 +1,167 @@
+body, html {
+  margin: 0;
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: url('/marketPlaceWeb/marketPictures/kitchen.jpg') no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  color: #959595; /* light gray default text */
+}
+
+body::before{
+  background: rgba(0, 0, 0, 0.589); /* Dark overlay for text readability */
+}
+
+.terrymark-auth-wrapper {
+  background: rgba(82, 82, 84, 0.45); /* charcoal gray translucent */
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 12px;
+  width: 850px;
+  max-width: 95vw;
+  height: 480px;
+  box-shadow: 0 0 25px rgba(36, 35, 35, 0.7); /* blackish gray shadow */
+  overflow: hidden;
+  position: relative;
+}
+
+.terrymark-auth-container {
+  display: flex;
+  width: 1700px; /* 2 x wrapper width */
+  height: 100%;
+  transition: transform 0.6s ease;
+  will-change: transform;
+}
+
+.terrymark-form-container {
+  background: rgba(54, 54, 54, 0.85); /* graphite gray, slightly more opaque */
+  width: 850px;
+  padding: 3rem 3.5rem;
+  color: #959595; /* light gray text */
+  box-sizing: border-box;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 0 12px 12px 0;
+  border: 1px solid #525254; /* charcoal gray border */
+  padding-bottom: 3rem;
+  /* Add this or increase if you already have */
+  height: 100%; /* ensure full container height */
+}
+
+.terrymark-form-container.login {
+  border-radius: 12px 0 0 12px;
+}
+
+/* Titles */
+.terrymark-form-container h2 {
+  margin-bottom: 2rem;
+  font-weight: 700;
+  font-size: 2rem;
+  text-align: center;
+  color: #FFFFFF; /* pure white titles */
+}
+
+/* Form groups */
+.terrymark-form-group {
+  position: relative;
+  margin-bottom: 1.6rem;
+}
+
+/* Inputs */
+.terrymark-form-group input {
+  width: 100%;
+  padding: 0.8rem 0.8rem 0.8rem 3rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #525254; /* charcoal gray border */
+  background-color: #363636; /* graphite gray background */
+  color: #FFFFFF; /* white text */
+  outline: none;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+/* Input icons */
+.terrymark-form-group .input-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  opacity: 0.6;
+  pointer-events: none;
+  filter: brightness(0) invert(1); /* white icon */
+}
+
+/* Input focus */
+.terrymark-form-group input:focus {
+  border-color: #959595; /* light gray border on focus */
+}
+
+/* Buttons */
+.terrymark-btn {
+  margin-top: 1.5rem;
+  background-color: #FFFFFF; /* white button bg */
+  color: #363636; /* graphite gray text */
+  font-weight: 700;
+  padding: 0.75rem 0;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  user-select: none;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease;
+}
+
+.terrymark-btn:hover {
+  background-color: #959595; /* light gray on hover */
+  color: #242323; /* blackish gray text on hover */
+}
+
+/* Toggle links */
+.terrymark-toggle-link {
+  margin-top: 1.4rem;
+  text-align: center;
+  color: #959595; /* light gray */
+  font-size: 0.9rem;
+  user-select: none;
+  margin-top: 1rem;
+  margin-bottom: 0;  /* reduce bottom margin */
+  padding-bottom: 1rem; /* add some padding so it doesn’t touch bottom */
+}
+
+.terrymark-toggle-link a {
+  color: #959595; /* light gray */
+  cursor: pointer;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.terrymark-toggle-link a:hover {
+  color: #FFFFFF; /* white on hover */
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .terrymark-auth-wrapper {
+    width: 90vw;
+    height: auto;
+  }
+
+  .terrymark-auth-container {
+    width: 180vw;
+    flex-direction: column;
+  }
+
+  .terrymark-form-container {
+    width: 100%;
+    border-radius: 12px !important;
+    padding: 2rem;
+  }
+}

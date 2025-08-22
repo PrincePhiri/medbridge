@@ -1,0 +1,323 @@
+/* ==========================================LOGIN AND REGISTRATION=================== ////////////////////////////////*/
+
+.body-forms{
+    background-color: #c0c0b3;
+}
+/* ========== CONTAINER STYLES ========== */
+.prince-login-container {
+  display: flex;
+  width: 840px;
+  max-width: 95%;
+  margin: 80px auto;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  font-family: 'Segoe UI', sans-serif;
+  background: #fff;
+  animation: fadeInSlide 0.8s ease both;
+}
+
+/* ========== LEFT PANEL ========== */
+.prince-login-left {
+  flex: 1;
+  background-color: #0f1c2e;
+  color: #fdfdfd;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 30px;
+  text-align: center;
+  animation: slideInLeft 1s ease both;
+}
+
+.prince-logo {
+  max-width: 90px;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 1px 3px rgba(0,0,0,0.3));
+}
+
+.prince-tagline {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.prince-intro {
+  font-size: 14px;
+  opacity: 0.85;
+  line-height: 1.5;
+}
+
+/* ========== RIGHT PANEL ========== */
+.prince-login-right {
+  flex: 1;
+  padding: 50px 40px;
+  background-color: #ffffff;
+  animation: slideInRight 1s ease both;
+}
+
+.prince-form-title {
+  text-align: center;
+  font-size: 22px;
+  margin-bottom: 30px;
+  font-weight: 800;
+  color: #222;
+}
+
+/* ========== INPUT GROUPS ========== */
+.prince-input-group {
+  margin-bottom: 20px;
+}
+
+.prince-input-label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  font-size: 13.5px;
+  color: #333;
+}
+
+.prince-input-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.prince-input-icon {
+  width: 18px;
+  height: 18px;
+  opacity: 0.7;
+}
+
+.prince-input {
+  flex: 1;
+  padding: 10px 12px;
+  font-size: 13.5px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  transition: border-color 0.3s ease;
+  background: #fff;
+}
+
+.prince-input:focus {
+  border-color: #0f1c2e;
+  outline: none;
+}
+
+/* ========== FORM OPTIONS AND BUTTONS ========== */
+.prince-form-options {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  margin-bottom: 18px;
+  color: #444;
+}
+
+.prince-login-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #0f1c2e;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.prince-login-button:hover {
+  background-color: #091425;
+}
+
+.prince-register-msg {
+  text-align: center;
+  margin-top: 14px;
+  font-size: 12.5px;
+  color: #555;
+}
+
+/* ========== ANIMATIONS ========== */
+@keyframes fadeInSlide {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-50px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(50px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* -------------------------------------=========================REGISTRATION-- */
+.prince-register-container {
+  display: flex;
+  width: 860px;
+  max-width: 96%;
+  margin: 80px auto;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  font-family: 'Segoe UI', sans-serif;
+  background: #fff;
+  animation: fadeInSlide 0.8s ease both;
+}
+
+.prince-register-left {
+  flex: 1;
+  background-color: #0f1c2e;
+  color: #fdfdfd;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 30px;
+  text-align: center;
+  animation: slideInLeft 1s ease both;
+}
+
+.prince-logo {
+  max-width: 90px;
+  margin-bottom: 18px;
+}
+
+.prince-calling {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.prince-manifesto {
+  font-size: 14px;
+  opacity: 0.88;
+  line-height: 1.6;
+  padding: 0 5px;
+}
+
+.prince-register-right {
+  flex: 1;
+  background: #ffffff;
+  padding: 50px 40px;
+  animation: slideInRight 1s ease both;
+}
+
+.prince-form-title {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 26px;
+  font-weight: 700;
+  color: #222;
+}
+
+.prince-input-group {
+  margin-bottom: 16px;
+}
+
+.prince-input-label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  font-size: 13.5px;
+}
+
+.prince-input-icon-wrapper {
+  position: relative;
+}
+
+.prince-input-icon-wrapper img {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  opacity: 0.7;
+}
+
+.prince-input {
+  width: 100%;
+  padding: 9px 10px 9px 10px; /* Increase left padding to avoid overlap */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 13.5px;
+  transition: border-color 0.3s;
+}
+
+.prince-input:focus {
+  border-color: #0f1c2e;
+  outline: none;
+}
+
+.prince-register-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #0f1c2e;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.prince-register-button:hover {
+  background-color: #091425;
+}
+
+.prince-login-msg {
+  text-align: center;
+  margin-top: 14px;
+  font-size: 12.5px;
+  color: #555;
+}
+
+@keyframes fadeInSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.home-icon-link-prince{
+    height: 24px;
+    filter: invert(1) brightness(0) !important;
+}
+.Back-Home{
+    height: 24px;
+    filter: invert(1) brightness(0) !important;
+}
+
+
+/* -----------------------------------------------------------------------------------///////////////////////////////// */

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Who We Are - The MedBridge</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='icons/medbridge-logo.png') }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='icons/medbridge-logo.png') }}">
+
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yourwebsite.com/">
+  <meta property="og:title" content="MedBridge">
+  <meta property="og:description" content="MedBridge - Your trusted medical resource.">
+  <meta property="og:image" content="{{ url_for('static', filename='icons/medbridge-logo.png') }}">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://yourwebsite.com/">
+  <meta property="twitter:title" content="MedBridge">
+  <meta property="twitter:description" content="MedBridge - Your trusted medical resource.">
+  <meta property="twitter:image" content="{{ url_for('static', filename='icons/medbridge-logo.png') }}">
+
+  <!-- WhatsApp / General Share -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yourwebsite.com/">
+  <meta property="og:title" content="MedBridge">
+  <meta property="og:description" content="MedBridge - Your trusted medical resource.">
+  <meta property="og:image" content="{{ url_for('static', filename='icons/medbridge-logo.png') }}">
+  <meta property="og:image:alt" content="MedBridge Logo">
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='CSS Sheets/who-we-are.css') }}" />
+</head>
+<body class="who-body">
+  
+  <!-- ========== NAVBAR ========== -->
+  <nav class="who-navbar">
+    <div class="who-navbar__brand">The MedBridge</div>
+    <div class="who-navbar__links">
+      <a href="javascript:history.back()" class="who-navbar__link">Back</a>
+    </div>
+  </nav>
+
+  <!-- ========== TEAM CARDS ========== -->
+  <section class="who-cards-container">
+
+    <!-- Dr. Doreen Card -->
+    <div id="doreen" class="who-card who-card--left">
+      <img src="{{ url_for('static', filename='medicinePhotos/staffPhotos/IMG_0378-Edited.jpg') }}" alt="Dr. Doreen Thandie Phiri" class="who-card__photo" />
+      <div class="who-card__content">
+        <h1 class="who-card__name">Dr. Doreen Thandie Phiri</h1>
+        <h3 class="who-card__title">Consultant in Pediatrics – Precision with Compassion</h3>
+        <p class="who-card__description">
+          Dr. Doreen Thandie Phiri is a seasoned pediatric consultant with over a decade of hands-on experience in child health and wellness. As the administrative lead at The MedBridge, she is committed to advancing clinical excellence and ensuring access to essential medical resources for healthcare professionals. Her mission blends compassion with clinical precision, empowering young lives and guiding caregivers every step of the way.
+        </p>
+        <button class="who-card__btn" data-recipient="doreen@medbridge.com">Contact Me</button>
+      </div>
+    </div>
+
+    <!-- Mervis Ziyenda Card -->
+    <div id="mervis" class="who-card who-card--right">
+      <img src="{{ url_for('static', filename='medicinePhotos/staffPhotos/mervis.jpg') }}" alt="Mervis Ziyenda" class="who-card__photo" />
+      <div class="who-card__content">
+        <h1 class="who-card__name">Mervis Ziyenda</h1>
+        <h3 class="who-card__title">Clinical Officer – Devoted to Medicine, Focused on Impact</h3>
+        <p class="who-card__description">
+          Mervis Ziyenda is a passionate Clinical Officer practicing at Mlale Hospital with a strong foundation in Clinical Medicine. Based in Lilongwe, Mervis brings dedication, discipline, and an unwavering focus to every patient interaction. With no affiliations beyond the medical field, she channels all her energy into delivering optimal healthcare outcomes. Her love for medicine is not just a profession—it's a way of life. Outside the hospital, she shares her journey on Instagram as <strong>@mervisziyenda</strong>.
+          <br><br>
+          <!-- 📍 Location: Lilongwe<br>
+          📧 Email: <a href="mailto:mervisziyenda@gmail.com">mervisziyenda@gmail.com</a><br>
+          📷 Instagram: <a href="https://instagram.com/mervisziyenda" target="_blank">@mervisziyenda</a><br>
+          🏥 Workplace: Mlale Hospital -->
+        </p>
+        <button class="who-card__btn" data-recipient="mervisziyenda@gmail.com">Contact Me</button>
+      </div>
+    </div>
+
+    <!-- The Prince Card -->
+    <div id="prince" class="who-card who-card--left">
+      <img src="{{ url_for('static', filename='medicinePhotos/staffPhotos/TPNE033-1.jpg') }}" alt="The Prince" class="who-card__photo" />
+      <div class="who-card__content">
+        <h1 class="who-card__name">The Prince</h1>
+        <h3 class="who-card__title">Medical Assistant Clinician, Programmer, Designer & Photographer</h3>
+        <p class="who-card__description">
+          The Prince is a multi-disciplinary creative and medical professional with a unique fusion of talents. As a developer, designer, and certified Medical Assistant Clinician, he powers the digital heart of The MedBridge. He combines functionality with aesthetics—building tools for learning, care, and connection. His photography and design work further amplify the brand's vision of accessibility and innovation in healthcare.
+        </p>
+        <button class="who-card__btn" data-recipient="tekprince82@gmail.com">Contact Me</button>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ========== CONTACT MODAL ========== -->
+  <div id="contact-modal" class="contact-modal"></button>
+    <div class="contact-modal__content">
+      <button type="button" class="contact-modal__close" id="close-contact-modal" aria-label="Close">&times;</button>
+      <h2 class="contact-modal__title">Contact Staff Member</h2>
+      
+      <form id="contact-form" method="POST" action="{{ url_for('contact_staff') }}" novalidate>
+          <!-- Hidden recipient email -->
+          <input type="hidden" id="contact-to" name="to" />
+
+          <label for="contact-name">Your Name</label>
+          <input type="text" id="contact-name" name="name" required placeholder="Enter your full name" />
+
+          <label for="contact-email">Your Email</label>
+          <input type="email" id="contact-email" name="email" required placeholder="you@example.com" />
+
+          <label for="contact-message">Message</label>
+          <textarea id="contact-message" name="message" rows="4" required placeholder="Write your message here..."></textarea>
+
+          <button type="submit" class="who-btn">Send</button>
+
+          <!-- Feedback message -->
+          <p class="contact-feedback" id="contact-feedback" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- ========== FOOTER ========== -->
+  <footer id="contact" class="who-footer">
+    <p class="who-footer__text">&copy; 2025 The MedBridge. All rights reserved.</p>
+  </footer>
+
+  <!-- ========== JS ========== -->
+  <script src="{{ url_for('static', filename='JAVASCRIPT Files/who-we-are.js') }}"></script>
+</body>
+</html>

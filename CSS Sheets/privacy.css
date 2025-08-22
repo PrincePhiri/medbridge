@@ -1,0 +1,327 @@
+/* ===================================== PRIVACY PAGE ==================================== */
+
+/* Reset & base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #0F1516;
+  color: #E5E7EB;
+  line-height: 1.75;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+/* Container for full centered content */
+.privacy-container {
+  max-width: 1000px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+/* Header */
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+
+/* Main layout */
+main {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  width: 100%;
+  justify-content: center;
+}
+
+/* Table of Contents */
+.toc {
+  flex: 0 0 220px;
+  background-color: #1A2324;
+  border-radius: 12px;
+  padding: 25px;
+  position: sticky;
+  top: 40px;
+  height: fit-content;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.5);
+}
+
+.toc h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+}
+
+.toc ul {
+  list-style: none;
+}
+
+.toc ul li {
+  margin-bottom: 12px;
+}
+
+.toc ul li a {
+  text-decoration: none;
+  color: #4A6FA5;
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+.toc ul li a:hover {
+  color: #39587f;
+  text-decoration: underline;
+}
+
+/* Privacy Content Section */
+.privacy-content {
+  flex: 1;
+  background-color: #1A2324;
+  border-radius: 14px;
+  padding: 40px 35px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Headings */
+.privacy-content h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-top: 25px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #334556;
+  padding-bottom: 6px;
+}
+
+.privacy-content h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-top: 18px;
+  margin-bottom: 10px;
+}
+
+/* Paragraphs */
+.privacy-content p {
+  font-size: 15px;
+  color: #D1D5DB;
+  margin-bottom: 14px;
+}
+
+/* Lists */
+.privacy-content ul {
+  list-style-type: disc;
+  margin-left: 24px;
+  margin-bottom: 14px;
+}
+
+.privacy-content ul li {
+  font-size: 15px;
+  color: #D1D5DB;
+  margin-bottom: 10px;
+}
+
+/* Links */
+.privacy-content a {
+  color: #4A6FA5;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  font-weight: 500;
+}
+
+.privacy-content a:hover {
+  color: #39587f;
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  main {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .toc {
+    flex: 1 1 auto;
+    position: relative;
+    top: auto;
+    margin-bottom: 25px;
+    width: 100%;
+  }
+
+  .privacy-content {
+    width: 100%;
+    padding: 30px 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 25px 15px;
+  }
+
+  header h1 {
+    font-size: 30px;
+  }
+
+  .privacy-content {
+    padding: 25px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 20px 10px;
+  }
+
+  .toc {
+    display: none; /* hide TOC on very small screens */
+  }
+
+  .privacy-content {
+    padding: 20px 15px;
+  }
+}
+
+
+/* ===================================================================================================== */
+/* ===================================================================================================== */
+/* ================================ALL MEDIA QUERIES ON THIS SHEET====================================== */
+/* ===================================================================================================== */
+/* ===================================================================================================== */
+/* ====================== MEDIA QUERIES - PRIVACY PAGE ====================== */
+
+/* Large Tablets / iPads ≤1024px */
+@media (max-width: 1024px) {
+  main {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .toc {
+    flex: 1 1 auto;
+    position: relative;
+    top: auto;
+    margin-bottom: 25px;
+    width: 100%;
+  }
+
+  .privacy-content {
+    width: 100%;
+    padding: 30px 25px;
+  }
+}
+
+/* Tablets and smaller ≤768px */
+@media (max-width: 768px) {
+  body {
+    padding: 20px 10px;
+  }
+
+  /* Main heading on top */
+  header h1 {
+    display: block;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+  }
+
+  /* Hide Table of Contents */
+  .toc {
+    display: none;
+  }
+
+  /* Remove privacy-content wrapper styles */
+  .privacy-content {
+    width: 100%;
+    padding: 0;
+    background: none;
+    box-shadow: none;
+    margin: 0;
+  }
+
+  /* All inner content sit directly on background */
+  .privacy-content > * {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 0;
+  }
+
+  /* Adjust text sizes for smaller screens */
+  .privacy-content h2 {
+    font-size: 20px;
+  }
+
+  .privacy-content h3 {
+    font-size: 16px;
+  }
+
+  .privacy-content p,
+  .privacy-content ul li {
+    font-size: 14px;
+  }
+}
+
+/* Mobile Portrait ≤480px */
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 26px;
+  }
+
+  .privacy-content h2 {
+    font-size: 18px;
+  }
+
+  .privacy-content h3 {
+    font-size: 15px;
+  }
+
+  .privacy-content p,
+  .privacy-content ul li {
+    font-size: 13px;
+  }
+}
+
+/* Ultra Small Phones ≤360px */
+@media (max-width: 360px) {
+  header h1 {
+    font-size: 24px;
+  }
+
+  .privacy-content h2 {
+    font-size: 17px;
+  }
+
+  .privacy-content h3 {
+    font-size: 14px;
+  }
+
+  .privacy-content p,
+  .privacy-content ul li {
+    font-size: 12px;
+  }
+}

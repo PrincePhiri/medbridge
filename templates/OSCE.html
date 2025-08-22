@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>OSCE | The MedBridge</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='icons/medbridge-logo.png') }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='icons/medbridge-logo.png') }}">
+
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yourwebsite.com/">
+  <meta property="og:title" content="MedBridge">
+  <meta property="og:description" content="MedBridge - Your trusted medical resource.">
+  <meta property="og:image" content="{{ url_for('static', filename='icons/medbridge-logo.png') }}">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://yourwebsite.com/">
+  <meta property="twitter:title" content="MedBridge">
+  <meta property="twitter:description" content="MedBridge - Your trusted medical resource.">
+  <meta property="twitter:image" content="{{ url_for('static', filename='icons/medbridge-logo.png') }}">
+
+  <!-- WhatsApp / General Share -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yourwebsite.com/">
+  <meta property="og:title" content="MedBridge">
+  <meta property="og:description" content="MedBridge - Your trusted medical resource.">
+  <meta property="og:image" content="{{ url_for('static', filename='icons/medbridge-logo.png') }}">
+  <meta property="og:image:alt" content="MedBridge Logo">
+
+  <link rel="stylesheet" href="/medicalweb/CSS Sheets/OSCE.css" />
+</head>
+<body class="med-osce-body">
+
+  <!-- ========== HEADER ========== -->
+  <header class="med-header">
+    <h1 class="med-header-title">OSCE Central Hub</h1>
+    <p class="med-header-subtitle">Master your clinical skills with real-world OSCE tools, stations, and resources.</p>
+  </header>
+
+  <!-- ========== MAIN CONTENT ========== -->
+  <main class="med-osce-main">
+
+    <!-- ==================== OSCE Introduction ==================== -->
+<section class="osce-section">
+  <h2 class="osce-title">What is an OSCE?</h2>
+  <p class="osce-text">
+    The Objective Structured Clinical Examination (OSCE) is a practical, hands-on method of assessing clinical competence in the health professions. Unlike traditional exams that test theoretical knowledge, the OSCE evaluates the ability to perform clinical tasks in real-world scenarios. Participants rotate through a series of timed stations, performing tasks such as:
+  </p>
+
+  <ul class="osce-list">
+    <li>History taking and patient interviews</li>
+    <li>Physical examination and diagnostic skills</li>
+    <li>Procedural skills (e.g., IV insertion, catheterization)</li>
+    <li>Interpretation of clinical data and laboratory results</li>
+    <li>Patient communication, counseling, and education</li>
+    <li>Professionalism, ethics, and clinical decision-making</li>
+  </ul>
+
+  <h3 class="osce-subtitle">Purpose of an OSCE</h3>
+  <p class="osce-text">
+    OSCEs aim to provide a standardized, objective way to assess practical competence, ensuring that candidates can:
+  </p>
+  <ul class="osce-list">
+    <li>Apply theoretical knowledge safely in clinical practice</li>
+    <li>Demonstrate procedural and diagnostic skills</li>
+    <li>Communicate effectively with patients and colleagues</li>
+    <li>Show professionalism, empathy, and ethical judgment</li>
+    <li>Manage time efficiently and prioritize tasks</li>
+  </ul>
+
+  <h3 class="osce-subtitle">Structure of an OSCE</h3>
+  <p class="osce-text">
+    A typical OSCE consists of multiple stations, each with a defined task, time limit, and assessment criteria:
+  </p>
+
+  <table class="osce-table">
+    <thead>
+      <tr>
+        <th>Station Type</th>
+        <th>Duration</th>
+        <th>Task Examples</th>
+        <th>Assessment Focus</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>History Taking</td>
+        <td>5–10 min</td>
+        <td>Patient presenting with chest pain</td>
+        <td>Completeness, communication, professionalism</td>
+      </tr>
+      <tr>
+        <td>Physical Exam</td>
+        <td>5–10 min</td>
+        <td>Cardiovascular, respiratory, or neurological exam</td>
+        <td>Technique, accuracy, patient comfort</td>
+      </tr>
+      <tr>
+        <td>Procedures</td>
+        <td>5–15 min</td>
+        <td>Venipuncture, catheterization, wound care</td>
+        <td>Safety, asepsis, efficiency</td>
+      </tr>
+      <tr>
+        <td>Data Interpretation</td>
+        <td>3–5 min</td>
+        <td>ECG, lab results, imaging reports</td>
+        <td>Analytical reasoning, correct conclusions</td>
+      </tr>
+      <tr>
+        <td>Communication / Counseling</td>
+        <td>5 min</td>
+        <td>Explaining diagnosis or medication to a patient</td>
+        <td>Clarity, empathy, patient-centered approach</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3 class="osce-subtitle">Scoring & Marking</h3>
+  <p class="osce-text">
+    Each OSCE station typically has a checklist and/or global rating scale. Candidates are scored on:
+  </p>
+  <ul class="osce-list">
+    <li>Task completion and accuracy</li>
+    <li>Clinical reasoning and decision-making</li>
+    <li>Professionalism and communication skills</li>
+    <li>Time management and efficiency</li>
+  </ul>
+
+  <h3 class="osce-subtitle">Tips for Success in OSCEs</h3>
+  <ul class="osce-list">
+    <li>Read instructions carefully and clarify doubts before starting.</li>
+    <li>Prioritize patient safety and hygiene (hand washing, PPE if required).</li>
+    <li>Be structured: follow systematic approaches for history and exams.</li>
+    <li>Practice common procedures and scenarios with peers or simulation labs.</li>
+    <li>Communicate clearly and empathetically, even under time pressure.</li>
+    <li>Manage your time at each station efficiently; do not linger unnecessarily.</li>
+    <li>Stay calm, confident, and professional throughout the examination.</li>
+  </ul>
+
+  <h3 class="osce-subtitle">Purpose of OSCE</h3>
+<p class="osce-text">
+  OSCEs aim to evaluate a candidate's ability to apply clinical knowledge, communicate effectively, and demonstrate technical and professional skills in real-life scenarios.
+</p>
+
+<ul class="osce-list">
+  <li>History Taking</li>
+  <li>Physical Examination</li>
+  <li>Clinical Procedures</li>
+  <li>Patient Communication & Counseling</li>
+  <li>Interpretation of Investigations</li>
+  <li>Professionalism and Ethics</li>
+</ul>
+
+<h3 class="osce-subtitle">Example OSCE Stations</h3>
+<table class="osce-table">
+  <thead>
+    <tr>
+      <th>Station</th>
+      <th>Task</th>
+      <th>Skills Assessed</th>
+      <th>Time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Cardiovascular Exam</td>
+      <td>Physical exam, communication, clinical reasoning</td>
+      <td>8 min</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>History Taking – Abdominal Pain</td>
+      <td>History skills, patient interaction</td>
+      <td>10 min</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Venipuncture</td>
+      <td>Technical skills, infection control</td>
+      <td>5 min</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Breaking Bad News</td>
+      <td>Communication, empathy</td>
+      <td>7 min</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 class="osce-subtitle">Scoring Criteria & Tips</h3>
+<p class="osce-text">
+  Each station is scored using checklists or global rating scales. Key tips to excel:
+</p>
+<ul class="osce-list">
+  <li>Read instructions carefully before starting the station.</li>
+  <li>Maintain professionalism and empathy throughout.</li>
+  <li>Organize your tasks efficiently to complete within the allotted time.</li>
+  <li>Communicate clearly with both patients and examiners.</li>
+  <li>Practice common procedures repeatedly to build muscle memory.</li>
+</ul>
+
+
+<h3 class="osce-subtitle">Additional Resources</h3>
+  <ul class="osce-list">
+    <li><a href="/downloads/osce-guide.pdf" target="_blank">Comprehensive OSCE Guide (PDF)</a></li>
+    <li><a href="/downloads/osce-checklists.pdf" target="_blank">Sample OSCE Checklists</a></li>
+    <li><a href="/downloads/osce-prep-tips.pdf" target="_blank">Preparation Tips & Strategies</a></li>
+  </ul>
+
+</section>
+
+
+    <!-- Toggle Buttons -->
+<section class="osce-section">
+  <h2 class="osce-title">Explore More</h2>
+  <div class="toggle-group">
+    <button class="toggle-btn" data-target="stages">
+      OSCE Stages
+    </button>
+    <button class="toggle-btn" data-target="types">
+      OSCE Types
+    </button>
+  </div>
+
+  <!-- Hidden Content: OSCE Stages -->
+<div id="stages" class="toggle-content">
+  <h3>Stages of the OSCE</h3>
+
+  <!-- Stage 1: Preparation -->
+  <p><strong>1. Preparation:</strong> This is the foundation of OSCE success. Focus on:</p>
+  <ul>
+    <li>Reviewing clinical guidelines, textbooks, and institutional protocols.</li>
+    <li>Memorizing core checklists for common procedures (e.g., venipuncture, airway management).</li>
+    <li>Practicing under timed conditions to simulate real OSCE pressure.</li>
+    <li>Familiarizing yourself with OSCE station setup and equipment.</li>
+    <li>Preparing mental scripts for communication-heavy stations.</li>
+    <li>Self-assessment: identify weak areas and target practice accordingly.</li>
+  </ul>
+
+  <!-- Stage 2: Station Entry -->
+  <p><strong>2. Station Entry:</strong> Your first impression counts. Key tips:</p>
+  <ul>
+    <li>Read the instructions thoroughly before touching any equipment.</li>
+    <li>Maintain calm, professional posture; take a deep breath.</li>
+    <li>Check all items needed for the task; organize mentally.</li>
+    <li>Prioritize tasks according to the station’s objectives.</li>
+  </ul>
+
+  <!-- Stage 3: Interaction Phase -->
+  <p><strong>3. Interaction Phase:</strong> This is where your skills are assessed.</p>
+  <ul>
+    <li>Perform clinical procedures systematically (ABCDE approach if applicable).</li>
+    <li>Communicate clearly with the patient or standardized actor.</li>
+    <li>Explain procedures before performing them.</li>
+    <li>Observe infection control and safety precautions rigorously.</li>
+    <li>Checklists: follow each step to avoid missing critical actions.</li>
+    <li>Time management: ensure completion within station limits.</li>
+  </ul>
+
+  <!-- Stage 4: Exit & Reset -->
+  <p><strong>4. Exit & Reset:</strong> Transition effectively to the next station:</p>
+  <ul>
+    <li>Leave the previous station tidy and reset any equipment if required.</li>
+    <li>Mentally reset; do not carry over stress from the previous station.</li>
+    <li>Review any feedback or memory cues quickly before entering the next station.</li>
+    <li>Maintain confidence and composure; each station is a fresh opportunity.</li>
+  </ul>
+
+  <!-- Stage 5: Feedback & Reflection -->
+  <p><strong>5. Feedback & Reflection:</strong> Maximize learning even after the OSCE:</p>
+  <ul>
+    <li>Analyze which steps were strong and which need improvement.</li>
+    <li>Compare performance against checklists or global rating scales.</li>
+    <li>Seek peer or mentor feedback for targeted development.</li>
+    <li>Document common errors and strategies to avoid them in future practice.</li>
+    <li>Practice high-yield scenarios repeatedly to reinforce competence.</li>
+  </ul>
+
+  <!-- Optional Advanced Tips -->
+  <h4>Advanced OSCE Tips:</h4>
+  <ul>
+    <li>Practice “think aloud” strategies during communication stations to show reasoning.</li>
+    <li>For technical procedures, simulate complications and how you would respond safely.</li>
+    <li>Time each station to train pacing without compromising accuracy.</li>
+    <li>Focus on patient-centered care: empathy, explanation, and reassurance are scored.</li>
+    <li>Use mnemonics (ABCDE, SAMPLE, SOCRATES) for efficiency in history and examination stations.</li>
+  </ul>
+</div>
+
+
+  <!-- Hidden Content: OSCE Types -->
+<div id="types" class="toggle-content">
+  <h3>Types of OSCE Stations</h3>
+
+  <!-- History Taking -->
+  <p><strong>History Taking:</strong> Interviewing patients systematically while demonstrating clinical reasoning.</p>
+  <ul>
+    <li>Use structured approaches: <strong>SAMPLE</strong> (Symptoms, Allergies, Medications, Past medical history, Last meal, Events leading to problem).</li>
+    <li>Establish rapport: greeting, introducing yourself, explaining purpose.</li>
+    <li>Ask open-ended questions first, then focused closed-ended questions.</li>
+    <li>Document findings clearly and concisely on checklist sheets.</li>
+    <li>Example: A 45-year-old patient with chest pain—cover onset, character, severity, associated symptoms, past cardiac history.</li>
+  </ul>
+
+  <!-- Physical Examination -->
+  <p><strong>🩺 Physical Examination:</strong> Demonstrating thorough and safe examination skills.</p>
+  <ul>
+    <li>Follow a systematic approach per body system (head-to-toe or focused exam).</li>
+    <li>Observe infection control, patient comfort, and privacy.</li>
+    <li>Verbalize each step for examiner clarity.</li>
+    <li>Example checklist for cardiovascular exam:</li>
+    <table>
+      <tr><th>Step</th><th>Action</th></tr>
+      <tr><td>Inspection</td><td>Observe chest, neck veins, edema.</td></tr>
+      <tr><td>Palpation</td><td>Assess pulses, precordial areas.</td></tr>
+      <tr><td>Percussion</td><td>Evaluate heart borders.</td></tr>
+      <tr><td>Auscultation</td><td>Listen for heart sounds and murmurs.</td></tr>
+    </table>
+  </ul>
+
+  <!-- Communication / Counseling -->
+  <p><strong>🗣️ Communication & Counseling:</strong> Educating patients, giving instructions, or breaking bad news.</p>
+  <ul>
+    <li>Use clear, empathetic language.</li>
+    <li>Confirm understanding through teach-back or questioning.</li>
+    <li>Example: Counseling a patient on diabetes lifestyle modifications—diet, exercise, medication adherence.</li>
+    <li>Breaking bad news: follow <strong>SPIKES protocol</strong> (Setting, Perception, Invitation, Knowledge, Emotions, Summary/Strategy).</li>
+  </ul>
+
+  <!-- Procedures -->
+  <p><strong>Procedures:</strong> Performing sterile and safe clinical interventions.</p>
+  <ul>
+    <li>Follow aseptic technique and safety standards.</li>
+    <li>Prepare equipment and explain steps to patient.</li>
+    <li>Examples include: IV cannulation, urinary catheterization, wound dressing, or nasogastric tube insertion.</li>
+    <li>Checklist approach: Preparation → Procedure → Post-procedure care → Documentation.</li>
+  </ul>
+
+  <!-- Data Interpretation -->
+  <p><strong>Data Interpretation:</strong> Interpreting investigations to form a clinical decision.</p>
+  <ul>
+    <li>ECGs: Identify arrhythmias, ischemia, or conduction blocks.</li>
+    <li>Lab results: Recognize critical values (e.g., electrolytes, hemoglobin, WBC counts).</li>
+    <li>Imaging: Chest X-ray, ultrasound, or CT—identify normal vs abnormal findings.</li>
+    <li>Always verbalize your reasoning to the examiner.</li>
+  </ul>
+
+  <!-- Emergencies -->
+  <p><strong>Emergencies:</strong> Handling acute, high-pressure situations.</p>
+  <ul>
+    <li>Follow <strong>ABCDE</strong> approach: Airway, Breathing, Circulation, Disability, Exposure.</li>
+    <li>Prioritize tasks: stabilize the patient first, then complete OSCE checklist steps.</li>
+    <li>Examples: Anaphylaxis, acute stroke, status epilepticus, hypoglycemia.</li>
+    <li>Demonstrate rapid, safe interventions while communicating effectively with the patient.</li>
+  </ul>
+</div>
+
+</section>
+
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="med-footer">
+    <!-- Your existing footer HTML here -->
+  </footer>
+
+  <!-- ========== JS TOGGLE SCRIPT ========== -->
+<script>
+  document.querySelectorAll(".toggle-btn").forEach(button => {
+    button.addEventListener("click", () => {
+      const targetId = button.getAttribute("data-target");
+      const targetContent = document.getElementById(targetId);
+
+      // Close all other toggle contents
+      document.querySelectorAll(".toggle-content").forEach(section => {
+        if (section !== targetContent) {
+          section.classList.remove("active");
+        }
+      });
+
+      // Toggle current
+      targetContent.classList.toggle("active");
+
+      // Optional: Smooth scroll to opened section
+      if (targetContent.classList.contains("active")) {
+        targetContent.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

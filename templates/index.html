@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Welcome | MedBridge{% endblock %}
+
+{% block content %}
+<main class="landing-hero">
+  <!-- Dark overlay -->
+  <div class="hero-overlay"></div>
+
+  <div class="hero-left">
+    <h1 class="landing-title">MedBridge</h1>
+    <p class="landing-subtitle">
+      Empowering Nurses & Doctors with trusted, accessible medical resources.<br>
+      Built for professionals, by professionals.
+    </p>
+  </div>
+
+  <div class="hero-right">
+    <h2 class="entry-title">Access MedBridge</h2>
+    <div class="landing-actions">
+      <a href="{{ url_for('auth') }}" class="landing-btn access-btn">
+        <img src="{{ url_for('static', filename='icons/LOGIN-icon.png') }}" alt="" /> Login / Register
+      </a>
+    </div>
+  </div>
+</main>
+{% endblock %}

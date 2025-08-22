@@ -1,0 +1,391 @@
+/* ===== RESET ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  background-color: #0F1516; /* dark background */
+  color: #C9C2C2; /* light gray text */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.55;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+/* ===== CONTAINER ===== */
+.toolkit-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #1b2324;  /* card background */
+  border-radius: 12px;
+  padding: 2.5rem 3rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+/* ===== TITLES ===== */
+#tool-title {
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #7F8C94; /* medium gray */
+  text-align: center;
+  letter-spacing: 0.02em;
+  user-select: none;
+}
+
+/* ===== BACK BUTTON ===== */
+.toolkit-back-button {
+  background-color: #234C58; /* deep blue */
+  color: #C9C2C2;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.3rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+  display: inline-block;
+  margin-bottom: 2rem;
+  user-select: none;
+}
+
+.toolkit-back-button:hover,
+.toolkit-back-button:focus {
+  background-color: #1B3B46;
+  outline: none;
+}
+
+/* ===== TOOL SECTIONS ===== */
+.tool-section {
+  background: #1b2324;
+  border-radius: 12px;
+  padding: 2rem 2.5rem;
+  margin-bottom: 3rem;
+  box-shadow: inset 0 0 10px rgba(20,30,35,0.3);
+  display: none;
+  line-height: 1.6;
+}
+
+.tool-section.active {
+  display: block;
+}
+
+/* Section headings */
+.tool-section-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #C9C2C2;
+  margin-bottom: 1rem;
+  user-select: text;
+}
+
+/* Section descriptive text */
+.tool-section-desc {
+  font-size: 1rem;
+  color: #A9A5A5;
+  margin-bottom: 1.8rem;
+  max-width: 650px;
+  user-select: text;
+  line-height: 1.65;
+}
+
+/* ===== FORMS ===== */
+form {
+  max-width: 400px;
+  margin-bottom: 2rem;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  color: #C9C2C2;
+  margin-bottom: 0.4rem;
+  font-size: 1rem;
+  user-select: text;
+}
+
+input[type="number"] {
+  width: 100%;
+  padding: 0.55rem 0.85rem;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #C9C2C2;
+  background-color: #0F1516;
+  border: 1.8px solid #2E3B41;
+  border-radius: 8px;
+  transition: border-color 0.25s ease;
+  outline-offset: 2px;
+  user-select: text;
+}
+
+input[type="number"]:focus {
+  border-color: #234C58;
+  outline: none;
+}
+
+/* ===== BUTTONS ===== */
+button {
+  background-color: #234C58;
+  color: #C9C2C2;
+  border: none;
+  border-radius: 8px;
+  padding: 0.65rem 1.4rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+  user-select: none;
+  margin-top: 1rem;
+  display: inline-block;
+  min-width: 140px;
+  text-align: center;
+}
+
+button:hover,
+button:focus {
+  background-color: #1B3B46;
+  outline: none;
+}
+
+/* ===== RESULTS ===== */
+.bmi-result,
+.dosage-result {
+  margin-top: 1.3rem;
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: #A9C9D2; /* lighter blue-gray */
+  user-select: text;
+}
+
+/* ===== LISTS and TABLES ===== */
+ul, ol {
+  margin-left: 1.5rem;
+  margin-bottom: 1.8rem;
+  color: #BBB9B9;
+  font-size: 1rem;
+  line-height: 1.5;
+  user-select: text;
+}
+
+li {
+  margin-bottom: 0.45rem;
+}
+
+h3 {
+  margin-top: 1.8rem;
+  font-size: 1.3rem;
+  color: #C9C2C2;
+  user-select: text;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #C9C2C2;
+  user-select: text;
+}
+
+th, td {
+  border: 1px solid #2E3B41;
+  padding: 0.7rem 1rem;
+  text-align: left;
+}
+
+th {
+  background-color: #234C58;
+  font-weight: 600;
+}
+
+tr:nth-child(even) {
+  background-color: #162024;
+}
+
+/* ===== LINKS ===== */
+a {
+  color: #7FA8B9;
+  text-decoration: none;
+  font-weight: 600;
+  user-select: text;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+  outline: none;
+}
+
+/* ===== RESPONSIVENESS ===== */
+@media (max-width: 600px) {
+  body {
+    padding: 1rem;
+  }
+  .toolkit-wrapper {
+    padding: 1.5rem 1.8rem;
+  }
+  form {
+    max-width: 100%;
+  }
+  .tool-section {
+    padding: 1.5rem 1.8rem;
+    margin-bottom: 2rem;
+  }
+  #tool-title {
+    font-size: 2rem;
+  }
+  button {
+    min-width: 100%;
+  }
+}
+
+
+/* ===================================================================================================== */
+/* ===================================================================================================== */
+/* ================================ALL MEDIA QUERIES ON THIS SHEET====================================== */
+/* ===================================================================================================== */
+/* ===================================================================================================== */
+
+/* ====================== MEDIA QUERIES FOR FULL-BACKGROUND FLOW ====================== */
+
+/* Small tablets / large phones ≤768px */
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+
+  /* Remove container wrapper completely */
+  .toolkit-wrapper {
+    background: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+  }
+
+  /* Make sections flow directly on body */
+  .tool-section {
+    background: none !important;
+    padding: 0.5rem 0 !important;
+    margin-bottom: 1rem !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+
+  #tool-title {
+    font-size: 1.8rem !important;
+    text-align: left !important;
+  }
+
+  .tool-section-title {
+    font-size: 1.3rem !important;
+  }
+
+  .tool-section-desc {
+    font-size: 0.9rem !important;
+    max-width: 100% !important;
+    margin-bottom: 1rem !important;
+  }
+
+  input[type="number"] {
+    font-size: 0.9rem !important;
+    padding: 0.35rem 0.5rem !important;
+    border: none !important;
+    border-radius: 0 !important;
+  }
+
+  button {
+    font-size: 0.95rem !important;
+    padding: 0.4rem 0.8rem !important;
+    min-width: 100% !important;
+    border-radius: 0 !important;
+  }
+
+  table {
+    font-size: 0.85rem !important;
+    width: 100% !important;
+    border: none !important;
+  }
+  th, td {
+    padding: 0.4rem 0.5rem !important;
+    border: none !important;
+  }
+}
+
+/* Mobile Portrait ≤480px */
+@media (max-width: 480px) {
+  body {
+    padding: 0.8rem;
+  }
+
+  #tool-title {
+    font-size: 1.6rem !important;
+  }
+
+  .tool-section {
+    padding: 0.3rem 0 !important;
+    margin-bottom: 0.8rem !important;
+  }
+  .tool-section-title {
+    font-size: 1.2rem !important;
+  }
+  .tool-section-desc {
+    font-size: 0.85rem !important;
+  }
+
+  input[type="number"] {
+    font-size: 0.8rem !important;
+    padding: 0.3rem 0.45rem !important;
+  }
+
+  button {
+    font-size: 0.9rem !important;
+    padding: 0.35rem 0.7rem !important;
+  }
+
+  table {
+    font-size: 0.8rem !important;
+  }
+  th, td {
+    padding: 0.35rem 0.45rem !important;
+  }
+}
+
+/* Ultra-small phones ≤360px */
+@media (max-width: 360px) {
+  #tool-title {
+    font-size: 1.5rem !important;
+  }
+  .tool-section-title {
+    font-size: 1.1rem !important;
+  }
+  .tool-section-desc {
+    font-size: 0.8rem !important;
+  }
+
+  input[type="number"] {
+    font-size: 0.75rem !important;
+    padding: 0.3rem 0.4rem !important;
+  }
+
+  button {
+    font-size: 0.85rem !important;
+    padding: 0.3rem 0.65rem !important;
+  }
+
+  table {
+    font-size: 0.75rem !important;
+  }
+  th, td {
+    padding: 0.3rem 0.4rem !important;
+  }
+}

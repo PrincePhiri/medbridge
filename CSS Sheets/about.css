@@ -1,0 +1,278 @@
+/* ====== Global Reset and Base ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body.about-wrapper {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #121212;
+  color: #e0e0e0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ====== Navigation ====== */
+.site-nav {
+  background-color: #1e1e1e;
+  padding: 16px 40px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+  z-index: 10;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  color: #e0e0e0;
+  font-weight: 700;
+  font-size: 1.6rem;
+  text-decoration: none;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: #cfcfcf;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #a0a0a0;
+}
+
+/* ====== Main Content ====== */
+.main-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  position: relative;
+}
+
+/* ====== Card Slider Container ====== */
+.card-slider-container {
+  position: relative;
+  width: 700px;
+  max-width: 90vw;
+  height: 450px;
+  overflow: hidden;
+}
+
+/* ====== About Cards ====== */
+.about-card {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.7s ease;
+  display: flex;
+}
+
+.about-card.active {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 5;
+}
+
+/* ====== Text Styling ====== */
+.card-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #ccc;
+  padding-top: 66px;
+  padding-left: 20px;
+}
+
+.card-overlay p {
+  font-size: .8rem;
+  line-height: 1.5;
+  color: #bbb;
+  padding-left: 20px;
+}
+
+/* ===========contact btn=========== */
+.contact-btn{
+  padding-left: 14px;
+  padding-right: 14px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background: #333;
+  margin-top: 18px;
+  margin-left: 20px;
+  border: 20px;
+  border-radius: 3px;
+  color: #888;
+  transition: all .3s ease;
+}
+
+.contact-btn a{
+  text-decoration: none;
+  margin: 4px;
+  color: #888;
+  transition: all .3s ease;
+}
+
+.contact-btn:hover{
+  text-decoration: none;
+  background-color: #1e1e1e;
+}
+
+.contact-btn a:hover{
+  text-decoration: none;
+  background-color: #1e1e1e;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* ====== Navigation Arrows ====== */
+/* ====== Navigation Arrows ====== */
+.nav-controls {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  z-index: 20;
+}
+
+.arrow {
+  background-color: transparent;
+  border: 2px solid #888;
+  color: hsl(0, 0%, 53%);
+  width: 10px;
+  height: 10px;
+  font-size: 1.6rem;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  padding: 16px;
+}
+
+.arrow:hover {
+  background-color: #2a2a2a;
+  color: #ccc;
+  border-color: #aaa;
+}
+
+/* ====== Media Queries ====== */
+@media (max-width: 768px) {
+  .nav-controls {
+    right: 10px;
+    gap: 12px;
+  }
+
+  .arrow {
+    width: 8px;
+    height: 8px;
+    font-size: 1.4rem;
+    padding: 14px;
+  }
+}
+
+@media (max-width: 500px) {
+  .nav-controls {
+    right: 8px;
+    gap: 10px;
+  }
+
+  .arrow {
+    width: 6px;
+    height: 6px;
+    font-size: 1.2rem;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 360px) {
+  .nav-controls {
+    right: 6px;
+    gap: 8px;
+  }
+
+  .arrow {
+    width: 5px;
+    height: 5px;
+    font-size: 1rem;
+    padding: 10px;
+  }
+}
+
+/* ====== Footer ====== */
+.site-footer {
+  background-color: #1e1e1e;
+  text-align: center;
+  padding: 18px 0;
+  font-size: 0.9rem;
+  color: #888;
+  box-shadow: 0 -2px 6px rgba(0,0,0,0.6);
+}
+
+/* ====== Responsive ====== */
+@media (max-width: 768px) {
+  .card-slider-container {
+    width: 90vw;
+    height: 400px;
+  }
+
+  .card-overlay {
+    padding: 28px 30px;
+    max-width: 90vw;
+  }
+
+  .card-title {
+    font-size: 1.8rem;
+  }
+
+  .card-overlay p {
+    font-size: 1rem;
+  }
+
+  .nav-controls {
+    right: -55px;
+  }
+
+  .arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .card-slider-container {
+    height: 350px;
+  }
+
+  .card-title {
+    font-size: 1.5rem;
+  }
+
+  .card-overlay p {
+    font-size: 0.95rem;
+  }
+}

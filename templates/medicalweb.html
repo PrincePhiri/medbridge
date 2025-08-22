@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en" class="med-root">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary Meta Tags -->
+  <title>MedBridge</title>
+  <meta name="title" content="MedBridge">
+  <meta name="description" content="MedBridge - Your trusted medical resource.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='icons/medbridge-logo.png') }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='icons/medbridge-logo.png') }}">
+
+  <!-- Open Graph / Facebook / WhatsApp -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yourwebsite.com/">
+  <meta property="og:title" content="MedBridge">
+  <meta property="og:description" content="MedBridge - Your trusted medical resource.">
+  <meta property="og:image" content="{{ url_for('static', filename='icons/medbridge-logo.png') }}">
+  <meta property="og:image:alt" content="MedBridge Logo">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://yourwebsite.com/">
+  <meta property="twitter:title" content="MedBridge">
+  <meta property="twitter:description" content="MedBridge - Your trusted medical resource.">
+  <meta property="twitter:image" content="{{ url_for('static', filename='icons/medbridge-logo.png') }}">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='CSS Sheets/medical.css') }}" />
+</head>
+
+
+
+<body>
+  <header class="med-header">
+    <div class="med-logo">
+      <img src="/static/medicinePhotos/medbridge logo.png" alt="The MedBridge Logo" />
+    </div>
+
+    {% if session.get('user_id') %}
+    <div class="med-logout">
+      <a href="{{ url_for('logout') }}" class="med-logout-btn">Logout</a>
+    </div>
+    {% endif %}
+  </header>
+
+
+  <section class="hero tp-searchable">
+    <h1>Empowering Medical Professionals</h1>
+    <p>Centralized resources for nurses and doctors. Learn, grow, and lead with ThePrince MedBridge Hub.</p>
+
+    <!-- ----------------------SEARCH BAR--------------------- -->
+    <div class="tp-search-wrapper">
+      <img src="/static/icons/search.png" alt="Search" class="tp-search-icon">
+      <input type="text" class="tp-search-input" placeholder="Search medical updates...">
+      <ul class="tp-search-suggestions"></ul>
+
+    </div>
+  </section>
+<!-- =========================================CARDS SLIDER================================== -->
+<section class="cards-slider">
+  <img src="/static/icons/arrow-back-circle-outline.png" alt="Left" class="arrow left" />
+  
+  <div class="cards-carousel">
+    <!-- Cards will be injected here dynamically by JS -->
+  </div>
+
+  <img src="/static/icons/arrow-forward-circle-outline.png" alt="Right" class="arrow right" />
+</section>
+
+
+<!-- Info container where card details from cardhero.html will appear -->
+<div id="infoContainer" class="card-info-container" style="display:none;"></div>
+
+
+  
+<main class="med-main">
+
+  <!-- ====================== NURSE SECTION ====================== -->
+  <section id="nurse" class="med-section tp-searchable">
+    <h2>Nurse Resources</h2>
+    <!-- Search Bar -->
+    <input type="text" class="section-search" placeholder="Search Nurse Resources...">
+
+    <ul class="med-resources">
+      <li><a href="#" class="resource-link" data-content-id="nursing-fundamentals">Fundamentals of Nursing (PDF)</a></li>
+      <li><a href="#" class="resource-link" data-content-id="medication-guide">Medication Administration Guide</a></li>
+      <li><a href="#" class="resource-link" data-content-id="nursing-procedures">Nursing Procedures Video Tutorials</a></li>
+      <li><a href="#" class="resource-link" data-content-id="clinical-assessment">Clinical Assessment Notes</a></li>
+      <li><a href="#" class="resource-link" data-content-id="icu-nursing-protocols">ICU Nursing Protocols</a></li>
+      <li><a href="#" class="resource-link" data-content-id="pediatric-nursing-handbook">Pediatric Nursing Handbook</a></li>
+      <li><a href="#" class="resource-link" data-content-id="wound-care-nursing">Wound Care in Nursing</a></li>
+      <li><a href="#" class="resource-link" data-content-id="emergency-nursing-guide">Emergency Nursing Quick Guide</a></li>
+    </ul>
+
+    <button class="show-more-btn">Show More</button>
+  </section>
+
+  <!-- ====================== DOCTOR SECTION ====================== -->
+  <section id="doctor" class="med-section tp-searchable">
+    <h2>Doctor Resources</h2>
+    <!-- Search Bar -->
+    <input type="text" class="section-search" placeholder="Search Doctor Resources...">
+
+    <ul class="med-resources">
+      <li><a href="#" class="resource-link" data-content-id="malawi-hiv-guidelines-2022">Malawi Clinical HIV Guidelines 2022</a></li>
+      <li><a href="#" class="resource-link" data-content-id="clinical-blue-book">Clinical Blue Book</a></li>
+      <li><a href="#" class="resource-link" data-content-id="tb-guideline">TB Guideline</a></li>
+      <li><a href="#" class="resource-link" data-content-id="uterine-rupture">Uterine Rupture</a></li>
+      <li><a href="#" class="resource-link" data-content-id="new-antenatalcare">New AntenatalCare Mlw</a></li>
+      <li><a href="#" class="resource-link" data-content-id="amoebic-dysentery">Amoebic Dysentery</a></li>
+      <li><a href="#" class="resource-link" data-content-id="bacillary-dysentry">Bacillary Dysentry</a></li>
+      <li><a href="#" class="resource-link" data-content-id="chicken-pox">Chicken Pox</a></li>
+      <li><a href="#" class="resource-link" data-content-id="cholera">Cholera</a></li>
+      <li><a href="#" class="resource-link" data-content-id="diabetes-mellitus-lecture">Diabetes Mellitus Lecture</a></li>
+      <li><a href="#" class="resource-link" data-content-id="diptheria">Diptheria</a></li>
+      <li><a href="#" class="resource-link" data-content-id="food-poisoning">Food Poisoning</a></li>
+      <li><a href="#" class="resource-link" data-content-id="hepatitis-a">Hepatitis A</a></li>
+      <li><a href="#" class="resource-link" data-content-id="hepatitis-b">Hepatitis B</a></li>
+      <li><a href="#" class="resource-link" data-content-id="hiv-and-aids">HIV and AIDS</a></li>
+      <li><a href="#" class="resource-link" data-content-id="hook-worm">Hook Worm</a></li>
+      <li><a href="#" class="resource-link" data-content-id="influenza">Influenza</a></li>
+      <li><a href="#" class="resource-link" data-content-id="meningitis">Meningitis</a></li>
+      <li><a href="#" class="resource-link" data-content-id="mumps">Mumps</a></li>
+      <li><a href="#" class="resource-link" data-content-id="rabies">Rabies</a></li>
+      <li><a href="#" class="resource-link" data-content-id="rheumatic-fever">Rheumatic Fever</a></li>
+      <li><a href="#" class="resource-link" data-content-id="round-worms">Round Worms</a></li>
+      <li><a href="#" class="resource-link" data-content-id="rubella">Rubella</a></li>
+      <li><a href="#" class="resource-link" data-content-id="tetanus">Tetanus</a></li>
+      <li><a href="#" class="resource-link" data-content-id="tuberculosis">Tuberculosis</a></li>
+      <li><a href="#" class="resource-link" data-content-id="typhoid">Typhoid</a></li>
+      <li><a href="#" class="resource-link" data-content-id="typhoid-fever">Typhoid Fever</a></li>
+      <li><a href="#" class="resource-link" data-content-id="whooping-cough">Whooping Cough</a></li>
+      <li><a href="#" class="resource-link" data-content-id="alcohol-disorders">Alcohol Disorders</a></li>
+      <li><a href="#" class="resource-link" data-content-id="etat-pre-service2016">ETAT Pre-service 2016</a></li>
+      <li><a href="#" class="resource-link" data-content-id="hypertension">Hypertension</a></li>
+      <li><a href="#" class="resource-link" data-content-id="chest-injuries">Chest Injuries</a></li>
+      <li><a href="#" class="resource-link" data-content-id="liver-cirrhosis">Liver Cirrhosis</a></li>
+      <li><a href="#" class="resource-link" data-content-id="pneumonia">Pneumonia</a></li>
+      <li><a href="#" class="resource-link" data-content-id="prom-pprom">PROM & PPROM</a></li>
+    </ul>
+
+    <button class="show-more-btn">Show More</button>
+  </section>
+</main>
+
+
+<!-- ====================== NURSES RESOURCE CONTENTS (HIDDEN) ====================== -->
+<div id="nursing-fundamentals" class="resource-content hidden">
+  <h3>Fundamentals of Nursing (PDF)</h3>
+  <p>This PDF contains core nursing principles including patient care, ethics, and safety practices.</p>
+  <embed src="{{ url_for('static', filename='PDF-RESOURCE/NURSES/Fundamentals_of_Nursing.pdf') }}" type="application/pdf" width="100%" height="75vh" />
+  <a href="{{ url_for('static', filename='PDF-RESOURCE/NURSES/Fundamentals_of_Nursing.pdf') }}" download>Download PDF</a>
+</div>
+
+<div id="medication-guide" class="resource-content hidden">
+  <h3>Medication Administration Guide</h3>
+  <p>Explore dosage guidelines, routes of administration, safety checks, and more.</p>
+  <embed src="{{ url_for('static', filename='PDF-RESOURCE/NURSES/Medication_Administration_Guide.pdf') }}" type="application/pdf" width="100%" height="75vh" />
+  <a href="{{ url_for('static', filename='PDF-RESOURCE/NURSES/Medication_Administration_Guide.pdf') }}" download>Download PDF</a>
+</div>
+
+<div id="nursing-procedures" class="resource-content hidden">
+  <h3>Nursing Procedures Video Tutorials</h3>
+  <p>Step-by-step video tutorials demonstrating nursing procedures.</p>
+  <embed src="{{ url_for('static', filename='PDF-RESOURCE/NURSES/Nursing_Procedures_Tutorials.pdf') }}" type="application/pdf" width="100%" height="75vh" />
+  <a href="{{ url_for('static', filename='PDF-RESOURCE/NURSES/Nursing_Procedures_Tutorials.pdf') }}" download>Download PDF</a>
+</div>
+
+<div id="clinical-assessment" class="resource-content hidden">
+  <h3>Clinical Assessment Notes</h3>
+  <p>Notes and checklists for clinical patient assessments.</p>
+  <embed src="{{ url_for('static', filename='PDF-RESOURCE/NURSES/Clinical_Assessment_Notes.pdf') }}" type="application/pdf" width="100%" height="75vh" />
+  <a href="{{ url_for('static', filename='PDF-RESOURCE/NURSES/Clinical_Assessment_Notes.pdf') }}" download>Download PDF</a>
+</div>
+
+<div id="icu-nursing-protocols" class="resource-content hidden">
+  <h3>ICU Nursing Protocols</h3>
+  <p>Comprehensive protocols for intensive care nursing including ventilator management, hemodynamic monitoring, and patient safety guidelines.</p>
+  <embed src="{{ url_for('static', filename='PDF-RESOURCE/NURSES/ICU_Nursing_Protocols.pdf') }}" type="application/pdf" width="100%" height="75vh" />
+  <a href="{{ url_for('static', filename='PDF-RESOURCE/NURSES/ICU_Nursing_Protocols.pdf') }}" download>Download PDF</a>
+</div>
+
+<div id="pediatric-nursing-handbook" class="resource-content hidden">
+  <h3>Pediatric Nursing Handbook</h3>
+  <p>A handbook covering pediatric nursing essentials including growth and development, child assessment, and pediatric medication safety.</p>
+  <embed src="{{ url_for('static', filename='PDF-RESOURCE/NURSES/Pediatric_Nursing_Handbook.pdf') }}" type="application/pdf" width="100%" height="75vh" />
+  <a href="{{ url_for('static', filename='PDF-RESOURCE/NURSES/Pediatric_Nursing_Handbook.pdf') }}" download>Download PDF</a>
+</div>
+
+<div id="wound-care-nursing" class="resource-content hidden">
+  <h3>Wound Care in Nursing</h3>
+  <p>Guidelines and procedures for effective wound assessment, dressing techniques, infection control, and healing promotion.</p>
+  <embed src="{{ url_for('static', filename='PDF-RESOURCE/NURSES/Wound_Care_in_Nursing.pdf') }}" type="application/pdf" width="100%" height="75vh" />
+  <a href="{{ url_for('static', filename='PDF-RESOURCE/NURSES/Wound_Care_in_Nursing.pdf') }}" download>Download PDF</a>
+</div>
+
+<div id="emergency-nursing-guide" class="resource-content hidden">
+  <h3>Emergency Nursing Quick Guide</h3>
+  <p>A quick reference guide for emergency nursing procedures including triage, trauma care, resuscitation, and rapid interventions.</p>
+  <embed src="{{ url_for('static', filename='PDF-RESOURCE/NURSES/Emergency_Nursing_Quick_Guide.pdf') }}" type="application/pdf" width="100%" height="75vh" />
+  <a href="{{ url_for('static', filename='PDF-RESOURCE/NURSES/Emergency_Nursing_Quick_Guide.pdf') }}" download>Download PDF</a>
+</div>
+
+
+<!-- ------------------------------------------------------------------------------- -->
+
+
+<!-- ====================== DOCTORS RESOURCE CONTENTS (HIDDEN) ====================== -->
+
+<!-- ===================================================PDF`s HERE======================================== -->
+<div id="clinical-blue-book" class="resource-content hidden">
+  <h3>Clinical Blue Book</h3>
+  <p>A comprehensive handbook for internal medicine protocols and treatments.</p>
+  <embed 
+    src="/static/PDF-RESOURCE/DOCTORS/The_Clinical_Blue_Book-Copy.pdf" 
+    type="application/pdf" 
+    width="100%" 
+    height="75vh" 
+    title="Clinical Blue Book PDF" 
+    loading="lazy" 
+    allowfullscreen
+  />
+  <a href="/static/PDF-RESOURCE/DOCTORS/The_Clinical_Blue_Book-Copy.pdf" download>Download PDF</a>
+</div>
+
+<div id="tb-guideline" class="resource-content hidden">
+  <h3>TB Guideline</h3>
+  <p>Comprehensive guidelines for tuberculosis management.</p>
+  <embed 
+    src="/static/PDF-RESOURCE/DOCTORS/TB_Guideline.pdf" 
+    type="application/pdf" 
+    width="100%" 
+    height="75vh" 
+    title="TB Guideline PDF" 
+    loading="lazy" 
+    allowfullscreen
+  />
+  <a href="/static/PDF-RESOURCE/DOCTORS/TB_Guideline.pdf" download>Download PDF</a>
+</div>
+
+<!-- Uterine Rupture -->
+<div id="uterine-rupture" class="resource-content hidden">
+  <h3>Uterine Rupture</h3>
+  <p>Guidelines on diagnosis and management of uterine rupture.</p>
+  <embed 
+    src="/static/PDF-RESOURCE/DOCTORS/Uterine_Rupture.pdf" 
+    type="application/pdf" 
+    width="100%" 
+    height="75vh" 
+    title="Uterine Rupture PDF" 
+    loading="lazy" 
+    allowfullscreen
+  />
+  <a href="/static/PDF-RESOURCE/DOCTORS/Uterine_Rupture.pdf" download>Download PDF</a>
+</div>
+
+<!-- New AntenatalCare -->
+<div id="new-antenatalcare" class="resource-content hidden">
+  <h3>New AntenatalCare Mlw</h3>
+  <p>Latest guidelines and protocols for antenatal care.</p>
+  <embed 
+    src="/static/PDF-RESOURCE/DOCTORS/New_AntenatalCare_Mlw.pdf" 
+    type="application/pdf" 
+    width="100%" 
+    height="75vh" 
+    title="New AntenatalCare PDF" 
+    loading="lazy" 
+    allowfullscreen
+  />
+  <a href="/static/PDF-RESOURCE/DOCTORS/New_AntenatalCare_Mlw.pdf" download>Download PDF</a>
+</div>
+
+<!-- Malawi Clinical HIV Guidelines 2022 -->
+<div id="malawi-hiv-guidelines-2022" class="resource-content hidden">
+  <h3>Malawi Clinical HIV Guidelines 2022</h3>
+  <p>Comprehensive guidelines for HIV management in Malawi.</p>
+  <embed 
+    src="/static/PDF-RESOURCE/DOCTORS/Malawi_Clinical_Hiv_Guidelines_2022.pdf" 
+    type="application/pdf" 
+    width="100%" 
+    height="75vh" 
+    title="Malawi Clinical HIV Guidelines 2022 PDF" 
+    loading="lazy" 
+    allowfullscreen
+  />
+  <a href="/static/PDF-RESOURCE/DOCTORS/Malawi_Clinical_Hiv_Guidelines_2022.pdf" download>Download PDF</a>
+</div>
+
+
+
+<!-- ==================================================PPT================================================== -->
+<!-- Amoebic Dysentery -->
+<div id="amoebic-dysentery" class="resource-content hidden">
+  <h3>Amoebic Dysentery</h3>
+  <p>PowerPoint presentation - click download to view.</p>
+  <a href="/static/PDF-RESOURCE/DOCTORS/Amoebic_Dysentery.ppt" download>Download PPT</a>
+</div>
+
+<!-- Bacillary Dysentry -->
+<div id="bacillary-dysentry" class="resource-content hidden">
+  <h3>Bacillary Dysentry</h3>
+  <p>PowerPoint presentation - click download to view.</p>
+  <a href="/static/PDF-RESOURCE/DOCTORS/Bacillary_Dysentry.ppt" download>Download PPT</a>
+</div>
+
+<!-- Chicken Pox -->
+<div id="chicken-pox" class="resource-content hidden">
+  <h3>Chicken Pox</h3>
+  <p>PowerPoint presentation - click download to view.</p>
+  <a href="/static/PDF-RESOURCE/DOCTORS/Chicken_Pox.ppt" download>Download PPT</a>
+</div>
+
+<!-- Cholera -->
+<div id="cholera" class="resource-content hidden">
+  <h3>Cholera</h3>
+  <p>PowerPoint presentation - click download to view.</p>
+  <a href="/static/PDF-RESOURCE/DOCTORS/Cholera.ppt" download>Download PPT</a>
+</div>
+
+<!-- Diabetes Mellitus Lecture -->
+<div id="diabetes-mellitus-lecture" class="resource-content hidden">
+  <h3>Diabetes Mellitus Lecture</h3>
+  <p>PowerPoint presentation - click download to view.</p>
+  <a href="/static/PDF-RESOURCE/DOCTORS/Diabetes_Mellitus_lecture.ppt" download>Download PPT</a>
+</div>
+
+<!-- Diptheria -->
+<div id="diptheria" class="resource-content hidden">
+  <h3>Diptheria</h3>
+  <p>PowerPoint presentation - click download to view.</p>
+  <a href="/static/PDF-RESOURCE/DOCTORS/Diptheria.ppt" download>Download PPT</a>
+</div>
+
+<!-- Food Poisoning -->
+<div id="food-poisoning" class="resource-content hidden">
+  <h3>Food Poisoning</h3>
+  <p>PowerPoint presentation - click download to view.</p>
+  <a href="/static/PDF-RESOURCE/DOCTORS/FoodPoisoning.ppt" download>Download PPT</a>
+</div>
+
+<!-- Hepatitis A -->
+<div id="hepatitis-a" class="resource-content hidden">
+  <h3>Hepatitis A</h3>
+  <p>PowerPoint presentation - click download to view.</p>
+  <a href="/static/PDF-RESOURCE/DOCTORS/Hepatitis_A.ppt" download>Download PPT</a>
+</div>
+
+<!-- Hepatitis B -->
+<div id="hepatitis-b" class="resource-content hidden">
+  <h3>Hepatitis B</h3>
+  <p>PowerPoint presentation - click download to view.</p>
+  <a href="/static/PDF-RESOURCE/DOCTORS/Hepatitis_B.ppt" download>Download PPT</a>
+</div>
+
+<!-- HIV and AIDS -->
+<div id="hiv-and-aids" class="resource-content hidden">
+  <h3>HIV and AIDS</h3>
+  <p>PowerPoint presentation - click download to view.</p>
+  <a href="/static/PDF-RESOURCE/DOCTORS/HIV_and_AIDS.ppt" download>Download PPT</a>
+</div>
+
+<!-- Hook Worm -->
+<div id="hook-worm" class="resource-content hidden">
+  <h3>Hook Worm</h3>
+  <p>PowerPoint presentation - click download to view.</p>
+  <a href="/static/PDF-RESOURCE/DOCTORS/Hook_worm.ppt" download>Download PPT</a>
+</div>
+
+<!-- Influenza -->
+<div id="influenza" class="resource-content hidden">
+  <h3>Influenza</h3>
+  <p>PowerPoint presentation - click download to view.</p>
+  <a href="/static/PDF-RESOURCE/DOCTORS/Infuenza.ppt" download>Download PPT</a>
+</div>
+
+<!-- Meningitis -->
+<div id="meningitis" class="resource-content hidden">
+  <h3>Meningitis</h3>
+  <p>PowerPoint presentation - click download to view.</p>
+  <a href="/static/PDF-RESOURCE/DOCTORS/Meningitis.ppt" download>Download PPT</a>
+</div>
+
+<!-- Mumps -->
+<div id="mumps" class="resource-content hidden">
+  <h3>Mumps</h3>
+  <p>PowerPoint presentation - click download to view.</p>
+  <a href="/static/PDF-RESOURCE/DOCTORS/Mumps.ppt" download>Download PPT</a>
+</div>
+
+<!-- Rabies -->
+<div id="rabies" class="resource-content hidden">
+  <h3>Rabies</h3>
+  <p>PowerPoint presentation - click download to view.</p>
+  <a href="/static/PDF-RESOURCE/DOCTORS/Rabies.ppt" download>Download PPT</a>
+</div>
+
+<!-- Rheumatic Fever -->
+<div id="rheumatic-fever" class="resource-content hidden">
+  <h3>Rheumatic Fever</h3>
+  <p>PowerPoint presentation - click download to view.</p>
+  <a href="/static/PDF-RESOURCE/DOCTORS/Rheumatic_fever.ppt" download>Download PPT</a>
+</div>
+
+<!-- Round Worms -->
+<div id="round-worms" class="resource-content hidden">
+  <h3>Round Worms</h3>
+  <p>PowerPoint presentation - click download to view.</p>
+  <a href="/static/PDF-RESOURCE/DOCTORS/Round_worms.ppt" download>Download PPT</a>
+</div>
+
+<!-- Rubella -->
+<div id="rubella" class="resource-content hidden">
+  <h3>Rubella</h3>
+  <p>PowerPoint presentation - click download to view.</p>
+  <a href="/static/PDF-RESOURCE/DOCTORS/Rubella.ppt" download>Download PPT</a>
+</div>
+
+<!-- Tetanus -->
+<div id="tetanus" class="resource-content hidden">
+  <h3>Tetanus</h3>
+  <p>PowerPoint presentation - click download to view.</p>
+  <a href="/static/PDF-RESOURCE/DOCTORS/Tetanus.ppt" download>Download PPT</a>
+</div>
+
+<!-- Tuberculosis -->
+<div id="tuberculosis" class="resource-content hidden">
+  <h3>Tuberculosis</h3>
+  <p>PowerPoint presentation - click download to view.</p>
+  <a href="/static/PDF-RESOURCE/DOCTORS/Tuberculosis.ppt" download>Download PPT</a>
+</div>
+
+<!-- Typhoid -->
+<div id="typhoid" class="resource-content hidden">
+  <h3>Typhoid</h3>
+  <p>PowerPoint presentation - click download to view.</p>
+  <a href="/static/PDF-RESOURCE/DOCTORS/Typhoid.ppt" download>Download PPT</a>
+</div>
+
+<!-- Typhoid Fever -->
+<div id="typhoid-fever" class="resource-content hidden">
+  <h3>Typhoid Fever</h3>
+  <p>PowerPoint presentation - click download to view.</p>
+  <a href="/static/PDF-RESOURCE/DOCTORS/Typhoid_Fever.ppt" download>Download PPT</a>
+</div>
+
+<!-- Whooping Cough -->
+<div id="whooping-cough" class="resource-content hidden">
+  <h3>Whooping Cough</h3>
+  <p>PowerPoint presentation - click download to view.</p>
+  <a href="/static/PDF-RESOURCE/DOCTORS/Wooping_Cough.ppt" download>Download PPT</a>
+</div>
+
+<!-- ==================================================PPXT================================================== -->
+<!-- Alcohol Disorders -->
+<div id="alcohol-disorders" class="resource-content hidden">
+  <h3>Alcohol Disorders</h3>
+  <p>PowerPoint presentation - click download to view.</p>
+  <a href="/static/PDF-RESOURCE/DOCTORS/ALCOHOL_DISORDERS_lecture_ppt.pptx" download>Download PPTX</a>
+</div>
+
+<!-- ETAT Pre-service 2016 -->
+<div id="etat-pre-service2016" class="resource-content hidden">
+  <h3>ETAT Pre-service 2016</h3>
+  <p>PowerPoint presentation - click download to view.</p>
+  <a href="/static/PDF-RESOURCE/DOCTORS/ETAT_Pre-service2016.pptx" download>Download PPTX</a>
+</div>
+
+<!-- Hypertension -->
+<div id="hypertension" class="resource-content hidden">
+  <h3>Hypertension</h3>
+  <p>PowerPoint presentation - click download to view.</p>
+  <a href="/static/PDF-RESOURCE/DOCTORS/HYPERTENSION.pptx" download>Download PPTX</a>
+</div>
+
+<!-- Chest Injuries -->
+<div id="chest-injuries" class="resource-content hidden">
+  <h3>Chest Injuries</h3>
+  <p>PowerPoint presentation - click download to view.</p>
+  <a href="/static/PDF-RESOURCE/DOCTORS/INJURIES_OF_THE_CHEST.pptx" download>Download PPTX</a>
+</div>
+
+<!-- Liver Cirrhosis -->
+<div id="liver-cirrhosis" class="resource-content hidden">
+  <h3>Liver Cirrhosis</h3>
+  <p>PowerPoint presentation - click download to view.</p>
+  <a href="/static/PDF-RESOURCE/DOCTORS/LIVER_CIRRHOSIS.pptx" download>Download PPTX</a>
+</div>
+
+<!-- Pneumonia -->
+<div id="pneumonia" class="resource-content hidden">
+  <h3>Pneumonia</h3>
+  <p>PowerPoint presentation - click download to view.</p>
+  <a href="/static/PDF-RESOURCE/DOCTORS/Pneumonia.pptx" download>Download PPTX</a>
+</div>
+
+<!-- PROM & PPROM -->
+<div id="prom-pprom" class="resource-content hidden">
+  <h3>PROM & PPROM</h3>
+  <p>PowerPoint presentation - click download to view.</p>
+  <a href="/static/PDF-RESOURCE/DOCTORS/PROM_PPROM.pptx" download>Download PPTX</a>
+</div>
+
+<!-- -------------------------------------------------------------------------------- -->
+
+<!-- ====================== RESOURCE MODAL ====================== -->
+<div id="resource-modal" class="resource-modal">
+  <div class="resource-modal__content">
+    <span class="resource-modal__close" id="close-resource-modal">&times;</span>
+    <div id="resource-modal-body"></div>
+  </div>
+</div>
+
+<!-- ====================== PROCEDURES SECTION ====================== -->
+  <section class="med-latest-section" id="procedures">
+    <h2>Procedures</h2>
+    <p class="med-procedures-intro">
+      This section serves as a comprehensive repository of core clinical procedures essential to modern diagnostic
+      and interventional practice. Each guide is meticulously structured to reflect current best practices and
+      evidence-based protocols, ensuring procedural accuracy, patient safety, and operational efficiency in both
+      elective and emergency contexts. From lumbar puncture and thoracentesis to central venous catheterization
+      and paracentesis, practitioners will find step-by-step workflows, sterile technique guidelines, anatomical
+      landmarks, contraindications, complication management, and post-procedural care essentials. This resource is
+      tailored for clinicians operating in high-stakes environments where precision and adherence to protocol are
+      paramount—ideal for residents, physician assistants, medical officers, and attending physicians in surgical,
+      internal medicine, and critical care settings.
+    </p>
+    <a href="{{ url_for('procedures') }}" class="med-procedures-button">View All Procedures</a>
+
+  </section>
+
+<!-- ===================================================================================== -->
+<!-- ====================== LATEST MEDICAL UPDATES 50 CARDS IN TOTAL====================== -->
+<section class="med-latest-section">
+  <h2>Medical Notes</h2>
+
+  <div class="med-updates-grid" id="updatesGrid">
+    
+    <!-- Updated Asthma Management -->
+<div class="med-update-card tp-searchable">
+  <div class="med-update-info">
+    <div class="med-update-header">
+      <h3>Updated Asthma Management</h3>
+      <a href="{{ url_for('static', filename='Medical-Updates/asthma-management.pptx') }}" 
+        class="med-download-icon" download title="Download PPTX">
+        <img src="{{ url_for('static', filename='icons/download.png') }}" alt="Download">
+      </a>
+
+    </div>
+    <p>New protocol: Add ICS-formoterol in step 3 care.</p>
+  </div>
+</div>
+
+<div class="med-update-card tp-searchable"> 
+  <div class="med-update-info">
+    <div class="med-update-header">
+      <h3>Abnormal Uterine Bleeding</h3>
+      <a href="{{ url_for('static', filename='Medical-Updates/abnormal_uterine_bleeding.pptx') }}" 
+        class="med-download-icon" download title="Download PPTX">
+        <img src="{{ url_for('static', filename='icons/download.png') }}" alt="Download">
+      </a>
+    </div>
+    <p>Download this presentation for reference.</p>
+  </div>
+</div>
+
+<div class="med-update-card tp-searchable"> 
+  <div class="med-update-info">
+    <div class="med-update-header">
+      <h3>Acute Pancreatitis</h3>
+      <a href="{{ url_for('static', filename='Medical-Updates/acute_pancreatitis.ppt') }}" 
+        class="med-download-icon" download title="Download PPT">
+        <img src="{{ url_for('static', filename='icons/download.png') }}" alt="Download">
+      </a>
+    </div>
+    <p>Download this presentation for reference.</p>
+  </div>
+</div>
+
+
+
+
+    <!-- Add more cards below using the same structure -->
+    </div>
+
+  </div>
+
+  <button class="med-toggle-btn" id="toggleUpdatesBtn">View All Updates</button>
+
+</section>
+<!---------------------------------------------------------------------------------------- -->
+<!---------------------------------------------------------------------------------------- -->
+
+  <!-- ====================== TOOLKIT SECTION ====================== -->
+<section class="med-toolkit-section">
+  <h2 class="med-toolkit-title">Quick Access Toolkit</h2>
+
+  <div class="med-toolkit-grid">
+    <!-- Core Tools -->
+    <div class="toolkit-card tp-searchable" data-tool="bmi">BMI Calculator</div>
+    <div class="toolkit-card tp-searchable" data-tool="dosage">Dosage Calculator</div>
+    <div class="toolkit-card tp-searchable" data-tool="iv-fluid">IV Fluid Chart</div>
+    <div class="toolkit-card tp-searchable" data-tool="gcs">GCS Scale</div>
+    <div class="toolkit-card tp-searchable" data-tool="compatibility">Drug Compatibility</div>
+    <div class="toolkit-card tp-searchable" data-tool="abbreviations">Medical Abbreviations</div>
+    <div class="toolkit-card tp-searchable" data-tool="vital-signs">Vital Signs Reference</div>
+    <div class="toolkit-card tp-searchable" data-tool="lab-values">Electrolyte & Lab Values</div>
+    <div class="toolkit-card tp-searchable" data-tool="dosage-guidelines">Drug Dosage Guidelines</div>
+    <div class="toolkit-card tp-searchable" data-tool="fluid-resuscitation">Fluid Resuscitation Protocols</div>
+    <div class="toolkit-card tp-searchable" data-tool="basic-life-support">Basic Life Support Steps</div>
+    <div class="toolkit-card tp-searchable" data-tool="wound-care">Wound Care & Dressing Techniques</div>
+  </div>
+</section>
+
+<!-- ===========================HEALTH TIPS SECTION================================= -->
+<section class="health-tips-section">
+  <div class="health-tips-header">
+    <h2 class="healthtipshead">Health Tips for Everyday Wellness</h2>
+    <p>Quick and practical tips to keep your body and mind in top shape.</p>
+  </div>
+<div class="health-tips-grid">
+  <div class="tip-card">
+    <img src="{{ url_for('static', filename='icons/healthTipsIcons/hydration.png') }}" alt="Hydration Icon" class="tip-icon">
+    <h3>Stay Hydrated</h3>
+    <p>Drink at least 8 glasses of water daily to maintain optimal body function.</p>
+  </div>
+  <div class="tip-card">
+    <img src="{{ url_for('static', filename='icons/healthTipsIcons/sleep.png') }}" alt="Sleep Icon" class="tip-icon">
+    <h3>Get Enough Sleep</h3>
+    <p>Aim for 7-9 hours of sleep every night to boost immunity and mental clarity.</p>
+  </div>
+  <div class="tip-card">
+    <img src="{{ url_for('static', filename='icons/healthTipsIcons/exercise.png') }}" alt="Exercise Icon" class="tip-icon">
+    <h3>Regular Exercise</h3>
+    <p>Engage in at least 30 minutes of moderate activity most days to stay healthy.</p>
+  </div>
+  <div class="tip-card">
+    <img src="{{ url_for('static', filename='icons/healthTipsIcons/health-eating.png') }}" alt="Healthy Eating Icon" class="tip-icon">
+    <h3>Balanced Diet</h3>
+    <p>Include fruits, vegetables, lean proteins, and whole grains in every meal.</p>
+  </div>
+  <div class="tip-card">
+    <img src="{{ url_for('static', filename='icons/healthTipsIcons/stress.png') }}" alt="Stress Management Icon" class="tip-icon">
+    <h3>Manage Stress</h3>
+    <p>Practice relaxation techniques like deep breathing, meditation, or yoga daily.</p>
+  </div>
+  <div class="tip-card">
+    <img src="{{ url_for('static', filename='icons/healthTipsIcons/sunlight.png') }}" alt="Sunlight Icon" class="tip-icon">
+    <h3>Get Sunlight</h3>
+    <p>Spend at least 15 minutes outdoors for vitamin D and improved mood.</p>
+  </div>
+  <div class="tip-card">
+    <img src="{{ url_for('static', filename='icons/healthTipsIcons/hygiene.png') }}" alt="Hygiene Icon" class="tip-icon">
+    <h3>Maintain Hygiene</h3>
+    <p>Wash hands regularly and follow basic hygiene practices to prevent infections.</p>
+  </div>
+  <div class="tip-card">
+    <img src="{{ url_for('static', filename='icons/healthTipsIcons/mental-health.png') }}" alt="Mental Health Icon" class="tip-icon">
+    <h3>Mind Your Mental Health</h3>
+    <p>Take time for yourself, set boundaries, and seek help if you feel overwhelmed.</p>
+  </div>
+</div>
+
+</section>
+
+
+
+<!-- =============================== CONTACT US FORM ============================== -->
+<div id="contact-modal" class="contact-modal">
+  <div class="contact-modal__content">
+    <span class="contact-modal__close-btn" id="close-contact-modal">&times;</span>
+    <h2 class="contact-modal__title">Contact Us</h2>
+
+    <form id="contact-form" class="contact-modal__form" novalidate>
+      
+      <!-- Recipient Select -->
+      <div class="contact-modal__field">
+        <label for="contact-to" class="contact-modal__label">Send to</label>
+        <select id="contact-to" name="to" class="contact-modal__select" required>
+          <option value="" disabled selected>Choose recipient</option>
+          <option value="doreen@medbridge.com">Dr. Doreen Thandie Phiri (Admin)</option>
+          <option value="mervisziyenda@gmail.com">Mervis Ziyenda (Admin)</option>
+          <option value="tekprince82@gmail.com">The Prince (WebCoder)</option>
+        </select>
+      </div>
+
+      <!-- Name Field -->
+      <div class="contact-modal__field">
+        <label for="contact-name" class="contact-modal__label">Your Name</label>
+        <input type="text" id="contact-name" name="name" class="contact-modal__input" required />
+      </div>
+
+      <!-- Email Field -->
+      <div class="contact-modal__field">
+        <label for="contact-email" class="contact-modal__label">Your Email</label>
+        <input type="email" id="contact-email" name="email" class="contact-modal__input" required />
+      </div>
+
+      <!-- Message Field -->
+      <div class="contact-modal__field">
+        <label for="contact-message" class="contact-modal__label">Message</label>
+        <textarea id="contact-message" name="message" rows="4" class="contact-modal__textarea" required></textarea>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="contact-modal__submit">Send</button>
+
+      <!-- Feedback Message -->
+      <p class="contact-modal__feedback contact-feedback" aria-live="polite"></p>
+    </form>
+  </div>
+</div>
+<!-- ------------------------------------------------------------------------------ -->
+
+
+  <!-- ====================== FOOTER ====================== -->
+  <footer class="med-footer">
+  <div class="med-footer-container">
+        <div class="med-footer-branding">
+          <h2 class="med-footer-logo">
+            <img src="/static/medicinePhotos/medbridge logo.png" alt="The MedBridge Logo" />
+          </h2>
+
+          <p class="med-footer-tagline">
+            Empowering Nurses & Doctors with trusted, accessible medical resources—guiding your practice, advancing knowledge, and supporting professional growth.
+          </p>
+        </div>
+
+      <div class="med-footer-links">
+        <div class="med-footer-column">
+          <h3>Resources</h3>
+          <ul>
+            <li>
+              <a href="/static/PDF-RESOURCE/DOCTORS/Mstg_6th_Edition.pdf" download>
+                MSTG 6th Edition 2023
+              </a>
+            </li>
+
+            <li>
+              <a href="/static/PDF-RESOURCE/DOCTORS/The_Clinical_Blue_Book-Copy.pdf" download>
+                Blue Book Handbook 4 Malawi
+              </a>
+            </li>
+
+            <li>
+              <a href="/static/PDF-RESOURCE/DOCTORS/Malawi_Clinical_Hiv_Guidelines_2022.pdf" download>
+                Malawi Clinical HIV Guidelines 2022
+              </a>
+            </li>
+
+            <li>
+              <a href="/static/PDF-RESOURCE/DOCTORS/Etat_Pre_service2016.ppxt" download>
+                ETAT_Pre-service2016
+              </a>
+            </li>
+
+            <li>
+              <a href="/static/PDF-RESOURCE/DOCTORS/Malawi-Cmam-Guidelines.pdf" download>
+                Malawi-CMAM-Guidelines-Dec2016
+              </a>
+            </li>
+
+            <li>
+              <a href="/static/PDF-RESOURCE/DOCTORS/TB_Guideline.pdf" download>
+                TB Guideline May 2018 rv with FASH 02-05-2018
+              </a>
+            </li>
+
+
+          </ul>
+        </div>
+
+        <div class="med-footer-column">
+          <h3>Professionals</h3>
+          <ul>
+            <li><a href="#nurse">For Nurses</a></li>
+            <li><a href="#doctor">For Doctors</a></li>
+            <li><a href="{{ url_for('osce_tools') }}">OSCE Tools</a></li>
+          </ul>
+        </div>
+
+        <div class="med-footer-column">
+          <h3>About</h3>
+          <ul>
+              <li><a href="{{ url_for('who_we_are') }}">Who We Are</a></li>
+              <li><a href="#" id="contact-toggle-btn">Contact</a></li>
+              <li><a href="{{ url_for('privacy') }}">Privacy Policy</a></li>
+              {% if session.get('user_id') %}
+                <a href="{{ url_for('logout') }}" class="med-logout-btn">Logout</a>
+              {% endif %}
+          </ul>
+
+
+        </div>
+      </div>
+    </div>
+
+    <div class="med-footer-bottom">
+      <p>&copy; 2025 The MedBridge. All rights reserved.</p>
+    </div>
+  </footer>
+
+
+  <!-- ====================== JS ====================== -->
+  <script src="{{ url_for('static', filename='JAVASCRIPT Files/medical.js') }}"></script>
+
+</body>
+</html>

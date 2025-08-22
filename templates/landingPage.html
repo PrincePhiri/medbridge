@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MedBridge | Welcome</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='icons/medbridge-logo.png') }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='icons/medbridge-logo.png') }}">
+
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yourwebsite.com/">
+  <meta property="og:title" content="MedBridge">
+  <meta property="og:description" content="MedBridge - Your trusted medical resource.">
+  <meta property="og:image" content="{{ url_for('static', filename='icons/medbridge-logo.png') }}">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://yourwebsite.com/">
+  <meta property="twitter:title" content="MedBridge">
+  <meta property="twitter:description" content="MedBridge - Your trusted medical resource.">
+  <meta property="twitter:image" content="{{ url_for('static', filename='icons/medbridge-logo.png') }}">
+
+  <!-- WhatsApp / General Share -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yourwebsite.com/">
+  <meta property="og:title" content="MedBridge">
+  <meta property="og:description" content="MedBridge - Your trusted medical resource.">
+  <meta property="og:image" content="{{ url_for('static', filename='icons/medbridge-logo.png') }}">
+  <meta property="og:image:alt" content="MedBridge Logo">
+
+  <link rel="stylesheet" href="/static/CSS Sheets/landingPage.css" />
+</head>
+<body class="chp-body">
+  <!-- Header / Navbar -->
+  <header class="chp-header">
+      <nav class="chp-nav">
+        <div class="med-logo">
+          <img src="{{ url_for('static', filename='medicinePhotos/medbridge logo.png') }}" alt="The MedBridge Logo" />
+        </div>
+        <ul class="nav-links">
+          <li><a href="{{ url_for('home') }}">Home</a></li>
+          <li><a href="{{ url_for('privacy') }}">Policy</a></li>
+        </ul>
+      </nav>
+  </header>
+
+
+  <!-- Hero Section -->
+  <main class="landing-hero">
+    <!-- Dark overlay -->
+    <div class="hero-overlay"></div>
+
+    <div class="hero-left">
+      <h1 class="landing-title">MedBridge</h1>
+      <p class="landing-subtitle">
+        Empowering Nurses & Doctors with trusted, accessible medical resources.<br>
+        Built for professionals, by professionals.
+      </p>
+    </div>
+
+    <div class="hero-right">
+      <h2 class="entry-title">Access MedBridge</h2>
+      <div class="landing-actions">
+        <a href="{{ url_for('auth') }}" class="landing-btn access-btn">
+          <img src="/static/icons/login.PNG" alt="" /> Login / Register
+        </a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="chp-footer">
+    <p>© 2025 MedBridge. All Rights Reserved.</p>
+  </footer>
+
+<!-- ====================== JS ====================== -->
+  <script src="/static/JAVASCRIPT Files/landingPage.js"></script>
+
+</body>
+</html>

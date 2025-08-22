@@ -1,0 +1,508 @@
+/* Base styles */
+body.who-body {
+  background-color: #0F1516;
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Navbar */
+.who-navbar {
+  background-color: #0F1516;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #1b2324;
+}
+
+.who-navbar__brand {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.who-navbar__links {
+  display: flex;
+  gap: 30px;
+}
+
+.who-navbar__link {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.who-navbar__link:hover,
+.who-navbar__link:focus {
+  color: #234C58;
+  outline: none;
+}
+
+/* Hero Cards */
+.who-cards-container {
+  max-width: 1000px;
+  margin: 60px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 0 20px;
+}
+
+.who-card {
+  display: flex;
+  background-color: #1b2324;
+  border: 1px solid #234C58;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.who-card--left {
+  flex-direction: row;
+}
+
+
+.who-card--right {
+  flex-direction: row-reverse;
+}
+
+.who-card__photo {
+  width: 350px;
+  height: 350px;
+  object-fit: cover;
+  padding: 8px;
+  margin-top: 34px;
+}
+
+.who-card__content {
+  padding: 30px 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+}
+
+.who-card__name {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+}
+
+.who-card__title {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #6a6a6a;
+  margin: 0 0 20px 0;
+}
+
+.who-card__description {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 25px;
+  color: #d1d9dd;
+}
+
+.who-card__btn {
+  width: fit-content;
+  padding: 12px 28px;
+  background-color: #234C58;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.who-card__btn:hover,
+.who-card__btn:focus {
+  background-color: #1b2324;
+  outline: none;
+}
+
+/* Skills Grid */
+.who-skills {
+  padding: 60px 40px;
+  background-color: #1b2324;
+  text-align: center;
+}
+
+.who-skills__title {
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+}
+
+.who-skills__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
+  justify-content: center;
+}
+
+.who-skills__card {
+  background-color: #0F1516;
+  border: 1px solid #234C58;
+  padding: 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: white;
+  font-weight: 500;
+}
+
+/* Responsive: stack on small screens */
+@media (max-width: 768px) {
+  .who-card {
+    flex-direction: column !important;
+  }
+  .who-card__photo {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* Footer */
+.who-footer {
+  background-color: #1b2324;
+  padding: 30px 40px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #a0aabb;
+  user-select: none;
+}
+
+/* Responsive tweaks */
+@media (max-width: 720px) {
+  .who-hero {
+    flex-direction: column !important;
+    padding: 40px 20px;
+  }
+
+  .who-hero__image-wrapper {
+    max-width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .who-hero__image {
+    width: 180px;
+    height: 180px;
+  }
+
+  .who-about {
+    margin-bottom: 40px;
+    padding: 30px 20px;
+  }
+
+  .who-skills {
+    padding: 30px 20px;
+  }
+}
+
+/* Ensure padding doesn't cause overflow */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* ========================================== Contact Modal */
+.contact-modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(15, 21, 22, 0.85);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.contact-modal.show {
+  display: flex;
+  opacity: 1;
+}
+
+.contact-modal__content {
+  background-color: #1b2324;
+  border: 1px solid #234C58;
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 400px;
+  width: 100%;
+  color: white;
+  position: relative;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  font-family: 'Montserrat', sans-serif;
+  overflow: hidden;
+}
+
+.contact-modal__close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+.contact-modal__close:hover {
+  color: #ccc;
+}
+
+.contact-modal__title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+#contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
+#contact-form label {
+  margin-top: 12px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #ccc;
+}
+
+#contact-form input,
+#contact-form textarea {
+  padding: 10px 12px;
+  background-color: #0F1516;
+  border: 1px solid #234C58;
+  border-radius: 5px;
+  color: white;
+  font-size: 0.95rem;
+  font-family: inherit;
+  resize: none;
+  transition: border-color 0.3s ease;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+  outline: none;
+  border-color: #40a2d8;
+}
+
+#contact-form button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #234C58;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#contact-form button:hover {
+  background-color: #1b2324;
+}
+
+.contact-feedback {
+  margin-top: 12px;
+  font-size: 0.85rem;
+  color: #4CAF50;
+  display: none;
+  text-align: center;
+}
+
+.contact-feedback.show {
+  display: block;
+}
+
+@media (max-width: 500px) {
+  .contact-modal__content {
+    padding: 16px;
+    max-width: 90%;
+  }
+}
+
+
+/* ===================================================================================================== */
+/* ===================================================================================================== */
+/* ================================ALL MEDIA QUERIES ON THIS SHEET====================================== */
+/* ===================================================================================================== */
+/* ===================================================================================================== */
+
+/* ====================== RESPONSIVE MEDIA QUERIES REFINED ====================== */
+
+/* Large Tablets / Landscape ≤1024px */
+@media (max-width: 1024px) {
+  /* .who-navbar {
+    padding: 15px 25px;
+  }
+  .who-navbar__links {
+    gap: 18px;
+  } */
+  .who-cards-container {
+    margin: 40px auto;
+    gap: 30px;
+  }
+  .who-card__photo {
+    width: 250px;
+    height: 250px;
+    margin-top: 20px;
+  }
+  .who-card__name {
+    font-size: 1.8rem;
+  }
+  .who-card__title {
+    font-size: 0.95rem;
+  }
+  .who-card__description {
+    font-size: 0.9rem;
+  }
+  .who-skills {
+    padding: 45px 25px;
+  }
+  .who-skills__title {
+    font-size: 1.5rem;
+  }
+}
+
+/* Tablets / Landscape ≤768px */
+@media (max-width: 768px) {
+  /* .who-navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px 18px;
+  }
+  .who-navbar__links {
+    flex-wrap: wrap;
+    gap: 12px;
+  } */
+  .who-cards-container {
+    gap: 25px;
+    padding: 0 12px;
+  }
+  .who-card {
+    flex-direction: column !important;
+  }
+  .who-card__photo {
+    width: 100%;
+    height: auto;
+    margin-top: 0;
+  }
+  .who-card__content {
+    padding: 18px 12px;
+  }
+  .who-card__name {
+    font-size: 1.6rem;
+  }
+  .who-card__title {
+    font-size: 0.9rem;
+  }
+  .who-card__description {
+    font-size: 0.85rem;
+  }
+  .who-card__btn {
+    padding: 10px 20px;
+    font-size: 0.85rem;
+  }
+  .who-skills {
+    padding: 30px 15px;
+  }
+  .who-skills__title {
+    font-size: 1.3rem;
+  }
+}
+
+/* Mobile Portrait ≤480px */
+@media (max-width: 480px) {
+  /* .who-navbar {
+    padding: 10px 12px;
+  }
+  .who-navbar__brand {
+    font-size: 0.95rem;
+  }
+  .who-navbar__links {
+    gap: 8px;
+  } */
+  .who-card__photo {
+    width: 100%;
+    height: auto;
+  }
+  .who-card__name {
+    font-size: 1.4rem;
+  }
+  .who-card__title {
+    font-size: 0.85rem;
+  }
+  .who-card__description {
+    font-size: 0.8rem;
+  }
+  .who-card__btn {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+  }
+  .who-skills__title {
+    font-size: 1.1rem;
+  }
+  .who-skills__card {
+    font-size: 0.85rem;
+  }
+  .contact-modal__content {
+    max-width: 92%;
+    padding: 12px;
+  }
+  #contact-form input,
+  #contact-form textarea {
+    font-size: 0.85rem;
+  }
+  #contact-form button {
+    font-size: 0.85rem;
+    padding: 8px 14px;
+  }
+}
+
+/* Ultra Small Phones ≤360px */
+@media (max-width: 360px) {
+  /* .who-navbar {
+    padding: 8px 8px;
+  }
+  .who-navbar__brand {
+    font-size: 0.9rem;
+  } */
+  .who-card__name {
+    font-size: 1.2rem;
+  }
+  .who-card__title {
+    font-size: 0.8rem;
+  }
+  .who-card__description {
+    font-size: 0.75rem;
+  }
+  .who-card__btn {
+    padding: 6px 12px;
+    font-size: 0.75rem;
+  }
+  .who-skills__title {
+    font-size: 0.95rem;
+  }
+  .who-skills__card {
+    font-size: 0.8rem;
+  }
+  .contact-modal__content {
+    max-width: 90%;
+    padding: 10px;
+  }
+  #contact-form input,
+  #contact-form textarea {
+    font-size: 0.8rem;
+  }
+  #contact-form button {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+}

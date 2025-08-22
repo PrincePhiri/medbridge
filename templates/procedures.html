@@ -1,0 +1,1429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MedBridge Procedures</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='icons/medbridge-logo.png') }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='icons/medbridge-logo.png') }}">
+
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yourwebsite.com/">
+  <meta property="og:title" content="MedBridge">
+  <meta property="og:description" content="MedBridge - Your trusted medical resource.">
+  <meta property="og:image" content="{{ url_for('static', filename='icons/medbridge-logo.png') }}">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://yourwebsite.com/">
+  <meta property="twitter:title" content="MedBridge">
+  <meta property="twitter:description" content="MedBridge - Your trusted medical resource.">
+  <meta property="twitter:image" content="{{ url_for('static', filename='icons/medbridge-logo.png') }}">
+
+  <!-- WhatsApp / General Share -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yourwebsite.com/">
+  <meta property="og:title" content="MedBridge">
+  <meta property="og:description" content="MedBridge - Your trusted medical resource.">
+  <meta property="og:image" content="{{ url_for('static', filename='icons/medbridge-logo.png') }}">
+  <meta property="og:image:alt" content="MedBridge Logo">
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='CSS Sheets/LinkingPages.css') }}" />
+
+</head>
+<body class="mb-body">
+  <header class="mb-header">
+    <div class="med-logo">
+      <img src="{{ url_for('static', filename='medicinePhotos/medbridge logo.png') }}" alt="The MedBridge Logo" />
+    </div>
+    <nav class="mb-nav">
+      <a href="javascript:history.back()" class="mb-nav-link">Home</a>
+      <a href="{{ url_for('procedures') }}" class="mb-nav-link active">Procedures</a>
+
+    </nav>
+  </header>
+
+  <main class="mb-main">
+    <section class="mb-hero">
+      <div class="mb-hero-overlay">
+        <div class="mb-hero-content">
+          <h1 class="mb-hero-title">Clinical Procedures</h1>
+          <p class="mb-hero-subtitle">
+            Navigate critical steps of essential clinical procedures with clarity, precision, and confidence—curated for frontline excellence.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="mb-search-wrapper" style="position: relative;">
+        <input type="text" class="mb-search-input" placeholder="Search procedures...">
+        <button class="mb-search-icon"><img src="{{ url_for('static', filename='icons/search.png') }}" alt="Search Icon" /></button>
+        <ul class="mb-search-suggestions"></ul>
+    </div>
+
+
+    <section class="mb-procedure-list">
+
+<!--======================================ARTICLES START====================================== -->
+<!-- ----------------------------------------------------------------------------------------- -->
+
+        <article class="mb-procedure-card mb-searchable" tabindex="0" aria-describedby="lp-desc">
+            <h3 class="mb-procedure-title">Lumbar Puncture</h3>
+            <p class="mb-procedure-desc" id="lp-desc">A meticulous stepwise approach to cerebrospinal fluid collection via lumbar puncture.</p>
+            <button class="mb-toggle-button" data-target="lp-details">▼ View Steps</button>
+
+            <div id="lp-details" class="mb-procedure-details">
+                <img 
+                    src="{{ url_for('static', filename='medicinePhotos/ProceduresPhotos/LumbarPuncture.jpg') }}" 
+                    alt="Lumbar puncture step" 
+                    class="mb-procedure-img" 
+                />
+
+                
+                <div class="mb-procedure-text">
+                <p>
+                    This procedure is commonly used to diagnose or rule out serious infections such as meningitis, 
+                    or to relieve pressure from excess cerebrospinal fluid.
+                </p>
+
+                <ol class="mb-detail-steps">
+                    <li>Obtain informed consent after detailed explanation of indications, risks, and benefits.</li>
+                    <li>Position patient in lateral decubitus with knees flexed to maximize intervertebral space.</li>
+                    <li>Identify anatomical landmarks to locate L3-L4 or L4-L5 interspace for needle insertion.</li>
+                    <li>Perform full sterile preparation and administer local anesthesia meticulously.</li>
+                    <li>Advance spinal needle slowly into subarachnoid space to collect cerebrospinal fluid.</li>
+                    <li>Withdraw needle carefully, apply sterile dressing, and label samples accurately.</li>
+                    <li>Monitor patient for potential complications such as headache, bleeding, or neurological changes.</li>
+                </ol>
+                </div>
+            </div>
+        </article>
+
+
+      <article class="mb-procedure-card mb-searchable" tabindex="0" aria-describedby="vital-signs-assessment-bp-pulse-respiration-temperature-desc">
+        <h3 class="mb-procedure-title">Vital signs assessment (BP, pulse, respiration, temperature)</h3>
+        <p class="mb-procedure-desc" id="vital-signs-assessment-bp-pulse-respiration-temperature-desc">
+            Step-by-step protocol for performing the vital signs assessment (bp, pulse, respiration, temperature) procedure safely and effectively.
+        </p>
+        <button class="mb-toggle-button" data-target="vital-signs-assessment-bp-pulse-respiration-temperature-details">▼ View Steps</button>
+        <div id="vital-signs-assessment-bp-pulse-respiration-temperature-details" class="mb-procedure-details">
+
+            <img 
+                src="{{ url_for('static', filename='medicinePhotos/ProceduresPhotos/VitalSignsTemperature.jpg') }}" 
+                alt="Vital signs assessment" 
+                class="mb-procedure-img" 
+            />
+
+
+            <div class="mb-procedure-text">
+            <p>
+                Detailed explanation and guidance for conducting the vital signs assessment (bp, pulse, respiration, temperature) with standard best practices.
+            </p>
+            <ol class="mb-detail-steps">
+                <li>Prepare necessary equipment and verify patient identity.</li>
+                <li>Explain the procedure to the patient and obtain consent.</li>
+                <li>Ensure aseptic or appropriate technique is followed.</li>
+                <li>Perform the vital signs assessment (bp, pulse, respiration, temperature) step-by-step as per protocol.</li>
+                <li>Monitor patient for any complications or adverse reactions.</li>
+                <li>Document findings or outcomes appropriately.</li>
+            </ol>
+            </div>
+        </div>
+        </article>
+
+
+        <article class="mb-procedure-card mb-searchable" tabindex="0" aria-describedby="vision-and-hearing-screening-desc">
+        <h3 class="mb-procedure-title">Vision and hearing screening</h3>
+        <p class="mb-procedure-desc" id="vision-and-hearing-screening-desc">
+            Step-by-step protocol for performing the vision and hearing screening procedure safely and effectively.
+        </p>
+        <button class="mb-toggle-button" data-target="vision-and-hearing-screening-details">▼ View Steps</button>
+        <div id="vision-and-hearing-screening-details" class="mb-procedure-details">
+
+            <img 
+                src="{{ url_for('static', filename='medicinePhotos/ProceduresPhotos/Doctors_Warn_Stop_Using_Cotton_Swabs.jpg') }}" 
+                alt="Earwax removal procedure" 
+                class="mb-procedure-img" 
+            />
+
+            <div class="mb-procedure-text">
+            <p>
+                Detailed explanation and guidance for conducting the vision and hearing screening with standard best practices.
+            </p>
+            <ol class="mb-detail-steps">
+                <li>Prepare necessary equipment and verify patient identity.</li>
+                <li>Explain the procedure to the patient and obtain consent.</li>
+                <li>Ensure aseptic or appropriate technique is followed.</li>
+                <li>Perform the vision and hearing screening step-by-step as per protocol.</li>
+                <li>Monitor patient for any complications or adverse reactions.</li>
+                <li>Document findings or outcomes appropriately.</li>
+            </ol>
+            </div>
+        </div>
+        </article>
+
+
+        <article class="mb-procedure-card mb-searchable" tabindex="0" aria-describedby="bmi-and-nutritional-evaluation-desc">
+        <h3 class="mb-procedure-title">BMI and nutritional evaluation</h3>
+        <p class="mb-procedure-desc" id="bmi-and-nutritional-evaluation-desc">
+            Step-by-step protocol for performing the bmi and nutritional evaluation procedure safely and effectively.
+        </p>
+        <button class="mb-toggle-button" data-target="bmi-and-nutritional-evaluation-details">▼ View Steps</button>
+        <div id="bmi-and-nutritional-evaluation-details" class="mb-procedure-details">
+
+            <img 
+                src="{{ url_for('static', filename='medicinePhotos/ProceduresPhotos/BMI_Calculator_I_Love_Fitness.jpg') }}" 
+                alt="BMI and nutritional evaluation" 
+                class="mb-procedure-img" 
+            />
+
+            <div class="mb-procedure-text">
+            <p>
+                Detailed explanation and guidance for conducting the bmi and nutritional evaluation with standard best practices.
+            </p>
+            <ol class="mb-detail-steps">
+                <li>Prepare necessary equipment and verify patient identity.</li>
+                <li>Explain the procedure to the patient and obtain consent.</li>
+                <li>Ensure aseptic or appropriate technique is followed.</li>
+                <li>Perform the bmi and nutritional evaluation step-by-step as per protocol.</li>
+                <li>Monitor patient for any complications or adverse reactions.</li>
+                <li>Document findings or outcomes appropriately.</li>
+            </ol>
+            </div>
+        </div>
+        </article>
+
+
+        <article class="mb-procedure-card mb-searchable" tabindex="0" aria-describedby="blood-glucose-testing-finger-stick-desc">
+        <h3 class="mb-procedure-title">Blood glucose testing (finger stick)</h3>
+        <p class="mb-procedure-desc" id="blood-glucose-testing-finger-stick-desc">
+            Step-by-step protocol for performing the blood glucose testing (finger stick) procedure safely and effectively.
+        </p>
+        <button class="mb-toggle-button" data-target="blood-glucose-testing-finger-stick-details">▼ View Steps</button>
+        <div id="blood-glucose-testing-finger-stick-details" class="mb-procedure-details">
+
+            <img 
+                src="{{ url_for('static', filename='medicinePhotos/ProceduresPhotos/blood_glucose.jpg') }}" 
+                alt="Blood glucose testing" 
+                class="mb-procedure-img" 
+            />
+            <div class="mb-procedure-text">
+            <p>
+                Detailed explanation and guidance for conducting the blood glucose testing (finger stick) with standard best practices.
+            </p>
+            <ol class="mb-detail-steps">
+                <li>Prepare necessary equipment and verify patient identity.</li>
+                <li>Explain the procedure to the patient and obtain consent.</li>
+                <li>Ensure aseptic or appropriate technique is followed.</li>
+                <li>Perform the blood glucose testing (finger stick) step-by-step as per protocol.</li>
+                <li>Monitor patient for any complications or adverse reactions.</li>
+                <li>Document findings or outcomes appropriately.</li>
+            </ol>
+            </div>
+        </div>
+        </article>
+
+
+        <article class="mb-procedure-card mb-searchable" tabindex="0" aria-describedby="urinalysis-desc">
+        <h3 class="mb-procedure-title">Urinalysis</h3>
+        <p class="mb-procedure-desc" id="urinalysis-desc">
+            Step-by-step protocol for performing the urinalysis procedure safely and effectively.
+        </p>
+        <button class="mb-toggle-button" data-target="urinalysis-details">▼ View Steps</button>
+        <div id="urinalysis-details" class="mb-procedure-details">
+
+            <img src="{{ url_for('static', filename='medicinePhotos/ProceduresPhotos/urinalysis.jpg') }}" alt="Urinalysis" class="mb-procedure-img" />
+            <div class="mb-procedure-text">
+            <p>
+                Detailed explanation and guidance for conducting the urinalysis with standard best practices.
+            </p>
+            <ol class="mb-detail-steps">
+                <li>Prepare necessary equipment and verify patient identity.</li>
+                <li>Explain the procedure to the patient and obtain consent.</li>
+                <li>Ensure aseptic or appropriate technique is followed.</li>
+                <li>Perform the urinalysis step-by-step as per protocol.</li>
+                <li>Monitor patient for any complications or adverse reactions.</li>
+                <li>Document findings or outcomes appropriately.</li>
+            </ol>
+            </div>
+        </div>
+        </article>
+
+
+        <article class="mb-procedure-card mb-searchable" tabindex="0" aria-describedby="rapid-diagnostic-tests-eg-malaria-hiv-pregnancy-desc">
+        <h3 class="mb-procedure-title">Rapid diagnostic tests (e.g. malaria, HIV, pregnancy)</h3>
+        <p class="mb-procedure-desc" id="rapid-diagnostic-tests-eg-malaria-hiv-pregnancy-desc">
+            Step-by-step protocol for performing the rapid diagnostic tests (e.g. malaria, hiv, pregnancy) procedure safely and effectively.
+        </p>
+        <button class="mb-toggle-button" data-target="rapid-diagnostic-tests-eg-malaria-hiv-pregnancy-details">▼ View Steps</button>
+        <div id="rapid-diagnostic-tests-eg-malaria-hiv-pregnancy-details" class="mb-procedure-details">
+
+            <img 
+                src="{{ url_for('static', filename='medicinePhotos/ProceduresPhotos/rapid_diagnostic_tests.jpg') }}" 
+                alt="Rapid diagnostic tests" 
+                class="mb-procedure-img" 
+            />
+            <div class="mb-procedure-text">
+            <p>
+                Detailed explanation and guidance for conducting the rapid diagnostic tests (e.g. malaria, hiv, pregnancy) with standard best practices.
+            </p>
+            <ol class="mb-detail-steps">
+                <li>Prepare necessary equipment and verify patient identity.</li>
+                <li>Explain the procedure to the patient and obtain consent.</li>
+                <li>Ensure aseptic or appropriate technique is followed.</li>
+                <li>Perform the rapid diagnostic tests (e.g. malaria, hiv, pregnancy) step-by-step as per protocol.</li>
+                <li>Monitor patient for any complications or adverse reactions.</li>
+                <li>Document findings or outcomes appropriately.</li>
+            </ol>
+            </div>
+        </div>
+        </article>
+
+
+        <article class="mb-procedure-card mb-searchable" tabindex="0" aria-describedby="skin-prick-allergy-test-desc">
+        <h3 class="mb-procedure-title">Skin prick allergy test</h3>
+        <p class="mb-procedure-desc" id="skin-prick-allergy-test-desc">
+            Step-by-step protocol for performing the skin prick allergy test procedure safely and effectively.
+        </p>
+        <button class="mb-toggle-button" data-target="skin-prick-allergy-test-details">▼ View Steps</button>
+        <div id="skin-prick-allergy-test-details" class="mb-procedure-details">
+
+            <img 
+                src="{{ url_for('static', filename='medicinePhotos/ProceduresPhotos/skin_prick_test.jpg') }}" 
+                alt="Skin prick allergy test" 
+                class="mb-procedure-img" 
+            />
+            <div class="mb-procedure-text">
+            <p>
+                Detailed explanation and guidance for conducting the skin prick allergy test with standard best practices.
+            </p>
+            <ol class="mb-detail-steps">
+                <li>Prepare necessary equipment and verify patient identity.</li>
+                <li>Explain the procedure to the patient and obtain consent.</li>
+                <li>Ensure aseptic or appropriate technique is followed.</li>
+                <li>Perform the skin prick allergy test step-by-step as per protocol.</li>
+                <li>Monitor patient for any complications or adverse reactions.</li>
+                <li>Document findings or outcomes appropriately.</li>
+            </ol>
+            </div>
+        </div>
+        </article>
+
+
+        <article class="mb-procedure-card mb-searchable" tabindex="0" aria-describedby="wound-cleaning-and-dressing-desc">
+        <h3 class="mb-procedure-title">Wound cleaning and dressing</h3>
+        <p class="mb-procedure-desc" id="wound-cleaning-and-dressing-desc">
+            Step-by-step protocol for performing the wound cleaning and dressing procedure safely and effectively.
+        </p>
+        <button class="mb-toggle-button" data-target="wound-cleaning-and-dressing-details">▼ View Steps</button>
+        <div id="wound-cleaning-and-dressing-details" class="mb-procedure-details">
+
+            <img 
+                src="{{ url_for('static', filename='medicinePhotos/ProceduresPhotos/wound_dressing.jpg') }}" 
+                alt="Wound cleaning and dressing" 
+                class="mb-procedure-img" 
+            />
+            <div class="mb-procedure-text">
+            <p>
+                Detailed explanation and guidance for conducting the wound cleaning and dressing with standard best practices.
+            </p>
+            <ol class="mb-detail-steps">
+                <li>Prepare necessary equipment and verify patient identity.</li>
+                <li>Explain the procedure to the patient and obtain consent.</li>
+                <li>Ensure aseptic or appropriate technique is followed.</li>
+                <li>Perform the wound cleaning and dressing step-by-step as per protocol.</li>
+                <li>Monitor patient for any complications or adverse reactions.</li>
+                <li>Document findings or outcomes appropriately.</li>
+            </ol>
+            </div>
+        </div>
+        </article>
+
+
+        <article class="mb-procedure-card mb-searchable" tabindex="0" aria-describedby="intramuscular-and-subcutaneous-injections-desc">
+        <h3 class="mb-procedure-title">Intramuscular and subcutaneous injections</h3>
+        <p class="mb-procedure-desc" id="intramuscular-and-subcutaneous-injections-desc">
+            Step-by-step protocol for performing the intramuscular and subcutaneous injections procedure safely and effectively.
+        </p>
+        <button class="mb-toggle-button" data-target="intramuscular-and-subcutaneous-injections-details">▼ View Steps</button>
+        <div id="intramuscular-and-subcutaneous-injections-details" class="mb-procedure-details">
+
+            <img 
+                src="{{ url_for('static', filename='medicinePhotos/ProceduresPhotos/injections.jpg') }}" 
+                alt="Intramuscular and subcutaneous injections" 
+                class="mb-procedure-img" 
+            />
+            <div class="mb-procedure-text">
+            <p>
+                Detailed explanation and guidance for conducting the intramuscular and subcutaneous injections with standard best practices.
+            </p>
+            <ol class="mb-detail-steps">
+                <li>Prepare necessary equipment and verify patient identity.</li>
+                <li>Explain the procedure to the patient and obtain consent.</li>
+                <li>Ensure aseptic or appropriate technique is followed.</li>
+                <li>Perform the intramuscular and subcutaneous injections step-by-step as per protocol.</li>
+                <li>Monitor patient for any complications or adverse reactions.</li>
+                <li>Document findings or outcomes appropriately.</li>
+            </ol>
+            </div>
+        </div>
+        </article>
+
+
+        <article class="mb-procedure-card mb-searchable" tabindex="0" aria-describedby="vaccine-administration-desc">
+        <h3 class="mb-procedure-title">Vaccine administration</h3>
+        <p class="mb-procedure-desc" id="vaccine-administration-desc">
+            Step-by-step protocol for performing the vaccine administration procedure safely and effectively.
+        </p>
+        <button class="mb-toggle-button" data-target="vaccine-administration-details">▼ View Steps</button>
+        <div id="vaccine-administration-details" class="mb-procedure-details">
+
+            <img 
+                src="{{ url_for('static', filename='medicinePhotos/ProceduresPhotos/vaccine_admin.jpg') }}" 
+                alt="Vaccine administration" 
+                class="mb-procedure-img" 
+            />
+            <div class="mb-procedure-text">
+            <p>
+                Detailed explanation and guidance for conducting the vaccine administration with standard best practices.
+            </p>
+            <ol class="mb-detail-steps">
+                <li>Prepare necessary equipment and verify patient identity.</li>
+                <li>Explain the procedure to the patient and obtain consent.</li>
+                <li>Ensure aseptic or appropriate technique is followed.</li>
+                <li>Perform the vaccine administration step-by-step as per protocol.</li>
+                <li>Monitor patient for any complications or adverse reactions.</li>
+                <li>Document findings or outcomes appropriately.</li>
+            </ol>
+            </div>
+        </div>
+        </article>
+
+
+        <article class="mb-procedure-card mb-searchable" tabindex="0" aria-describedby="foley-catheter-insertion-desc">
+        <h3 class="mb-procedure-title">Foley catheter insertion</h3>
+        <p class="mb-procedure-desc" id="foley-catheter-insertion-desc">
+            Step-by-step protocol for performing the foley catheter insertion procedure safely and effectively.
+        </p>
+        <button class="mb-toggle-button" data-target="foley-catheter-insertion-details">▼ View Steps</button>
+        <div id="foley-catheter-insertion-details" class="mb-procedure-details">
+
+            
+            <img 
+                src="{{ url_for('static', filename='medicinePhotos/ProceduresPhotos/foley_catheter.jpg') }}" 
+                alt="Foley catheter insertion" 
+                class="mb-procedure-img" 
+            />
+            <div class="mb-procedure-text">
+            <p>
+                Detailed explanation and guidance for conducting the foley catheter insertion with standard best practices.
+            </p>
+            <ol class="mb-detail-steps">
+                <li>Prepare necessary equipment and verify patient identity.</li>
+                <li>Explain the procedure to the patient and obtain consent.</li>
+                <li>Ensure aseptic or appropriate technique is followed.</li>
+                <li>Perform the foley catheter insertion step-by-step as per protocol.</li>
+                <li>Monitor patient for any complications or adverse reactions.</li>
+                <li>Document findings or outcomes appropriately.</li>
+            </ol>
+            </div>
+        </div>
+        </article>
+
+
+        <article class="mb-procedure-card mb-searchable" tabindex="0" aria-describedby="iv-cannulation-desc">
+        <h3 class="mb-procedure-title">IV cannulation</h3>
+        <p class="mb-procedure-desc" id="iv-cannulation-desc">
+            Step-by-step protocol for performing the iv cannulation procedure safely and effectively.
+        </p>
+        <button class="mb-toggle-button" data-target="iv-cannulation-details">▼ View Steps</button>
+        <div id="iv-cannulation-details" class="mb-procedure-details">
+
+            <img 
+                src="{{ url_for('static', filename='medicinePhotos/ProceduresPhotos/iv_cannulation.jpg') }}" 
+                alt="IV cannulation" 
+                class="mb-procedure-img" 
+            />
+                        <div class="mb-procedure-text">
+            <p>
+                Detailed explanation and guidance for conducting the iv cannulation with standard best practices.
+            </p>
+            <ol class="mb-detail-steps">
+                <li>Prepare necessary equipment and verify patient identity.</li>
+                <li>Explain the procedure to the patient and obtain consent.</li>
+                <li>Ensure aseptic or appropriate technique is followed.</li>
+                <li>Perform the iv cannulation step-by-step as per protocol.</li>
+                <li>Monitor patient for any complications or adverse reactions.</li>
+                <li>Document findings or outcomes appropriately.</li>
+            </ol>
+            </div>
+        </div>
+        </article>
+
+
+        <article class="mb-procedure-card mb-searchable" tabindex="0" aria-describedby="phlebotomy-venipuncture-desc">
+        <h3 class="mb-procedure-title">Phlebotomy (venipuncture)</h3>
+        <p class="mb-procedure-desc" id="phlebotomy-venipuncture-desc">
+            Step-by-step protocol for performing the phlebotomy (venipuncture) procedure safely and effectively.
+        </p>
+        <button class="mb-toggle-button" data-target="phlebotomy-venipuncture-details">▼ View Steps</button>
+        <div id="phlebotomy-venipuncture-details" class="mb-procedure-details">
+
+            <img 
+                src="{{ url_for('static', filename='medicinePhotos/ProceduresPhotos/phlebotomy.jpg') }}" 
+                alt="Phlebotomy (venipuncture)" 
+                class="mb-procedure-img" 
+            />
+            <div class="mb-procedure-text">
+            <p>
+                Detailed explanation and guidance for conducting the phlebotomy (venipuncture) with standard best practices.
+            </p>
+            <ol class="mb-detail-steps">
+                <li>Prepare necessary equipment and verify patient identity.</li>
+                <li>Explain the procedure to the patient and obtain consent.</li>
+                <li>Ensure aseptic or appropriate technique is followed.</li>
+                <li>Perform the phlebotomy (venipuncture) step-by-step as per protocol.</li>
+                <li>Monitor patient for any complications or adverse reactions.</li>
+                <li>Document findings or outcomes appropriately.</li>
+            </ol>
+            </div>
+        </div>
+        </article>
+
+
+        <article class="mb-procedure-card mb-searchable" tabindex="0" aria-describedby="ecg-monitoring-desc">
+        <h3 class="mb-procedure-title">ECG monitoring</h3>
+        <p class="mb-procedure-desc" id="ecg-monitoring-desc">
+            Step-by-step protocol for performing the ecg monitoring procedure safely and effectively.
+        </p>
+        <button class="mb-toggle-button" data-target="ecg-monitoring-details">▼ View Steps</button>
+        <div id="ecg-monitoring-details" class="mb-procedure-details">
+
+            <img 
+                src="{{ url_for('static', filename='medicinePhotos/ProceduresPhotos/ECG_Monitoring.JPG') }}" 
+                alt="ECG monitoring" 
+                class="mb-procedure-img" 
+            />
+
+            <div class="mb-procedure-text">
+            <p>
+                Detailed explanation and guidance for conducting the ecg monitoring with standard best practices.
+            </p>
+            <ol class="mb-detail-steps">
+                <li>Prepare necessary equipment and verify patient identity.</li>
+                <li>Explain the procedure to the patient and obtain consent.</li>
+                <li>Ensure aseptic or appropriate technique is followed.</li>
+                <li>Perform the ecg monitoring step-by-step as per protocol.</li>
+                <li>Monitor patient for any complications or adverse reactions.</li>
+                <li>Document findings or outcomes appropriately.</li>
+            </ol>
+            </div>
+        </div>
+        </article>
+
+
+        <article class="mb-procedure-card mb-searchable" tabindex="0" aria-describedby="nebulization-therapy-desc">
+        <h3 class="mb-procedure-title">Nebulization therapy</h3>
+        <p class="mb-procedure-desc" id="nebulization-therapy-desc">
+            Step-by-step protocol for performing the nebulization therapy procedure safely and effectively.
+        </p>
+        <button class="mb-toggle-button" data-target="nebulization-therapy-details">▼ View Steps</button>
+        <div id="nebulization-therapy-details" class="mb-procedure-details">
+
+            <img 
+                src="{{ url_for('static', filename='medicinePhotos/ProceduresPhotos/Nebulization_Therapy.JPG') }}" 
+                alt="Nebulization therapy" 
+                class="mb-procedure-img" 
+            />
+            <div class="mb-procedure-text">
+            <p>
+                Detailed explanation and guidance for conducting the nebulization therapy with standard best practices.
+            </p>
+            <ol class="mb-detail-steps">
+                <li>Prepare necessary equipment and verify patient identity.</li>
+                <li>Explain the procedure to the patient and obtain consent.</li>
+                <li>Ensure aseptic or appropriate technique is followed.</li>
+                <li>Perform the nebulization therapy step-by-step as per protocol.</li>
+                <li>Monitor patient for any complications or adverse reactions.</li>
+                <li>Document findings or outcomes appropriately.</li>
+            </ol>
+            </div>
+        </div>
+        </article>
+
+
+        <article class="mb-procedure-card mb-searchable" tabindex="0" aria-describedby="suture-placement-and-removal-desc">
+        <h3 class="mb-procedure-title">Suture placement and removal</h3>
+        <p class="mb-procedure-desc" id="suture-placement-and-removal-desc">
+            Step-by-step protocol for performing the suture placement and removal procedure safely and effectively.
+        </p>
+        <button class="mb-toggle-button" data-target="suture-placement-and-removal-details">▼ View Steps</button>
+        <div id="suture-placement-and-removal-details" class="mb-procedure-details">
+
+
+            <img 
+                src="{{ url_for('static', filename='medicinePhotos/ProceduresPhotos/Suture_Placement_Removal.JPG') }}" 
+                alt="Suture placement and removal" 
+                class="mb-procedure-img" 
+            />
+
+            <div class="mb-procedure-text">
+            <p>
+                Detailed explanation and guidance for conducting the suture placement and removal with standard best practices.
+            </p>
+            <ol class="mb-detail-steps">
+                <li>Prepare necessary equipment and verify patient identity.</li>
+                <li>Explain the procedure to the patient and obtain consent.</li>
+                <li>Ensure aseptic or appropriate technique is followed.</li>
+                <li>Perform the suture placement and removal step-by-step as per protocol.</li>
+                <li>Monitor patient for any complications or adverse reactions.</li>
+                <li>Document findings or outcomes appropriately.</li>
+            </ol>
+            </div>
+        </div>
+        </article>
+
+
+        <article class="mb-procedure-card mb-searchable" tabindex="0" aria-describedby="nasogastric-ng-tube-insertion-desc">
+        <h3 class="mb-procedure-title">Nasogastric (NG) tube insertion</h3>
+        <p class="mb-procedure-desc" id="nasogastric-ng-tube-insertion-desc">
+            Step-by-step protocol for performing the nasogastric (ng) tube insertion procedure safely and effectively.
+        </p>
+        <button class="mb-toggle-button" data-target="nasogastric-ng-tube-insertion-details">▼ View Steps</button>
+        <div id="nasogastric-ng-tube-insertion-details" class="mb-procedure-details">
+
+            <img 
+                src="{{ url_for('static', filename='medicinePhotos/ProceduresPhotos/Nasogastric_Tube_Insertion.JPG') }}" 
+                alt="Nasogastric (NG) tube insertion" 
+                class="mb-procedure-img" 
+            />
+
+            <div class="mb-procedure-text">
+            <p>
+                Detailed explanation and guidance for conducting the nasogastric (ng) tube insertion with standard best practices.
+            </p>
+            <ol class="mb-detail-steps">
+                <li>Prepare necessary equipment and verify patient identity.</li>
+                <li>Explain the procedure to the patient and obtain consent.</li>
+                <li>Ensure aseptic or appropriate technique is followed.</li>
+                <li>Perform the nasogastric (ng) tube insertion step-by-step as per protocol.</li>
+                <li>Monitor patient for any complications or adverse reactions.</li>
+                <li>Document findings or outcomes appropriately.</li>
+            </ol>
+            </div>
+        </div>
+        </article>
+
+
+        <article class="mb-procedure-card mb-searchable" tabindex="0" aria-describedby="simple-iandd-incision-and-drainage-of-abscess-desc">
+        <h3 class="mb-procedure-title">Simple I&D (incision and drainage of abscess)</h3>
+        <p class="mb-procedure-desc" id="simple-iandd-incision-and-drainage-of-abscess-desc">
+            Step-by-step protocol for performing the simple i&d (incision and drainage of abscess) procedure safely and effectively.
+        </p>
+        <button class="mb-toggle-button" data-target="simple-iandd-incision-and-drainage-of-abscess-details">▼ View Steps</button>
+        <div id="simple-iandd-incision-and-drainage-of-abscess-details" class="mb-procedure-details">
+
+            <img 
+                src="{{ url_for('static', filename='medicinePhotos/ProceduresPhotos/Incision_Drainage_Abscess.JPG') }}" 
+                alt="Simple I&D" 
+                class="mb-procedure-img" 
+            />
+            <div class="mb-procedure-text">
+            <p>
+                Detailed explanation and guidance for conducting the simple i&d (incision and drainage of abscess) with standard best practices.
+            </p>
+            <ol class="mb-detail-steps">
+                <li>Prepare necessary equipment and verify patient identity.</li>
+                <li>Explain the procedure to the patient and obtain consent.</li>
+                <li>Ensure aseptic or appropriate technique is followed.</li>
+                <li>Perform the simple i&d (incision and drainage of abscess) step-by-step as per protocol.</li>
+                <li>Monitor patient for any complications or adverse reactions.</li>
+                <li>Document findings or outcomes appropriately.</li>
+            </ol>
+            </div>
+        </div>
+        </article>
+
+
+        <article class="mb-procedure-card mb-searchable" tabindex="0" aria-describedby="ear-lavage-ear-irrigation-desc">
+        <h3 class="mb-procedure-title">Ear lavage (ear irrigation)</h3>
+        <p class="mb-procedure-desc" id="ear-lavage-ear-irrigation-desc">
+            Step-by-step protocol for performing the ear lavage (ear irrigation) procedure safely and effectively.
+        </p>
+        <button class="mb-toggle-button" data-target="ear-lavage-ear-irrigation-details">▼ View Steps</button>
+        <div id="ear-lavage-ear-irrigation-details" class="mb-procedure-details">
+
+            <img 
+                src="{{ url_for('static', filename='medicinePhotos/ProceduresPhotos/Ear_Lavage.JPG') }}" 
+                alt="Ear lavage" 
+                class="mb-procedure-img" 
+            />
+            <div class="mb-procedure-text">
+            <p>
+                Detailed explanation and guidance for conducting the ear lavage (ear irrigation) with standard best practices.
+            </p>
+            <ol class="mb-detail-steps">
+                <li>Prepare necessary equipment and verify patient identity.</li>
+                <li>Explain the procedure to the patient and obtain consent.</li>
+                <li>Ensure aseptic or appropriate technique is followed.</li>
+                <li>Perform the ear lavage (ear irrigation) step-by-step as per protocol.</li>
+                <li>Monitor patient for any complications or adverse reactions.</li>
+                <li>Document findings or outcomes appropriately.</li>
+            </ol>
+            </div>
+        </div>
+        </article>
+
+
+        <article class="mb-procedure-card mb-searchable" tabindex="0" aria-describedby="joint-aspiration-desc">
+        <h3 class="mb-procedure-title">Joint aspiration</h3>
+        <p class="mb-procedure-desc" id="joint-aspiration-desc">
+            Step-by-step protocol for performing the joint aspiration procedure safely and effectively.
+        </p>
+        <button class="mb-toggle-button" data-target="joint-aspiration-details">▼ View Steps</button>
+        <div id="joint-aspiration-details" class="mb-procedure-details">
+
+
+            <img 
+                src="{{ url_for('static', filename='medicinePhotos/ProceduresPhotos/Joint_Aspiration.JPG') }}" 
+                alt="Joint aspiration" 
+                class="mb-procedure-img" 
+            />
+            <div class="mb-procedure-text">
+            <p>
+                Detailed explanation and guidance for conducting the joint aspiration with standard best practices.
+            </p>
+            <ol class="mb-detail-steps">
+                <li>Prepare necessary equipment and verify patient identity.</li>
+                <li>Explain the procedure to the patient and obtain consent.</li>
+                <li>Ensure aseptic or appropriate technique is followed.</li>
+                <li>Perform the joint aspiration step-by-step as per protocol.</li>
+                <li>Monitor patient for any complications or adverse reactions.</li>
+                <li>Document findings or outcomes appropriately.</li>
+            </ol>
+            </div>
+        </div>
+        </article>
+
+
+        <article class="mb-procedure-card mb-searchable" tabindex="0" aria-describedby="pulse-oximetry-and-spirometry-desc">
+        <h3 class="mb-procedure-title">Pulse oximetry and spirometry</h3>
+        <p class="mb-procedure-desc" id="pulse-oximetry-and-spirometry-desc">
+            Step-by-step protocol for performing the pulse oximetry and spirometry procedure safely and effectively.
+        </p>
+        <button class="mb-toggle-button" data-target="pulse-oximetry-and-spirometry-details">▼ View Steps</button>
+        <div id="pulse-oximetry-and-spirometry-details" class="mb-procedure-details">
+
+            <img 
+                src="{{ url_for('static', filename='medicinePhotos/ProceduresPhotos/Pulse_Oximetry_Spirometry.JPG') }}" 
+                alt="Pulse oximetry and spirometry" 
+                class="mb-procedure-img" 
+            />
+            <div class="mb-procedure-text">
+            <p>
+                Detailed explanation and guidance for conducting the pulse oximetry and spirometry with standard best practices.
+            </p>
+            <ol class="mb-detail-steps">
+                <li>Prepare necessary equipment and verify patient identity.</li>
+                <li>Explain the procedure to the patient and obtain consent.</li>
+                <li>Ensure aseptic or appropriate technique is followed.</li>
+                <li>Perform the pulse oximetry and spirometry step-by-step as per protocol.</li>
+                <li>Monitor patient for any complications or adverse reactions.</li>
+                <li>Document findings or outcomes appropriately.</li>
+            </ol>
+            </div>
+        </div>
+        </article>
+
+
+        <article class="mb-procedure-card mb-searchable" tabindex="0" aria-describedby="local-anesthesia-administration-desc">
+        <h3 class="mb-procedure-title">Local anesthesia administration</h3>
+        <p class="mb-procedure-desc" id="local-anesthesia-administration-desc">
+            Step-by-step protocol for performing the local anesthesia administration procedure safely and effectively.
+        </p>
+        <button class="mb-toggle-button" data-target="local-anesthesia-administration-details">▼ View Steps</button>
+        <div id="local-anesthesia-administration-details" class="mb-procedure-details">
+            
+            <img 
+                src="{{ url_for('static', filename='medicinePhotos/ProceduresPhotos/Local_Anesthesia_Admin.JPG') }}" 
+                alt="Local anesthesia administration" 
+                class="mb-procedure-img" 
+            />
+            <div class="mb-procedure-text">
+            <p>
+                Detailed explanation and guidance for conducting the local anesthesia administration with standard best practices.
+            </p>
+            <ol class="mb-detail-steps">
+                <li>Prepare necessary equipment and verify patient identity.</li>
+                <li>Explain the procedure to the patient and obtain consent.</li>
+                <li>Ensure aseptic or appropriate technique is followed.</li>
+                <li>Perform the local anesthesia administration step-by-step as per protocol.</li>
+                <li>Monitor patient for any complications or adverse reactions.</li>
+                <li>Document findings or outcomes appropriately.</li>
+            </ol>
+            </div>
+        </div>
+        </article>
+
+
+        <article class="mb-procedure-card mb-searchable" tabindex="0" aria-describedby="minor-debridement-desc">
+        <h3 class="mb-procedure-title">Minor debridement</h3>
+        <p class="mb-procedure-desc" id="minor-debridement-desc">
+            Step-by-step protocol for performing the minor debridement procedure safely and effectively.
+        </p>
+        <button class="mb-toggle-button" data-target="minor-debridement-details">▼ View Steps</button>
+        <div id="minor-debridement-details" class="mb-procedure-details">
+
+            <img 
+                src="{{ url_for('static', filename='medicinePhotos/ProceduresPhotos/Minor_Debridement.JPG') }}" 
+                alt="Minor debridement" 
+                class="mb-procedure-img" 
+            />
+            <div class="mb-procedure-text">
+            <p>
+                Detailed explanation and guidance for conducting the minor debridement with standard best practices.
+            </p>
+            <ol class="mb-detail-steps">
+                <li>Prepare necessary equipment and verify patient identity.</li>
+                <li>Explain the procedure to the patient and obtain consent.</li>
+                <li>Ensure aseptic or appropriate technique is followed.</li>
+                <li>Perform the minor debridement step-by-step as per protocol.</li>
+                <li>Monitor patient for any complications or adverse reactions.</li>
+                <li>Document findings or outcomes appropriately.</li>
+            </ol>
+            </div>
+        </div>
+        </article>
+
+
+        <article class="mb-procedure-card mb-searchable" tabindex="0" aria-describedby="circumcision-desc">
+        <h3 class="mb-procedure-title">Circumcision</h3>
+        <p class="mb-procedure-desc" id="circumcision-desc">
+            Step-by-step protocol for performing the circumcision procedure safely and effectively.
+        </p>
+        <button class="mb-toggle-button" data-target="circumcision-details">▼ View Steps</button>
+        <div id="circumcision-details" class="mb-procedure-details">
+
+           
+            <img 
+                src="{{ url_for('static', filename='medicinePhotos/ProceduresPhotos/Circumcision.JPG') }}" 
+                alt="Circumcision" 
+                class="mb-procedure-img" 
+            />
+            <div class="mb-procedure-text">
+            <p>
+                Detailed explanation and guidance for conducting the circumcision with standard best practices.
+            </p>
+            <ol class="mb-detail-steps">
+                <li>Prepare necessary equipment and verify patient identity.</li>
+                <li>Explain the procedure to the patient and obtain consent.</li>
+                <li>Ensure aseptic or appropriate technique is followed.</li>
+                <li>Perform the circumcision step-by-step as per protocol.</li>
+                <li>Monitor patient for any complications or adverse reactions.</li>
+                <li>Document findings or outcomes appropriately.</li>
+            </ol>
+            </div>
+        </div>
+        </article>
+
+
+        <article class="mb-procedure-card mb-searchable" tabindex="0" aria-describedby="newborn-screening-desc">
+        <h3 class="mb-procedure-title">Newborn screening</h3>
+        <p class="mb-procedure-desc" id="newborn-screening-desc">
+            Step-by-step protocol for performing the newborn screening procedure safely and effectively.
+        </p>
+        <button class="mb-toggle-button" data-target="newborn-screening-details">▼ View Steps</button>
+        <div id="newborn-screening-details" class="mb-procedure-details">
+            
+        <img 
+            src="{{ url_for('static', filename='medicinePhotos/ProceduresPhotos/Newborn_Screening.JPG') }}" 
+            alt="Newborn screening" 
+            class="mb-procedure-img" 
+        />
+            <div class="mb-procedure-text">
+            <p>
+                Detailed explanation and guidance for conducting the newborn screening with standard best practices.
+            </p>
+            <ol class="mb-detail-steps">
+                <li>Prepare necessary equipment and verify patient identity.</li>
+                <li>Explain the procedure to the patient and obtain consent.</li>
+                <li>Ensure aseptic or appropriate technique is followed.</li>
+                <li>Perform the newborn screening step-by-step as per protocol.</li>
+                <li>Monitor patient for any complications or adverse reactions.</li>
+                <li>Document findings or outcomes appropriately.</li>
+            </ol>
+            </div>
+        </div>
+        </article>
+
+
+        <article class="mb-procedure-card mb-searchable" tabindex="0" aria-describedby="bilirubin-testing-desc">
+        <h3 class="mb-procedure-title">Bilirubin testing</h3>
+        <p class="mb-procedure-desc" id="bilirubin-testing-desc">
+            Step-by-step protocol for performing the bilirubin testing procedure safely and effectively.
+        </p>
+        <button class="mb-toggle-button" data-target="bilirubin-testing-details">▼ View Steps</button>
+        <div id="bilirubin-testing-details" class="mb-procedure-details">
+
+           <img 
+                src="{{ url_for('static', filename='medicinePhotos/ProceduresPhotos/Bilirubin_Testing.JPG') }}" 
+                alt="Bilirubin testing" 
+                class="mb-procedure-img" 
+            />
+            <div class="mb-procedure-text">
+            <p>
+                Detailed explanation and guidance for conducting the bilirubin testing with standard best practices.
+            </p>
+            <ol class="mb-detail-steps">
+                <li>Prepare necessary equipment and verify patient identity.</li>
+                <li>Explain the procedure to the patient and obtain consent.</li>
+                <li>Ensure aseptic or appropriate technique is followed.</li>
+                <li>Perform the bilirubin testing step-by-step as per protocol.</li>
+                <li>Monitor patient for any complications or adverse reactions.</li>
+                <li>Document findings or outcomes appropriately.</li>
+            </ol>
+            </div>
+        </div>
+        </article>
+
+
+        <article class="mb-procedure-card mb-searchable" tabindex="0" aria-describedby="umbilical-catheter-placement-desc">
+        <h3 class="mb-procedure-title">Umbilical catheter placement</h3>
+        <p class="mb-procedure-desc" id="umbilical-catheter-placement-desc">
+            Step-by-step protocol for performing the umbilical catheter placement procedure safely and effectively.
+        </p>
+        <button class="mb-toggle-button" data-target="umbilical-catheter-placement-details">▼ View Steps</button>
+        <div id="umbilical-catheter-placement-details" class="mb-procedure-details">
+
+           <img 
+                src="{{ url_for('static', filename='medicinePhotos/ProceduresPhotos/Umbilical_Catheter_Placement.JPG') }}" 
+                alt="Umbilical catheter placement" 
+                class="mb-procedure-img" 
+            />
+            <div class="mb-procedure-text">
+            <p>
+                Detailed explanation and guidance for conducting the umbilical catheter placement with standard best practices.
+            </p>
+            <ol class="mb-detail-steps">
+                <li>Prepare necessary equipment and verify patient identity.</li>
+                <li>Explain the procedure to the patient and obtain consent.</li>
+                <li>Ensure aseptic or appropriate technique is followed.</li>
+                <li>Perform the umbilical catheter placement step-by-step as per protocol.</li>
+                <li>Monitor patient for any complications or adverse reactions.</li>
+                <li>Document findings or outcomes appropriately.</li>
+            </ol>
+            </div>
+        </div>
+        </article>
+
+
+        <article class="mb-procedure-card mb-searchable" tabindex="0" aria-describedby="pediatric-resuscitation-desc">
+        <h3 class="mb-procedure-title">Pediatric resuscitation</h3>
+        <p class="mb-procedure-desc" id="pediatric-resuscitation-desc">
+            Step-by-step protocol for performing the pediatric resuscitation procedure safely and effectively.
+        </p>
+        <button class="mb-toggle-button" data-target="pediatric-resuscitation-details">▼ View Steps</button>
+        <div id="pediatric-resuscitation-details" class="mb-procedure-details">
+
+            <img 
+                src="{{ url_for('static', filename='medicinePhotos/ProceduresPhotos/Pediatric_Resuscitation.JPG') }}" 
+                alt="Pediatric resuscitation" 
+                class="mb-procedure-img" 
+            />
+            <div class="mb-procedure-text">
+            <p>
+                Detailed explanation and guidance for conducting the pediatric resuscitation with standard best practices.
+            </p>
+            <ol class="mb-detail-steps">
+                <li>Prepare necessary equipment and verify patient identity.</li>
+                <li>Explain the procedure to the patient and obtain consent.</li>
+                <li>Ensure aseptic or appropriate technique is followed.</li>
+                <li>Perform the pediatric resuscitation step-by-step as per protocol.</li>
+                <li>Monitor patient for any complications or adverse reactions.</li>
+                <li>Document findings or outcomes appropriately.</li>
+            </ol>
+            </div>
+        </div>
+        </article>
+
+
+        <article class="mb-procedure-card mb-searchable" tabindex="0" aria-describedby="cpr-desc">
+        <h3 class="mb-procedure-title">CPR</h3>
+        <p class="mb-procedure-desc" id="cpr-desc">
+            Step-by-step protocol for performing the cpr procedure safely and effectively.
+        </p>
+        <button class="mb-toggle-button" data-target="cpr-details">▼ View Steps</button>
+        <div id="cpr-details" class="mb-procedure-details">
+
+        <img 
+            src="{{ url_for('static', filename='medicinePhotos/ProceduresPhotos/CPR.JPG') }}" 
+            alt="CPR" 
+            class="mb-procedure-img" 
+        />
+            <div class="mb-procedure-text">
+            <p>
+                Detailed explanation and guidance for conducting the cpr with standard best practices.
+            </p>
+            <ol class="mb-detail-steps">
+                <li>Prepare necessary equipment and verify patient identity.</li>
+                <li>Explain the procedure to the patient and obtain consent.</li>
+                <li>Ensure aseptic or appropriate technique is followed.</li>
+                <li>Perform the cpr step-by-step as per protocol.</li>
+                <li>Monitor patient for any complications or adverse reactions.</li>
+                <li>Document findings or outcomes appropriately.</li>
+            </ol>
+            </div>
+        </div>
+        </article>
+
+
+        <article class="mb-procedure-card mb-searchable" tabindex="0" aria-describedby="defibrillation-desc">
+        <h3 class="mb-procedure-title">Defibrillation</h3>
+        <p class="mb-procedure-desc" id="defibrillation-desc">
+            Step-by-step protocol for performing the defibrillation procedure safely and effectively.
+        </p>
+        <button class="mb-toggle-button" data-target="defibrillation-details">▼ View Steps</button>
+        <div id="defibrillation-details" class="mb-procedure-details">
+
+           <img 
+                src="{{ url_for('static', filename='medicinePhotos/ProceduresPhotos/Defibrillation.JPG') }}" 
+                alt="Defibrillation" 
+                class="mb-procedure-img" 
+            />
+            <div class="mb-procedure-text">
+            <p>
+                Detailed explanation and guidance for conducting the defibrillation with standard best practices.
+            </p>
+            <ol class="mb-detail-steps">
+                <li>Prepare necessary equipment and verify patient identity.</li>
+                <li>Explain the procedure to the patient and obtain consent.</li>
+                <li>Ensure aseptic or appropriate technique is followed.</li>
+                <li>Perform the defibrillation step-by-step as per protocol.</li>
+                <li>Monitor patient for any complications or adverse reactions.</li>
+                <li>Document findings or outcomes appropriately.</li>
+            </ol>
+            </div>
+        </div>
+        </article>
+
+
+        <article class="mb-procedure-card mb-searchable" tabindex="0" aria-describedby="chest-tube-insertion-desc">
+        <h3 class="mb-procedure-title">Chest tube insertion</h3>
+        <p class="mb-procedure-desc" id="chest-tube-insertion-desc">
+            Step-by-step protocol for performing the chest tube insertion procedure safely and effectively.
+        </p>
+        <button class="mb-toggle-button" data-target="chest-tube-insertion-details">▼ View Steps</button>
+        <div id="chest-tube-insertion-details" class="mb-procedure-details">
+
+            <img 
+                src="{{ url_for('static', filename='medicinePhotos/ProceduresPhotos/Chest_Tube_Insertion.JPG') }}" 
+                alt="Chest tube insertion" 
+                class="mb-procedure-img" 
+            />
+            <div class="mb-procedure-text">
+            <p>
+                Detailed explanation and guidance for conducting the chest tube insertion with standard best practices.
+            </p>
+            <ol class="mb-detail-steps">
+                <li>Prepare necessary equipment and verify patient identity.</li>
+                <li>Explain the procedure to the patient and obtain consent.</li>
+                <li>Ensure aseptic or appropriate technique is followed.</li>
+                <li>Perform the chest tube insertion step-by-step as per protocol.</li>
+                <li>Monitor patient for any complications or adverse reactions.</li>
+                <li>Document findings or outcomes appropriately.</li>
+            </ol>
+            </div>
+        </div>
+        </article>
+
+
+        <article class="mb-procedure-card mb-searchable" tabindex="0" aria-describedby="pericardiocentesis-desc">
+        <h3 class="mb-procedure-title">Pericardiocentesis</h3>
+        <p class="mb-procedure-desc" id="pericardiocentesis-desc">
+            Step-by-step protocol for performing the pericardiocentesis procedure safely and effectively.
+        </p>
+        <button class="mb-toggle-button" data-target="pericardiocentesis-details">▼ View Steps</button>
+        <div id="pericardiocentesis-details" class="mb-procedure-details">
+
+        <img 
+            src="{{ url_for('static', filename='medicinePhotos/ProceduresPhotos/Pericardiocentesis.JPG') }}" 
+            alt="Pericardiocentesis" 
+            class="mb-procedure-img" 
+        />
+            <div class="mb-procedure-text">
+            <p>
+                Detailed explanation and guidance for conducting the pericardiocentesis with standard best practices.
+            </p>
+            <ol class="mb-detail-steps">
+                <li>Prepare necessary equipment and verify patient identity.</li>
+                <li>Explain the procedure to the patient and obtain consent.</li>
+                <li>Ensure aseptic or appropriate technique is followed.</li>
+                <li>Perform the pericardiocentesis step-by-step as per protocol.</li>
+                <li>Monitor patient for any complications or adverse reactions.</li>
+                <li>Document findings or outcomes appropriately.</li>
+            </ol>
+            </div>
+        </div>
+        </article>
+
+
+        <article class="mb-procedure-card mb-searchable" tabindex="0" aria-describedby="needle-decompression-desc">
+        <h3 class="mb-procedure-title">Needle decompression</h3>
+        <p class="mb-procedure-desc" id="needle-decompression-desc">
+            Step-by-step protocol for performing the needle decompression procedure safely and effectively.
+        </p>
+        <button class="mb-toggle-button" data-target="needle-decompression-details">▼ View Steps</button>
+        <div id="needle-decompression-details" class="mb-procedure-details">
+
+            <img 
+                src="{{ url_for('static', filename='medicinePhotos/ProceduresPhotos/Needle_Decompression.JPG') }}" 
+                alt="Needle decompression" 
+                class="mb-procedure-img" 
+            />
+            <div class="mb-procedure-text">
+            <p>
+                Detailed explanation and guidance for conducting the needle decompression with standard best practices.
+            </p>
+            <ol class="mb-detail-steps">
+                <li>Prepare necessary equipment and verify patient identity.</li>
+                <li>Explain the procedure to the patient and obtain consent.</li>
+                <li>Ensure aseptic or appropriate technique is followed.</li>
+                <li>Perform the needle decompression step-by-step as per protocol.</li>
+                <li>Monitor patient for any complications or adverse reactions.</li>
+                <li>Document findings or outcomes appropriately.</li>
+            </ol>
+            </div>
+        </div>
+        </article>
+
+
+        <article class="mb-procedure-card mb-searchable" tabindex="0" aria-describedby="wound-suturing-desc">
+    <h3 class="mb-procedure-title">Wound suturing</h3>
+    <p class="mb-procedure-desc" id="wound-suturing-desc">
+        Step-by-step protocol for performing the wound suturing procedure safely and effectively.
+    </p>
+    <button class="mb-toggle-button" data-target="wound-suturing-details">▼ View Steps</button>
+    <div id="wound-suturing-details" class="mb-procedure-details">
+        <img src="{{ url_for('static', filename='medicinePhotos/ProceduresPhotos/Wound_Suturing_Kit.JPG') }}" alt="Wound suturing">
+        <div class="mb-procedure-text">
+            <p>Detailed explanation and guidance for conducting the wound suturing with standard best practices.</p>
+            <ol class="mb-detail-steps">
+                <li>Prepare necessary equipment and verify patient identity.</li>
+                <li>Explain the procedure to the patient and obtain consent.</li>
+                <li>Ensure aseptic or appropriate technique is followed.</li>
+                <li>Perform the wound suturing step-by-step as per protocol.</li>
+                <li>Monitor patient for any complications or adverse reactions.</li>
+                <li>Document findings or outcomes appropriately.</li>
+            </ol>
+        </div>
+    </div>
+</article>
+
+<article class="mb-procedure-card mb-searchable" tabindex="0" aria-describedby="fracture-reduction-and-splinting-desc">
+    <h3 class="mb-procedure-title">Fracture reduction and splinting</h3>
+    <p class="mb-procedure-desc" id="fracture-reduction-and-splinting-desc">
+        Step-by-step protocol for performing the fracture reduction and splinting procedure safely and effectively.
+    </p>
+    <button class="mb-toggle-button" data-target="fracture-reduction-and-splinting-details">▼ View Steps</button>
+    <div id="fracture-reduction-and-splinting-details" class="mb-procedure-details">
+        <img 
+            src="{{ url_for('static', filename='medicinePhotos/ProceduresPhotos/Fracture_Reduction_Internal_Fixation.JPG') }}" 
+            alt="Fracture reduction and splinting" 
+            class="mb-procedure-img" 
+        />
+        <div class="mb-procedure-text">
+            <p>Detailed explanation and guidance for conducting the fracture reduction and splinting with standard best practices.</p>
+            <ol class="mb-detail-steps">
+                <li>Prepare necessary equipment and verify patient identity.</li>
+                <li>Explain the procedure to the patient and obtain consent.</li>
+                <li>Ensure aseptic or appropriate technique is followed.</li>
+                <li>Perform the fracture reduction and splinting step-by-step as per protocol.</li>
+                <li>Monitor patient for any complications or adverse reactions.</li>
+                <li>Document findings or outcomes appropriately.</li>
+            </ol>
+        </div>
+    </div>
+</article>
+
+<article class="mb-procedure-card mb-searchable" tabindex="0" aria-describedby="pap-smear-desc">
+    <h3 class="mb-procedure-title">Pap smear</h3>
+    <p class="mb-procedure-desc" id="pap-smear-desc">
+        Step-by-step protocol for performing the pap smear procedure safely and effectively.
+    </p>
+    <button class="mb-toggle-button" data-target="pap-smear-details">▼ View Steps</button>
+    <div id="pap-smear-details" class="mb-procedure-details">
+        <img 
+            src="{{ url_for('static', filename='medicinePhotos/ProceduresPhotos/Pap_Smear.JPG') }}" 
+            alt="Pap smear" 
+            class="mb-procedure-img" 
+        />
+        <div class="mb-procedure-text">
+            <p>Detailed explanation and guidance for conducting the pap smear with standard best practices.</p>
+            <ol class="mb-detail-steps">
+                <li>Prepare necessary equipment and verify patient identity.</li>
+                <li>Explain the procedure to the patient and obtain consent.</li>
+                <li>Ensure aseptic or appropriate technique is followed.</li>
+                <li>Perform the pap smear step-by-step as per protocol.</li>
+                <li>Monitor patient for any complications or adverse reactions.</li>
+                <li>Document findings or outcomes appropriately.</li>
+            </ol>
+        </div>
+    </div>
+</article>
+
+<article class="mb-procedure-card mb-searchable" tabindex="0" aria-describedby="dandc-dilation-and-curettage-desc">
+    <h3 class="mb-procedure-title">D&C (dilation and curettage)</h3>
+    <p class="mb-procedure-desc" id="dandc-dilation-and-curettage-desc">
+        Step-by-step protocol for performing the d&c (dilation and curettage) procedure safely and effectively.
+    </p>
+    <button class="mb-toggle-button" data-target="dandc-dilation-and-curettage-details">▼ View Steps</button>
+    <div id="dandc-dilation-and-curettage-details" class="mb-procedure-details">
+        <img 
+            src="{{ url_for('static', filename='medicinePhotos/ProceduresPhotos/Dilation_and_Curettage.JPG') }}" 
+            alt="D&C (dilation and curettage)" 
+            class="mb-procedure-img" 
+        />
+        <div class="mb-procedure-text">
+            <p>Detailed explanation and guidance for conducting the d&c (dilation and curettage) with standard best practices.</p>
+            <ol class="mb-detail-steps">
+                <li>Prepare necessary equipment and verify patient identity.</li>
+                <li>Explain the procedure to the patient and obtain consent.</li>
+                <li>Ensure aseptic or appropriate technique is followed.</li>
+                <li>Perform the d&c (dilation and curettage) step-by-step as per protocol.</li>
+                <li>Monitor patient for any complications or adverse reactions.</li>
+                <li>Document findings or outcomes appropriately.</li>
+            </ol>
+        </div>
+    </div>
+</article>
+
+<article class="mb-procedure-card mb-searchable" tabindex="0" aria-describedby="hysteroscopy-desc">
+    <h3 class="mb-procedure-title">Hysteroscopy</h3>
+    <p class="mb-procedure-desc" id="hysteroscopy-desc">
+        Step-by-step protocol for performing the hysteroscopy procedure safely and effectively.
+    </p>
+    <button class="mb-toggle-button" data-target="hysteroscopy-details">▼ View Steps</button>
+    <div id="hysteroscopy-details" class="mb-procedure-details">
+        <img 
+            src="{{ url_for('static', filename='medicinePhotos/ProceduresPhotos/Hysteroscopy_Guide.JPG') }}" 
+            alt="Hysteroscopy" 
+            class="mb-procedure-img" 
+        />
+        <div class="mb-procedure-text">
+            <p>Detailed explanation and guidance for conducting the hysteroscopy with standard best practices.</p>
+            <ol class="mb-detail-steps">
+                <li>Prepare necessary equipment and verify patient identity.</li>
+                <li>Explain the procedure to the patient and obtain consent.</li>
+                <li>Ensure aseptic or appropriate technique is followed.</li>
+                <li>Perform the hysteroscopy step-by-step as per protocol.</li>
+                <li>Monitor patient for any complications or adverse reactions.</li>
+                <li>Document findings or outcomes appropriately.</li>
+            </ol>
+        </div>
+    </div>
+</article>
+
+<article class="mb-procedure-card mb-searchable" tabindex="0" aria-describedby="ivf-in-vitro-fertilization-desc">
+    <h3 class="mb-procedure-title">IVF (in vitro fertilization)</h3>
+    <p class="mb-procedure-desc" id="ivf-in-vitro-fertilization-desc">
+        Step-by-step protocol for performing the ivf (in vitro fertilization) procedure safely and effectively.
+    </p>
+    <button class="mb-toggle-button" data-target="ivf-in-vitro-fertilization-details">▼ View Steps</button>
+    <div id="ivf-in-vitro-fertilization-details" class="mb-procedure-details">
+        <img 
+            src="{{ url_for('static', filename='medicinePhotos/ProceduresPhotos/IVF_Hospital.JPG') }}" 
+            alt="IVF (in vitro fertilization)" 
+            class="mb-procedure-img" 
+        />
+        <div class="mb-procedure-text">
+            <p>Detailed explanation and guidance for conducting the ivf (in vitro fertilization) with standard best practices.</p>
+            <ol class="mb-detail-steps">
+                <li>Prepare necessary equipment and verify patient identity.</li>
+                <li>Explain the procedure to the patient and obtain consent.</li>
+                <li>Ensure aseptic or appropriate technique is followed.</li>
+                <li>Perform the ivf (in vitro fertilization) step-by-step as per protocol.</li>
+                <li>Monitor patient for any complications or adverse reactions.</li>
+                <li>Document findings or outcomes appropriately.</li>
+            </ol>
+        </div>
+    </div>
+</article>
+
+<article class="mb-procedure-card mb-searchable" tabindex="0" aria-describedby="tubal-ligation-desc">
+    <h3 class="mb-procedure-title">Tubal ligation</h3>
+    <p class="mb-procedure-desc" id="tubal-ligation-desc">
+        Step-by-step protocol for performing the tubal ligation procedure safely and effectively.
+    </p>
+    <button class="mb-toggle-button" data-target="tubal-ligation-details">▼ View Steps</button>
+    <div id="tubal-ligation-details" class="mb-procedure-details">
+        <img 
+            src="{{ url_for('static', filename='medicinePhotos/ProceduresPhotos/Tubal_Ligation.JPG') }}" 
+            alt="Tubal ligation" 
+            class="mb-procedure-img" 
+        />
+        <div class="mb-procedure-text">
+            <p>Detailed explanation and guidance for conducting the tubal ligation with standard best practices.</p>
+            <ol class="mb-detail-steps">
+                <li>Prepare necessary equipment and verify patient identity.</li>
+                <li>Explain the procedure to the patient and obtain consent.</li>
+                <li>Ensure aseptic or appropriate technique is followed.</li>
+                <li>Perform the tubal ligation step-by-step as per protocol.</li>
+                <li>Monitor patient for any complications or adverse reactions.</li>
+                <li>Document findings or outcomes appropriately.</li>
+            </ol>
+        </div>
+    </div>
+</article>
+
+<article class="mb-procedure-card mb-searchable" tabindex="0" aria-describedby="vasectomy-desc">
+    <h3 class="mb-procedure-title">Vasectomy</h3>
+    <p class="mb-procedure-desc" id="vasectomy-desc">
+        Step-by-step protocol for performing the vasectomy procedure safely and effectively.
+    </p>
+    <button class="mb-toggle-button" data-target="vasectomy-details">▼ View Steps</button>
+    <div id="vasectomy-details" class="mb-procedure-details">
+        <img 
+            src="{{ url_for('static', filename='medicinePhotos/ProceduresPhotos/Vasectomy.JPG') }}" 
+            alt="Vasectomy" 
+            class="mb-procedure-img" 
+        />
+        <div class="mb-procedure-text">
+            <p>Detailed explanation and guidance for conducting the vasectomy with standard best practices.</p>
+            <ol class="mb-detail-steps">
+                <li>Prepare necessary equipment and verify patient identity.</li>
+                <li>Explain the procedure to the patient and obtain consent.</li>
+                <li>Ensure aseptic or appropriate technique is followed.</li>
+                <li>Perform the vasectomy step-by-step as per protocol.</li>
+                <li>Monitor patient for any complications or adverse reactions.</li>
+                <li>Document findings or outcomes appropriately.</li>
+            </ol>
+        </div>
+    </div>
+</article>
+
+<article class="mb-procedure-card mb-searchable" tabindex="0" aria-describedby="amniocentesis-desc">
+    <h3 class="mb-procedure-title">Amniocentesis</h3>
+    <p class="mb-procedure-desc" id="amniocentesis-desc">
+        Step-by-step protocol for performing the amniocentesis procedure safely and effectively.
+    </p>
+    <button class="mb-toggle-button" data-target="amniocentesis-details">▼ View Steps</button>
+    <div id="amniocentesis-details" class="mb-procedure-details">
+        <img 
+            src="{{ url_for('static', filename='medicinePhotos/ProceduresPhotos/Amniocentesis.JPG') }}" 
+            alt="Amniocentesis" 
+            class="mb-procedure-img" 
+        />
+        <div class="mb-procedure-text">
+            <p>Detailed explanation and guidance for conducting the amniocentesis with standard best practices.</p>
+            <ol class="mb-detail-steps">
+                <li>Prepare necessary equipment and verify patient identity.</li>
+                <li>Explain the procedure to the patient and obtain consent.</li>
+                <li>Ensure aseptic or appropriate technique is followed.</li>
+                <li>Perform the amniocentesis step-by-step as per protocol.</li>
+                <li>Monitor patient for any complications or adverse reactions.</li>
+                <li>Document findings or outcomes appropriately.</li>
+            </ol>
+        </div>
+    </div>
+</article>
+
+
+<!-- -------------------------------------------------------------------------------------- -->
+<!-- ========================================END ARTICLES================================== -->
+
+      
+    </section>
+    <p class="mb-procedure-hint">
+        Looking for something specific? Try using the search bar above for quicker access to procedures.
+        </p>
+
+        <button class="mb-show-more" id="showMoreBtn">Show More Procedures</button>
+
+  </main>
+
+
+<!-- ========================================FOOTER===================================== -->
+
+<footer class="mb-footer">
+  <div class="mb-footer-container">
+
+    <div class="mb-footer-section mb-footer-about">
+      <h4>MedBridge</h4>
+      <p>Bridging healthcare with clarity and care. Explore, learn, and apply with confidence.</p>
+    </div>
+
+    <!-- <div class="mb-footer-section mb-footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="/main.html">Home</a></li>
+        <li><a href="/medicalweb/WhoWeAre/who-we-are.html">About</a></li>
+        <li><a href="/medicalweb/LinkingPages/procedures.html">Procedures</a></li>
+        <li><a href="#" id="contact-toggle-btn">Contact</a></li>
+      </ul>
+    </div> -->
+
+    <div class="mb-footer-section mb-footer-procedures">
+      <h4>Common Procedures</h4>
+      <ul>
+        <li>
+          <a href="#lp-details" class="procedure-link">
+            <!-- <img src="/icons/spinal-needle.svg" alt="Lumbar Puncture Icon" class="proc-icon" /> -->
+            Lumbar Puncture
+          </a>
+        </li>
+        <li>
+          <a href="#iv-cannulation-details" class="procedure-link">
+            <!-- <img src="/icons/iv-bag.svg" alt="IV Cannulation Icon" class="proc-icon" /> -->
+            IV Cannulation
+          </a>
+        </li>
+        <li>
+          <a href="#ngt-details" class="procedure-link">
+            <!-- <img src="/icons/ng-tube.svg" alt="NG Tube Icon" class="proc-icon" /> -->
+            NG Tube Insertion
+          </a>
+        </li>
+        <li>
+          <a href="#burns-details" class="procedure-link">
+            <!-- <img src="/icons/burn.svg" alt="Burns Management Icon" class="proc-icon" /> -->
+            Burns Management
+          </a>
+        </li>
+        <li>
+          <a href="#cpr-details" class="procedure-link">
+            <!-- <img src="/icons/cpr.svg" alt="Pediatric CPR Icon" class="proc-icon" /> -->
+            Pediatric CPR
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="mb-footer-section mb-footer-contact">
+      <h4>Contact</h4>
+      <address>
+        <p>Email: <a href="mailto:info@medbridge.org">tekprince82@gmail.com</a></p>
+        <p>Phone: <a href="tel:+265999123456">+265 991 239 870</a></p>
+      </address>
+    </div>
+
+  </div>
+
+  <div class="mb-footer-bottom">
+    <p>&copy; 2025 MedBridge. All rights reserved.</p>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button id="backToTopBtn" aria-label="Back to top" title="Back to top">&#8679;</button>
+</footer>
+
+
+
+  <script src="{{ url_for('static', filename='JAVASCRIPT Files/procedures.js') }}"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,268 @@
+:root {
+  --dark-bg: #0F1516;
+  --white-bg: #ffffff;
+  --gray-light: #C9C2C2;
+  --gray-medium: #7F8C94;
+  --blue-deep: #234C58;
+  --earth-warm: #474747;
+  --gold-accent: #494949;
+  --highlight-color: #188497;
+  --table-border: #7F8C94;
+}
+
+/* ==================== BASE ==================== */
+body.chp-body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--dark-bg);
+  color: var(--gray-light);
+  line-height: 1.8;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+}
+
+/* ================== HEADER ================== */
+.chp-header {
+  background-color: var(--blue-deep);
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.6);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.med-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--gray-light);
+}
+
+.med-logo img {
+  height: 50px;
+  width: auto;
+}
+
+.chp-nav a {
+  margin-left: 1.5rem;
+  text-decoration: none;
+  color: var(--gray-light);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.chp-nav a:hover {
+  color: white;
+}
+
+.chp-nav .chp-active {
+  color: var(--gold-accent);
+  font-weight: bold;
+}
+
+/* ================== MAIN TEXT AREA ================== */
+.chp-main {
+  max-width: 900px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.chp-text-section {
+  text-align: left;
+}
+
+/* ================== HEADINGS ================== */
+.chp-text-section h2 {
+  color: #234C58;
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  position: relative;
+  letter-spacing: 0.5px;
+  background: rgba(124, 124, 124, 0.678);
+  border-radius: 6px;
+  padding: 0.4rem 0.8rem;
+}
+
+.chp-text-section h2::after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 50px;
+  background: #acacac;
+  margin-top: 5px;
+  border-radius: 2px;
+}
+
+.chp-text-section h3, .chp-text-section h4 {
+  color: #ffffff;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  position: relative;
+  letter-spacing: 0.5px;
+  background: rgba(163, 163, 163, 0.445);
+  border-radius: 4px;
+  padding: 0.3rem 0.6rem;
+}
+
+.chp-text-section h3::after, .chp-text-section h4::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 40px;
+  background: #acacac;
+  margin-top: 4px;
+  border-radius: 1px;
+}
+
+/* ================== GLOBAL HEADINGS ================== */
+h1, h2, h3, h4, h5, h6 {
+  background-color: #234C58; /* deep blue background */
+  color: #ffffff; /* white text */
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-weight: bold;
+  margin: 1rem 0;
+}
+
+/* Optional: alternate white background for certain heading levels */
+h3, h5 {
+  background-color: #acacac; /* white background */
+  color: #234C58; /* deep blue text */
+}
+
+/* ================== PARAGRAPHS ================== */
+.chp-text-section p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--gray-light);
+  margin-bottom: 1rem;
+}
+
+/* Strong words highlight */
+.chp-text-section p strong,
+.chp-text-section li strong {
+  color: var(--highlight-color);
+  font-weight: 700;
+  background: rgba(54, 54, 54, 0.18);
+  padding: 0.15rem 0.35rem;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+}
+
+/* Highlight numbers in paragraphs or lists */
+.chp-text-section p span.number,
+.chp-text-section li span.number {
+  background-color: rgba(143, 143, 143, 0.25);
+  padding: 0.1rem 0.3rem;
+  border-radius: 3px;
+  font-weight: 700;
+  color: var(--highlight-color);
+}
+
+/* ================== LISTS ================== */
+ul, ol {
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+/* ================== TABLES ================== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+}
+
+table th, table td {
+  border: 1px solid var(--table-border);
+  padding: 0.6rem 1rem;
+  text-align: left;
+  font-size: 1rem;
+}
+
+table th {
+  background-color: var(--blue-deep);
+  color: var(--white-bg);
+  font-weight: 700;
+}
+
+table tr:nth-child(even) {
+  background-color: #1b1b1b;
+}
+
+table tr:hover {
+  background-color: #2a2a2a;
+}
+
+/* ================== IMAGES ================== */
+.chp-text-section img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1.5rem 0;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* ================== BACK BUTTON ================== */
+.chp-back-btn {
+  display: block;
+  width: max-content;
+  margin: 2rem 0 0 0;
+  padding: 0.6rem 1.2rem;
+  background-color: transparent;
+  border: 1px solid var(--gold-accent);
+  color: var(--gold-accent);
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.chp-back-btn:hover {
+  background-color: var(--gold-accent);
+  color: var(--dark-bg);
+}
+
+/* ================== HIGHLIGHT BLOCKS ================== */
+.chp-highlight {
+  background-color: rgba(191, 161, 75, 0.18);
+  padding: 0.5rem 1rem;
+  border-left: 4px solid var(--gold-accent);
+  margin: 1rem 0;
+  border-radius: 6px;
+}
+
+/* ================== RESPONSIVE ================== */
+@media screen and (max-width: 768px) {
+  .chp-main {
+    padding: 0 1rem;
+    margin: 3rem auto;
+  }
+  .chp-text-section h2 {
+    font-size: 1.8rem;
+  }
+  .chp-text-section h3, .chp-text-section h4 {
+    font-size: 1.4rem;
+  }
+  .chp-text-section p {
+    font-size: 1rem;
+  }
+  .chp-back-btn {
+    padding: 0.5rem 1rem;
+  }
+}

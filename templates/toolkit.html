@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MedBridge Toolkit</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='icons/medbridge-logo.png') }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='icons/medbridge-logo.png') }}">
+
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yourwebsite.com/">
+  <meta property="og:title" content="MedBridge">
+  <meta property="og:description" content="MedBridge - Your trusted medical resource.">
+  <meta property="og:image" content="{{ url_for('static', filename='icons/medbridge-logo.png') }}">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://yourwebsite.com/">
+  <meta property="twitter:title" content="MedBridge">
+  <meta property="twitter:description" content="MedBridge - Your trusted medical resource.">
+  <meta property="twitter:image" content="{{ url_for('static', filename='icons/medbridge-logo.png') }}">
+
+  <!-- WhatsApp / General Share -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yourwebsite.com/">
+  <meta property="og:title" content="MedBridge">
+  <meta property="og:description" content="MedBridge - Your trusted medical resource.">
+  <meta property="og:image" content="{{ url_for('static', filename='icons/medbridge-logo.png') }}">
+  <meta property="og:image:alt" content="MedBridge Logo">
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='CSS Sheets/toolkit.css') }}">
+</head>
+<body class="toolkit-body">
+
+  <button class="toolkit-back-button" onclick="history.back()">&larr; Back to Toolkit</button>
+
+  <h1 id="tool-title" class="toolkit-main-title">Toolkit</h1>
+
+  <!-- =============================BMI================================== -->
+
+  <div id="bmi" class="tool-section bmi-section">
+  <h2 class="tool-section-title">BMI Calculator</h2>
+  <p class="tool-section-desc">
+    Use this tool to calculate your Body Mass Index (BMI), a widely used indicator of body fatness based on height and weight. BMI helps assess whether you're underweight, at a healthy weight, overweight, or obese.
+  </p>
+  <form class="bmi-form">
+    <label class="bmi-label">Height (cm): <input type="number" id="bmi-height" class="bmi-input"></label><br>
+    <label class="bmi-label">Weight (kg): <input type="number" id="bmi-weight" class="bmi-input"></label><br>
+    <button type="button" onclick="calculateBMI()" class="bmi-button">Calculate</button>
+  </form>
+  <p class="bmi-result" id="bmi-result"></p>
+
+  <div class="bmi-info">
+    <h3>Understanding Your BMI</h3>
+    <ul>
+      <li><strong>Severe Thinness:</strong> BMI &lt; 16</li>
+      <li><strong>Moderate Thinness:</strong> BMI 16–17</li>
+      <li><strong>Mild Thinness:</strong> BMI 17–18.5</li>
+      <li><strong>Normal:</strong> BMI 18.5–24.9</li>
+      <li><strong>Overweight:</strong> BMI 25–29.9</li>
+      <li><strong>Obese Class I:</strong> BMI 30–34.9</li>
+      <li><strong>Obese Class II:</strong> BMI 35–39.9</li>
+      <li><strong>Obese Class III:</strong> BMI ≥ 40</li>
+    </ul>
+
+    <p>
+      BMI is calculated using the formula: <em>BMI = weight (kg) ÷ [height (m)]²</em>. For example, someone who weighs 80 kg and is 1.75 m tall would have a BMI of 26.1.
+    </p>
+
+    <h3>Limitations of BMI</h3>
+    <p>
+      While BMI is a useful screening tool, it does not directly measure body fat. It may not accurately reflect health status for athletes, older adults, or those with high muscle mass. Always consult a healthcare provider for a full assessment.
+    </p>
+
+    <h3>Health Risks Associated with High BMI</h3>
+    <ul>
+      <li>High blood pressure</li>
+      <li>Type 2 diabetes</li>
+      <li>Heart disease</li>
+      <li>Sleep apnea</li>
+      <li>Osteoarthritis</li>
+    </ul>
+
+    <h3>Children & Teens</h3>
+    <p>
+      For individuals aged 2–19, BMI is interpreted using age- and sex-specific percentiles. The CDC provides growth charts to assess BMI-for-age. Categories include:
+    </p>
+    <ul>
+      <li><strong>Underweight:</strong> &lt; 5th percentile</li>
+      <li><strong>Healthy weight:</strong> 5th–85th percentile</li>
+      <li><strong>At risk of overweight:</strong> 85th–95th percentile</li>
+      <li><strong>Overweight:</strong> &gt; 95th percentile</li>
+    </ul>
+
+    <p>
+      Learn more from the <a href="https://www.cdc.gov/bmi/adult-calculator/index.html" target="_blank">CDC's Adult BMI Calculator</a> and explore detailed insights on <a href="https://www.calculator.net/bmi-calculator.html" target="_blank">Calculator.net</a>.
+    </p>
+  </div>
+</div>
+
+<!-- --------------------------------------------------------------------------------- -->
+
+  <!-- ========================================DOSAGE-================================== -->
+   <div id="dosage" class="tool-section dosage-section">
+  <h2 class="tool-section-title">Dosage Calculator</h2>
+  <p class="tool-section-desc">
+    Calculate drug dosage based on body weight and prescribed dose per kilogram. This tool supports safe and effective medication planning for adults, children, and specialized treatments.
+  </p>
+  <form class="dosage-form">
+    <label class="dosage-label">Weight (kg): <input type="number" id="dosage-weight" class="dosage-input"></label><br>
+    <label class="dosage-label">Dose (mg/kg): <input type="number" id="dosage-perkg" class="dosage-input"></label><br>
+    <button type="button" onclick="calculateDosage()" class="dosage-button">Calculate</button>
+  </form>
+  <p class="dosage-result" id="dosage-result"></p>
+
+  <div class="dosage-info">
+    <h3>How Dosage Is Calculated</h3>
+    <p>
+      The basic formula is: <em>Total Dose (mg) = Dose per kg × Weight (kg)</em>. For example, a 70 kg patient prescribed 10 mg/kg would receive 700 mg.
+    </p>
+
+    <h3>WHO's Defined Daily Dose (DDD)</h3>
+    <p>
+      The World Health Organization defines the <strong>Defined Daily Dose (DDD)</strong> as the assumed average maintenance dose per day for a drug used for its main indication in adults. DDDs are used for international comparisons and drug utilization research, but they do not necessarily reflect recommended or prescribed doses for individuals.
+    </p>
+    <ul>
+      <li>DDD is assigned per drug and route (e.g., oral, IV).</li>
+      <li>DDD is not available for all drugs, especially topical agents, vaccines, and anesthetics.</li>
+      <li>DDD is not suitable for pediatric dosing, which must be individualized based on age and weight.</li>
+    </ul>
+
+    <h3>Common Dose Frequencies</h3>
+    <table>
+      <tr><th>Frequency</th><th>Meaning</th></tr>
+      <tr><td>qD</td><td>Once daily</td></tr>
+      <tr><td>BID</td><td>Twice daily</td></tr>
+      <tr><td>TID</td><td>Three times daily</td></tr>
+      <tr><td>QID</td><td>Four times daily</td></tr>
+      <tr><td>q6h</td><td>Every 6 hours</td></tr>
+    </table>
+
+    <h3>Liquid Medication Conversion</h3>
+    <p>
+      If the drug is in liquid form, use: <em>Volume (mL) = Total Dose (mg) ÷ Concentration (mg/mL)</em>. For example, 250 mg of a drug with 50 mg/mL concentration requires 5 mL.
+    </p>
+
+    <h3>Routes of Administration</h3>
+    <ul>
+      <li><strong>Oral:</strong> Tablets, capsules, syrups</li>
+      <li><strong>Parenteral:</strong> IV, IM, SC, intraosseous</li>
+      <li><strong>Topical:</strong> Creams, ointments, eye drops</li>
+      <li><strong>Inhalation:</strong> Nebulizers, inhalers</li>
+      <li><strong>Rectal/Vaginal:</strong> Suppositories, gels</li>
+    </ul>
+
+    <h3>Clinical Considerations</h3>
+    <ul>
+      <li>Adjust doses for renal or hepatic impairment.</li>
+      <li>Monitor therapeutic drug levels for narrow therapeutic index drugs.</li>
+      <li>Use pediatric dosing charts for children under 12.</li>
+    </ul>
+
+    <h3>Important Notes</h3>
+    <p>
+      This calculator is a guide and does not replace clinical judgment. Always verify with a licensed healthcare provider, especially for critical medications or vulnerable populations.
+    </p>
+
+    <p>
+      Explore more at the <a href="https://www.who.int/tools/atc-ddd-toolkit/about-ddd" target="_blank">WHO ATC/DDD Toolkit</a>, the <a href="https://www.mdapp.co/dosage-calculator-estimate-daily-dose-597/" target="_blank">MDApp Dosage Estimator</a>, and the <a href="https://www.omnicalculator.com/health/dosage" target="_blank">Omni Dosage Calculator</a>.
+    </p>
+  </div>
+</div>
+
+   <!-- --------------------------------------------------------------------------------- -->
+
+  <!-- =============================IV FLUIDS============================ -->
+   <div id="iv-fluid" class="tool-section ivfluid-section">
+  <h2 class="tool-section-title">IV Fluid Chart</h2>
+  <p class="tool-section-desc">
+    Explore common IV fluid rates, maintenance calculations, and clinical considerations for safe intravenous therapy in adults and children.
+  </p>
+  <ul class="ivfluid-list">
+    <li class="ivfluid-item"><strong>Maintenance Fluid (Pediatrics):</strong> 4-2-1 Rule — 4 ml/kg for first 10 kg, 2 ml/kg for next 10 kg, 1 ml/kg for each kg above 20 kg</li>
+    <li class="ivfluid-item"><strong>Example:</strong> A 25 kg child = 4×10 + 2×10 + 1×5 = <strong>65 ml/hr</strong></li>
+    <li class="ivfluid-item"><strong>Maintenance Fluid (Adults):</strong> Typically 25–30 ml/kg/day of water; Sodium: 50–100 mmol/day; Potassium: 40–80 mmol/day</li>
+    <li class="ivfluid-item"><strong>Common IV Fluids:</strong> Normal Saline (0.9% NaCl), Ringer’s Lactate, Dextrose 5% in Water (D5W), Hartmann’s Solution</li>
+    <li class="ivfluid-item"><strong>Types of IV Fluids:</strong>
+      <ul>
+        <li><strong>Isotonic:</strong> Same osmolality as plasma (e.g., NS, LR)</li>
+        <li><strong>Hypotonic:</strong> Lower osmolality (e.g., 0.45% NaCl)</li>
+        <li><strong>Hypertonic:</strong> Higher osmolality (e.g., D10W, D50W)</li>
+        <li><strong>Colloids:</strong> Albumin, Dextrans, Gelatin — used for volume expansion</li>
+      </ul>
+    </li>
+    <li class="ivfluid-item"><strong>WHO Guidance:</strong> IV fluids should be prescribed only when oral or enteral routes are not feasible. WHO emphasizes accurate fluid balance monitoring to prevent complications from over/underhydration</li>
+    <li class="ivfluid-item"><strong>Pediatric Considerations:</strong> Children retain water more easily; fluid overload risks include cerebral edema and hyponatremia. Use glucose-containing fluids with electrolytes for maintenance</li>
+    <li class="ivfluid-item"><strong>Fluid Resuscitation:</strong> For shock, use 20 ml/kg bolus of isotonic fluid. Repeat as needed while monitoring vitals and urine output</li>
+    <li class="ivfluid-item"><strong>Monitoring:</strong> Weigh patients daily, check serum electrolytes every 24 hours, and document inputs/outputs every 12 hours</li>
+    <li class="ivfluid-item"><strong>Red Flags:</strong> Abnormal sodium levels (&lt;135 or &gt;145 mmol/L), fluid overload signs (edema), or ongoing losses (vomiting, diarrhea) require urgent reassessment</li>
+  </ul>
+  <p class="ivfluid-links">
+    Learn more from the <a href="https://www.who.int/tools/atc-ddd-toolkit/about-ddd" target="_blank">WHO ATC/DDD Toolkit</a>, the <a href="https://nurseslabs.com/iv-fluids/" target="_blank">Nurseslabs IV Fluids Guide</a>, and the <a href="https://www.rch.org.au/clinicalguide/guideline_index/Intravenous_fluids/" target="_blank">RCH Clinical Guidelines</a>.
+  </p>
+</div>
+
+<!-- ----------------------------------------------------------------- -->
+
+  <!-- ============================GCS============================= -->
+   <div id="gcs" class="tool-section gcs-section">
+  <h2 class="tool-section-title">GCS Scale</h2>
+  <p class="tool-section-desc">
+    The Glasgow Coma Scale (GCS) is a globally recognized tool used to assess a patient's level of consciousness following brain injury, trauma, or neurological decline. It is widely used in emergency, ICU, and neurosurgical settings.
+  </p>
+  <ul class="gcs-list">
+    <li class="gcs-item"><strong>Eye Opening (E):</strong>
+      <ul>
+        <li>4 – Spontaneous</li>
+        <li>3 – To speech</li>
+        <li>2 – To pain</li>
+        <li>1 – No response</li>
+      </ul>
+    </li>
+    <li class="gcs-item"><strong>Verbal Response (V):</strong>
+      <ul>
+        <li>5 – Oriented</li>
+        <li>4 – Confused</li>
+        <li>3 – Inappropriate words</li>
+        <li>2 – Incomprehensible sounds</li>
+        <li>1 – No response</li>
+      </ul>
+    </li>
+    <li class="gcs-item"><strong>Motor Response (M):</strong>
+      <ul>
+        <li>6 – Obeys commands</li>
+        <li>5 – Localizes pain</li>
+        <li>4 – Withdraws from pain</li>
+        <li>3 – Flexion to pain (decorticate)</li>
+        <li>2 – Extension to pain (decerebrate)</li>
+        <li>1 – No response</li>
+      </ul>
+    </li>
+    <li class="gcs-item"><strong>Total Score:</strong> E + V + M (Range: 3–15)</li>
+  </ul>
+
+  <div class="gcs-info">
+    <h3>Interpretation</h3>
+    <ul>
+      <li><strong>13–15:</strong> Mild brain injury</li>
+      <li><strong>9–12:</strong> Moderate brain injury</li>
+      <li><strong>≤8:</strong> Severe brain injury (coma)</li>
+    </ul>
+    <p>
+      A GCS score of 7 or less is considered comatose. A score of 3 indicates deep coma or brain death. The scale is used to monitor changes over time and guide clinical decisions.
+    </p>
+
+    <h3>WHO Insights</h3>
+    <p>
+      The World Health Organization recognizes GCS as a key component in trauma assessment protocols. It is used in global injury surveillance systems and integrated into emergency care guidelines for head trauma and stroke. WHO research also compares GCS with APACHE II for ICU mortality prediction, showing GCS as a time-efficient initial assessment tool.
+    </p>
+
+    <h3>Clinical Applications</h3>
+    <ul>
+      <li>Used in trauma scoring systems (e.g., Revised Trauma Score)</li>
+      <li>Guides airway management decisions (GCS ≤8 often requires intubation)</li>
+      <li>Monitors neurological deterioration in stroke, seizures, and intoxication</li>
+      <li>Supports prognosis and triage in emergency and ICU settings</li>
+    </ul>
+
+    <h3>Limitations</h3>
+    <ul>
+      <li>Not reliable in intubated or sedated patients (use GCS-P or FOUR score)</li>
+      <li>May be affected by language barriers, intoxication, or pre-existing conditions</li>
+      <li>Requires consistent training for accurate scoring</li>
+    </ul>
+
+    <p>
+      Learn more from the <a href="https://www.glasgowcomascale.org/who-we-are/" target="_blank">Glasgow Coma Scale Foundation</a>, the <a href="https://my.clevelandclinic.org/health/diagnostics/24848-glasgow-coma-scale-gcs" target="_blank">Cleveland Clinic GCS Guide</a>, and the <a href="https://applications.emro.who.int/imemrf/Bull_Emerg_Trauma/Bull_Emerg_Trauma_2018_6_2_141_145.pdf" target="_blank">WHO Research on GCS vs APACHE II</a>.
+    </p>
+  </div>
+</div>
+
+   <!-- -------------------------------------------------------------- -->
+
+  <!-- ============================DRUG COMPATIBILITY=============================== -->
+   <div id="compatibility" class="tool-section compatibility-section">
+  <h2 class="tool-section-title">Drug Compatibility</h2>
+  <p class="tool-section-desc">
+    A comprehensive guide to intravenous (IV) drug compatibility, interactions, and safe co-administration practices. This tool supports clinical decision-making in emergency, ICU, and pharmacy settings.
+  </p>
+  <ul class="compatibility-list">
+    <li class="compatibility-item"><strong>Critical Warning:</strong> Do not mix calcium-containing solutions (e.g., Ringer’s Lactate) with ceftriaxone due to risk of precipitation and fatal embolism.</li>
+    <li class="compatibility-item"><strong>Always verify compatibility</strong> before IV co-administration using institutional guidelines, compatibility charts, or validated interaction checkers.</li>
+    <li class="compatibility-item"><strong>Use Y-site compatibility references</strong> for simultaneous IV infusions. Incompatible drugs must be spaced or administered via separate lines.</li>
+    <li class="compatibility-item"><strong>WHO Guidance:</strong> WHO emphasizes the importance of drug interchangeability, bioequivalence, and safe co-administration in its global pharmaceutical standards. Compatibility must be assessed during formulation and clinical trials.</li>
+    <li class="compatibility-item"><strong>Types of Drug Interactions:</strong>
+      <ul>
+        <li><strong>Pharmacokinetic:</strong> One drug affects absorption, metabolism, or elimination of another (e.g., enzyme inhibition).</li>
+        <li><strong>Pharmacodynamic:</strong> One drug alters the clinical effect of another (e.g., additive sedation).</li>
+        <li><strong>Physical/Chemical:</strong> Incompatibility in IV lines due to pH, solubility, or precipitation.</li>
+      </ul>
+    </li>
+    <li class="compatibility-item"><strong>Common Incompatibilities:</strong>
+      <ul>
+        <li>Phenytoin + Dextrose → Precipitation</li>
+        <li>Amphotericin B + Saline → Inactivation</li>
+        <li>Diazepam + Most IV fluids → Insoluble</li>
+        <li>Vancomycin + Heparin → Precipitation</li>
+      </ul>
+    </li>
+    <li class="compatibility-item"><strong>Best Practices:</strong>
+      <ul>
+        <li>Flush IV lines between incompatible drugs</li>
+        <li>Use inline filters for high-risk medications</li>
+        <li>Label IV bags clearly with drug name, concentration, and expiration</li>
+        <li>Consult pharmacists for complex regimens</li>
+      </ul>
+    </li>
+    <li class="compatibility-item"><strong>Tools & Resources:</strong>
+      <ul>
+        <li><a href="https://www.drugs.com/drug_interactions.html" target="_blank">Drugs.com Interaction Checker</a></li>
+        <li><a href="https://go.drugbank.com/drug-interaction-checker" target="_blank">DrugBank Online DDI Tool</a></li>
+        <li><a href="https://www.who.int/docs/default-source/medicines/norms-and-standards/guidelines/regulatory-standards/trs1003-annex6-who-multisource-pharmaceutical-products-interchangeability.pdf" target="_blank">WHO Guidelines on Drug Interchangeability</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+   <!-- -------------------------------------------------------------------------- -->
+
+  <!-- ============================MEDICAL ABBREVIATIONS========================= -->
+   <div id="abbreviations" class="tool-section abbreviation-section">
+  <h2 class="tool-section-title">Medical Abbreviations</h2>
+  <p class="tool-section-desc">
+    A comprehensive guide to common medical abbreviations used in clinical documentation, prescriptions, diagnostics, and global health protocols. These abbreviations streamline communication among healthcare professionals and are recognized by institutions like WHO, CDC, and NIH.
+  </p>
+  <ul class="abbreviation-list">
+    <li class="abbreviation-item"><strong>b.i.d:</strong> Twice a day (bis in die)</li>
+    <li class="abbreviation-item"><strong>t.i.d:</strong> Three times a day (ter in die)</li>
+    <li class="abbreviation-item"><strong>q.i.d:</strong> Four times a day (quater in die)</li>
+    <li class="abbreviation-item"><strong>prn:</strong> As needed (pro re nata)</li>
+    <li class="abbreviation-item"><strong>NPO:</strong> Nothing by mouth (nil per os)</li>
+    <li class="abbreviation-item"><strong>PO:</strong> By mouth (per os)</li>
+    <li class="abbreviation-item"><strong>IV:</strong> Intravenous</li>
+    <li class="abbreviation-item"><strong>IM:</strong> Intramuscular</li>
+    <li class="abbreviation-item"><strong>SC:</strong> Subcutaneous</li>
+    <li class="abbreviation-item"><strong>STAT:</strong> Immediately</li>
+    <li class="abbreviation-item"><strong>OD:</strong> Right eye (oculus dexter)</li>
+    <li class="abbreviation-item"><strong>OS:</strong> Left eye (oculus sinister)</li>
+    <li class="abbreviation-item"><strong>OU:</strong> Both eyes (oculus uterque)</li>
+    <li class="abbreviation-item"><strong>WHO:</strong> World Health Organization — a UN agency responsible for international public health</li>
+    <li class="abbreviation-item"><strong>ICU:</strong> Intensive Care Unit</li>
+    <li class="abbreviation-item"><strong>CNS:</strong> Central Nervous System</li>
+    <li class="abbreviation-item"><strong>TSH:</strong> Thyroid-Stimulating Hormone</li>
+    <li class="abbreviation-item"><strong>AMI:</strong> Acute Myocardial Infarction</li>
+    <li class="abbreviation-item"><strong>PE:</strong> Pulmonary Embolism</li>
+    <li class="abbreviation-item"><strong>FSH:</strong> Follicle-Stimulating Hormone</li>
+    <li class="abbreviation-item"><strong>HAPE:</strong> High Altitude Pulmonary Edema</li>
+    <li class="abbreviation-item"><strong>IBS:</strong> Irritable Bowel Syndrome</li>
+    <li class="abbreviation-item"><strong>IDDM:</strong> Insulin-Dependent Diabetes Mellitus</li>
+    <li class="abbreviation-item"><strong>SIDS:</strong> Sudden Infant Death Syndrome</li>
+    <li class="abbreviation-item"><strong>ALL:</strong> Acute Lymphoblastic Leukemia</li>
+    <li class="abbreviation-item"><strong>Rx:</strong> Prescription</li>
+    <li class="abbreviation-item"><strong>Dx:</strong> Diagnosis</li>
+    <li class="abbreviation-item"><strong>Tx:</strong> Treatment</li>
+    <li class="abbreviation-item"><strong>Hx:</strong> History</li>
+    <li class="abbreviation-item"><strong>Px:</strong> Prognosis</li>
+  </ul>
+
+  <div class="abbreviation-info">
+    <h3>Why Abbreviations Matter</h3>
+    <p>
+      Medical abbreviations improve efficiency and reduce documentation time. However, they must be used carefully to avoid misinterpretation, especially in high-risk environments like ICUs and operating rooms.
+    </p>
+
+    <h3>WHO Guidance</h3>
+    <p>
+      The World Health Organization promotes standardized terminology in global health documentation. WHO discourages ambiguous abbreviations in international reporting and recommends clear definitions in pharmaceutical labeling and clinical trials.
+    </p>
+
+    <h3>Best Practices</h3>
+    <ul>
+      <li>Use approved institutional lists</li>
+      <li>Avoid non-standard or ambiguous abbreviations</li>
+      <li>Spell out terms in patient-facing documents</li>
+      <li>Train staff regularly on safe abbreviation use</li>
+    </ul>
+
+    <p>
+      Explore more at the <a href="https://www.medicinenet.com/common_medical_abbreviations_and_terms/article.htm" target="_blank">MedicineNet A–Z Abbreviation Guide</a> and the <a href="https://www.allacronyms.com/WHO/medical" target="_blank">WHO Medical Abbreviation Index</a>.
+    </p>
+  </div>
+</div>
+
+<!-- --------------------------------------------------------------------------- -->
+
+<!-- ===============================VITAL SIGNS============================= -->
+
+<div id="vital-signs" class="tool-section vital-signs-section">
+  <h2 class="tool-section-title">Vital Signs Reference</h2>
+  <p class="tool-section-desc">
+    Vital signs are key indicators of physiological status. WHO and clinical bodies recommend routine monitoring to detect early deterioration. They include temperature, pulse, respiratory rate, blood pressure, oxygen saturation, and pain assessment.
+  </p>
+  <ul>
+    <!-- Heart Rate -->
+    <li><strong>Pulse (Heart Rate):</strong> 
+      <ul>
+        <li>Adults: 60–100 bpm</li>
+        <li>Infants: 100–160 bpm</li>
+        <li>Children (1–10 yrs): 70–120 bpm</li>
+        <li>Bradycardia: &lt; 60 bpm (adults)</li>
+        <li>Tachycardia: &gt; 100 bpm (adults)</li>
+      </ul>
+    </li>
+
+    <!-- Blood Pressure -->
+    <li><strong>Blood Pressure:</strong> 
+      <ul>
+        <li>Normal Adult: 120/80 mmHg</li>
+        <li>Prehypertension: 120–139/80–89 mmHg</li>
+        <li>Hypertension Stage 1: 140–159/90–99 mmHg</li>
+        <li>Hypertension Stage 2: ≥160/≥100 mmHg</li>
+        <li>Hypotension: &lt; 90/60 mmHg</li>
+        <li>Children (1–10 yrs): 90–110/55–75 mmHg</li>
+      </ul>
+    </li>
+
+    <!-- Respiratory Rate -->
+    <li><strong>Respiratory Rate:</strong> 
+      <ul>
+        <li>Adults: 12–20 breaths/min</li>
+        <li>Newborns: 30–60 breaths/min</li>
+        <li>Children (1–5 yrs): 20–30 breaths/min</li>
+        <li>Bradypnea: &lt; 10 breaths/min</li>
+        <li>Tachypnea: &gt; 20 breaths/min (adults)</li>
+      </ul>
+    </li>
+
+    <!-- Temperature -->
+    <li><strong>Temperature:</strong> 
+      <ul>
+        <li>Normal: 36.5–37.5°C (oral)</li>
+        <li>Axillary: 0.3–0.4°C lower than oral</li>
+        <li>Rectal: 0.5–0.7°C higher than oral</li>
+        <li>Fever: &gt; 38°C</li>
+        <li>Hyperpyrexia: &gt; 41°C</li>
+        <li>Hypothermia: &lt; 35°C</li>
+      </ul>
+    </li>
+
+    <!-- Oxygen Saturation -->
+    <li><strong>Oxygen Saturation (SpO₂):</strong> 
+      <ul>
+        <li>Normal: ≥ 95%</li>
+        <li>Mild Hypoxia: 90–94%</li>
+        <li>Moderate: 80–89%</li>
+        <li>Severe: &lt; 80%</li>
+      </ul>
+    </li>
+
+    <!-- Pain -->
+    <li><strong>Pain (Subjective):</strong> 
+      <ul>
+        <li>Scale: 0 (no pain) to 10 (worst pain)</li>
+        <li>WHO recommends integrating pain as the “fifth vital sign”</li>
+        <li>Use visual analog scale (VAS) or numeric rating scale (NRS)</li>
+      </ul>
+    </li>
+
+    <!-- WHO Monitoring Notes -->
+    <li><strong>WHO Guidance:</strong> 
+      <ul>
+        <li>Vital signs should be interpreted in context—age, comorbidities, and baseline status</li>
+        <li>Changes over time are more clinically significant than isolated values</li>
+        <li>Vital signs are essential for triage, early warning scores, and clinical deterioration detection</li>
+      </ul>
+    </li>
+  </ul>
+  <p>
+    <strong>Seek urgent care if:</strong> Pulse is &lt; 50 or &gt; 120 bpm, BP is &lt; 90/60 or &gt; 180/120 mmHg, RR is &lt; 10 or &gt; 30 breaths/min, temperature is &gt; 39°C, or SpO₂ is &lt; 90%.
+  </p>
+</div>
+<!-- ---------------------------------------------------------------------------- -->
+
+<!-- ==========================Electrolyte and Lab Values============================= -->
+ 
+<div id="lab-values" class="tool-section lab-values-section">
+  <h2 class="tool-section-title">Electrolyte and Lab Values</h2>
+  <p class="tool-section-desc">
+    Reference ranges for common lab tests used to assess organ function, hydration, and metabolic status. WHO emphasizes context-based interpretation, especially in resource-limited settings. Values may vary slightly by lab and population.
+  </p>
+  <ul>
+    <!-- Electrolytes -->
+    <li><strong>Sodium (Na):</strong> 135–145 mmol/L</li>
+    <li><strong>Potassium (K):</strong> 3.5–5.0 mmol/L</li>
+    <li><strong>Chloride (Cl):</strong> 98–106 mmol/L</li>
+    <li><strong>Bicarbonate (HCO₃):</strong> 22–28 mmol/L</li>
+    <li><strong>Calcium (Ca):</strong> 2.1–2.6 mmol/L (total); 1.1–1.3 mmol/L (ionized)</li>
+    <li><strong>Magnesium (Mg):</strong> 0.65–1.05 mmol/L</li>
+    <li><strong>Phosphate (PO₄):</strong> 0.97–1.45 mmol/L</li>
+    <li><strong>Osmolality:</strong> 275–295 mOsm/kg</li>
+
+    <!-- Renal Function -->
+    <li><strong>Creatinine:</strong> 0.6–1.2 mg/dL (men); 0.5–1.1 mg/dL (women)</li>
+    <li><strong>Blood Urea Nitrogen (BUN):</strong> 7–20 mg/dL</li>
+    <li><strong>Uric Acid:</strong> 4–8.5 mg/dL (men); 2.7–7.3 mg/dL (women)</li>
+    <li><strong>eGFR:</strong> ≥ 90 mL/min/1.73m² (normal); &lt; 60 indicates CKD</li>
+
+    <!-- Liver Function -->
+    <li><strong>ALT (SGPT):</strong> 7–56 U/L</li>
+    <li><strong>AST (SGOT):</strong> 10–40 U/L</li>
+    <li><strong>Alkaline Phosphatase:</strong> 44–147 U/L</li>
+    <li><strong>Bilirubin (Total):</strong> 0.3–1.2 mg/dL</li>
+    <li><strong>Albumin:</strong> 3.5–5.0 g/dL</li>
+    <li><strong>Ammonia:</strong> 10–80 mcg/dL</li>
+
+    <!-- Glucose & Diabetes -->
+    <li><strong>Fasting Glucose:</strong> 70–110 mg/dL</li>
+    <li><strong>HbA1c:</strong> 4.0–5.6% (normal); &gt;6.5% = diabetes</li>
+    <li><strong>Oral Glucose Tolerance Test (OGTT):</strong> &lt;140 mg/dL at 2 hours</li>
+
+    <!-- Hematology -->
+    <li><strong>Hemoglobin (Hb):</strong> 13.8–17.2 g/dL (men); 12.1–15.1 g/dL (women)</li>
+    <li><strong>Hematocrit (Hct):</strong> 42–50% (men); 37–47% (women)</li>
+    <li><strong>RBC Count:</strong> 4.7–6.1 million/μL (men); 4.2–5.4 million/μL (women)</li>
+    <li><strong>WBC Count:</strong> 4,500–11,000/μL</li>
+    <li><strong>Platelets:</strong> 150,000–400,000/μL</li>
+    <li><strong>ESR:</strong> 0–22 mm/hr (men); 0–29 mm/hr (women)</li>
+    <li><strong>Reticulocyte Count:</strong> 0.5–2.5%</li>
+
+    <!-- Coagulation -->
+    <li><strong>Prothrombin Time (PT):</strong> 11–13.5 seconds</li>
+    <li><strong>INR:</strong> 0.8–1.1 (normal); 2–3 (therapeutic for anticoagulation)</li>
+    <li><strong>Activated Partial Thromboplastin Time (aPTT):</strong> 30–40 seconds</li>
+    <li><strong>Fibrinogen:</strong> 200–400 mg/dL</li>
+    <li><strong>D-Dimer:</strong> &lt; 0.5 μg/mL</li>
+
+    <!-- Lipid Profile -->
+    <li><strong>Total Cholesterol:</strong> &lt; 200 mg/dL</li>
+    <li><strong>LDL:</strong> &lt; 130 mg/dL</li>
+    <li><strong>HDL:</strong> &gt; 40 mg/dL (men); &gt; 50 mg/dL (women)</li>
+    <li><strong>Triglycerides:</strong> &lt; 150 mg/dL</li>
+
+    <!-- Endocrine -->
+    <li><strong>TSH:</strong> 0.4–4.0 mIU/L</li>
+    <li><strong>T3 (Total):</strong> 80–200 ng/dL</li>
+    <li><strong>T4 (Total):</strong> 5–12 μg/dL</li>
+    <li><strong>Free T4:</strong> 0.8–2.8 ng/dL</li>
+
+    <!-- Cardiac-->
+  </ul>
+</div>
+<!-- ---------------------------------------------------------------------- -->
+
+<!-- =============================Drug Dosage Guidelines=============================== -->
+<div id="dosage-guidelines" class="tool-section dosage-guidelines-section">
+  <h2 class="tool-section-title">Drug Dosage Guidelines</h2>
+  <p class="tool-section-desc">
+    This section provides reference tables and guidelines for commonly used medications, including recommended dosages, administration routes, and special considerations for adults and children. Always cross-check with official sources before administration.
+  </p>
+
+  <div class="dosage-guidelines-info">
+    <h3>General Principles</h3>
+    <ul>
+      <li>Dosages are usually weight-based (mg/kg) for pediatrics and standardized for adults.</li>
+      <li>Consider renal and hepatic function before prescribing.</li>
+      <li>Check for contraindications and drug interactions.</li>
+      <li>Adjust doses for special populations (elderly, pregnant, critically ill).</li>
+    </ul>
+
+    <h3>Commonly Used Drugs: Adult Dosage</h3>
+    <table class="dosage-table">
+      <thead>
+        <tr>
+          <th>Drug</th>
+          <th>Route</th>
+          <th>Adult Dose</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Paracetamol</td>
+          <td>Oral/IV</td>
+          <td>500–1000 mg every 6–8 hrs (max 4 g/day)</td>
+          <td>Check liver function, avoid overdose</td>
+        </tr>
+        <tr>
+          <td>Amoxicillin</td>
+          <td>Oral</td>
+          <td>500 mg every 8 hrs</td>
+          <td>Adjust in renal impairment</td>
+        </tr>
+        <tr>
+          <td>Furosemide</td>
+          <td>IV/Oral</td>
+          <td>20–40 mg daily, titrate as needed</td>
+          <td>Monitor electrolytes</td>
+        </tr>
+        <tr>
+          <td>Salbutamol</td>
+          <td>Inhalation</td>
+          <td>100–200 mcg every 4–6 hrs</td>
+          <td>Use with spacer if possible</td>
+        </tr>
+        <tr>
+          <td>Insulin (Rapid-Acting)</td>
+          <td>Subcutaneous</td>
+          <td>0.1–0.2 units/kg per meal</td>
+          <td>Monitor blood glucose closely</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Pediatric Dosage Reference (Weight-Based)</h3>
+    <table class="dosage-table">
+      <thead>
+        <tr>
+          <th>Drug</th>
+          <th>Route</th>
+          <th>Pediatric Dose</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Paracetamol</td>
+          <td>Oral/IV</td>
+          <td>10–15 mg/kg every 6 hrs (max 60 mg/kg/day)</td>
+          <td>Adjust for age under 3 months</td>
+        </tr>
+        <tr>
+          <td>Amoxicillin</td>
+          <td>Oral</td>
+          <td>25–50 mg/kg/day divided every 8 hrs</td>
+          <td>For infections: adjust as per severity</td>
+        </tr>
+        <tr>
+          <td>Ibuprofen</td>
+          <td>Oral</td>
+          <td>5–10 mg/kg every 6–8 hrs (max 40 mg/kg/day)</td>
+          <td>Use caution in dehydration or renal impairment</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Key Safety Tips</h3>
+    <ul>
+      <li>Always double-check dosages before administration.</li>
+      <li>Use weight-based calculations for pediatric patients.</li>
+      <li>Monitor for adverse reactions, especially in high-risk groups.</li>
+      <li>Follow institutional protocols and WHO guidelines when available.</li>
+      <li>Keep a reference chart accessible in clinical areas for rapid guidance.</li>
+    </ul>
+
+    <p>
+      For detailed references, consult <a href="https://www.who.int/publications/i/item/9789241549838" target="_blank">WHO Model Formulary</a> and <a href="https://www.medicinescomplete.com" target="_blank">MedicinesComplete</a>.
+    </p>
+  </div>
+</div>
+<!-- -------------------------------------------------------------------------------- -->
+
+<!-- =============================Fluid Resuscitation Protocols=============================== -->
+<div id="fluid-resuscitation" class="tool-section fluid-resuscitation-section">
+  <h2 class="tool-section-title">Fluid Resuscitation Protocols</h2>
+  <p class="tool-section-desc">
+    This section provides guidelines for fluid resuscitation in critically ill patients, including those with shock, dehydration, or major blood loss. The goal is to restore hemodynamic stability safely and efficiently.
+  </p>
+
+  <div class="fluid-resuscitation-info">
+    <h3>General Principles</h3>
+    <ul>
+      <li>Assess the patient’s volume status, perfusion, and vital signs before resuscitation.</li>
+      <li>Choose fluid type based on patient condition (crystalloids vs colloids).</li>
+      <li>Monitor response frequently and avoid fluid overload.</li>
+      <li>Adjust rates according to comorbidities such as heart or kidney disease.</li>
+    </ul>
+
+    <h3>Initial Fluid Resuscitation</h3>
+    <table class="resuscitation-table">
+      <thead>
+        <tr>
+          <th>Condition</th>
+          <th>Fluid Choice</th>
+          <th>Initial Volume</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Septic Shock (Adult)</td>
+          <td>0.9% Saline or Ringer's Lactate</td>
+          <td>30 mL/kg IV bolus within first 3 hours</td>
+          <td>Monitor MAP ≥ 65 mmHg, urine output, lactate levels</td>
+        </tr>
+        <tr>
+          <td>Hypovolemic Shock (Adult)</td>
+          <td>Crystalloids (Ringer's Lactate or 0.9% Saline)</td>
+          <td>500–1000 mL bolus, repeat as needed</td>
+          <td>Consider blood products if hemorrhagic</td>
+        </tr>
+        <tr>
+          <td>Severe Dehydration (Adult)</td>
+          <td>0.9% Saline</td>
+          <td>1–2 L over 1–2 hours</td>
+          <td>Monitor electrolytes and renal function</td>
+        </tr>
+        <tr>
+          <td>Septic Shock (Pediatric)</td>
+          <td>Ringer's Lactate or 0.9% Saline</td>
+          <td>20 mL/kg IV bolus, repeat up to 60 mL/kg in first hour</td>
+          <td>Monitor perfusion, urine output, and blood pressure</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Maintenance Fluids</h3>
+    <ul>
+      <li>Calculate based on weight, ongoing losses, and clinical status.</li>
+      <li>Typical adult maintenance: 25–30 mL/kg/day of water with appropriate electrolytes.</li>
+      <li>Pediatric formula: 100 mL/kg for first 10 kg, 50 mL/kg for next 10 kg, 20 mL/kg for remaining weight per 24 hours.</li>
+      <li>Monitor daily weight, electrolytes, and fluid balance charts.</li>
+    </ul>
+
+    <h3>Special Considerations</h3>
+    <ul>
+      <li>Cardiac patients: avoid fluid overload; consider slower rates or inotropes.</li>
+      <li>Renal patients: adjust volume and monitor creatinine and urine output closely.</li>
+      <li>Burn patients: use Parkland formula (4 mL/kg/%TBSA of Ringer’s Lactate in first 24 hours).</li>
+      <li>Trauma: follow ATLS guidelines for rapid assessment and balanced resuscitation.</li>
+    </ul>
+
+    <h3>Key Monitoring Parameters</h3>
+    <ul>
+      <li>Mean arterial pressure (MAP) ≥ 65 mmHg</li>
+      <li>Urine output: ≥ 0.5 mL/kg/hr (adults)</li>
+      <li>Heart rate and blood pressure trends</li>
+      <li>Serum lactate levels</li>
+      <li>Electrolytes and hematocrit</li>
+    </ul>
+
+    <p>
+      For further guidance, refer to <a href="https://www.who.int/publications/i/item/9789241506279" target="_blank">WHO Fluid Management Guidelines</a> and <a href="https://www.sccm.org" target="_blank">Society of Critical Care Medicine (SCCM) protocols</a>.
+    </p>
+  </div>
+</div>
+<!-- -------------------------------------------------------------------------------------- -->
+
+<!-- =============================Basic Life Support Steps=============================== -->
+<div id="basic-life-support" class="tool-section bls-section">
+  <h2 class="tool-section-title">Basic Life Support (BLS) Steps</h2>
+  <p class="tool-section-desc">
+    Basic Life Support (BLS) is a critical set of emergency procedures used to maintain circulation and breathing in individuals experiencing cardiac arrest or respiratory failure. Proper BLS can save lives before advanced care arrives.
+  </p>
+
+  <div class="bls-info">
+    <h3>Primary Survey: Assessing the Patient</h3>
+    <ul>
+      <li><strong>Check Responsiveness:</strong> Gently shake the patient and shout to see if they respond.</li>
+      <li><strong>Call for Help:</strong> Activate emergency services immediately.</li>
+      <li><strong>Assess Breathing:</strong> Look, listen, and feel for normal breathing for no more than 10 seconds.</li>
+      <li><strong>Check Pulse:</strong> Assess carotid pulse in adults, brachial pulse in infants.</li>
+    </ul>
+
+    <h3>Chest Compressions (Adults)</h3>
+    <table class="bls-table">
+      <thead>
+        <tr>
+          <th>Step</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Hand Placement</td>
+          <td>Center of the chest, lower half of sternum.</td>
+        </tr>
+        <tr>
+          <td>Compression Depth</td>
+          <td>5–6 cm (2–2.4 inches).</td>
+        </tr>
+        <tr>
+          <td>Compression Rate</td>
+          <td>100–120 compressions per minute.</td>
+        </tr>
+        <tr>
+          <td>Allow Full Recoil</td>
+          <td>Release pressure completely between compressions.</td>
+        </tr>
+        <tr>
+          <td>Compression-to-Ventilation Ratio</td>
+          <td>30:2 for single rescuer, 30:2 for two rescuers (adult).</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Rescue Breaths</h3>
+    <ul>
+      <li>Open airway using head tilt-chin lift (or jaw-thrust for trauma).</li>
+      <li>Give 2 breaths, each lasting ~1 second, watching for chest rise.</li>
+      <li>Ensure minimal interruption to chest compressions.</li>
+    </ul>
+
+    <h3>Special BLS Considerations</h3>
+    <ul>
+      <li><strong>Infants:</strong> Use 2 fingers for compressions, 1/3 chest depth, ratio 30:2 single rescuer, 15:2 two rescuers.</li>
+      <li><strong>Children:</strong> Use one or two hands depending on size, compress 1/3 of chest depth.</li>
+      <li><strong>Automated External Defibrillator (AED):</strong> Attach as soon as available and follow voice prompts.</li>
+      <li><strong>Untrained Rescuers:</strong> Perform hands-only CPR (100–120 compressions/min) until help arrives.</li>
+    </ul>
+
+    <h3>Steps Summary</h3>
+    <ol>
+      <li>Check responsiveness and breathing.</li>
+      <li>Call emergency services.</li>
+      <li>Start chest compressions immediately.</li>
+      <li>Open airway and give rescue breaths.</li>
+      <li>Use AED if available.</li>
+      <li>Continue cycles of 30 compressions and 2 breaths until help arrives or patient recovers.</li>
+    </ol>
+
+    <h3>Important Tips</h3>
+    <ul>
+      <li>Minimize interruptions in compressions.</li>
+      <li>Perform CPR on a firm, flat surface.</li>
+      <li>Rotate rescuers every 2 minutes if possible to prevent fatigue.</li>
+      <li>Ensure personal safety before starting BLS.</li>
+    </ul>
+
+    <p>
+      For further guidance, refer to <a href="https://www.ahajournals.org/doi/10.1161/CIR.0000000000000916" target="_blank">American Heart Association 2025 BLS Guidelines</a> and <a href="https://cpr.heart.org" target="_blank">AHA CPR & ECC Resources</a>.
+    </p>
+  </div>
+</div>
+<!-- ----------------------------------------------------------------------------------- -->
+
+<!-- =============================Wound Care & Dressing Techniques=============================== -->
+<div id="wound-care" class="tool-section wound-section">
+  <h2 class="tool-section-title">Wound Care & Dressing Techniques</h2>
+  <p class="tool-section-desc">
+    Proper wound care is essential to prevent infection, promote healing, and minimize scarring. This section covers assessment, cleaning, dressing selection, and monitoring of wounds in clinical practice.
+  </p>
+
+  <div class="wound-info">
+    <h3>1. Wound Assessment</h3>
+    <ul>
+      <li><strong>Type:</strong> Abrasion, laceration, puncture, burn, surgical.</li>
+      <li><strong>Depth & Size:</strong> Measure length, width, and depth in cm.</li>
+      <li><strong>Exudate:</strong> Note amount, color, and odor.</li>
+      <li><strong>Surrounding Skin:</strong> Check for redness, swelling, warmth, or signs of infection.</li>
+      <li><strong>Patient Factors:</strong> Consider age, comorbidities (diabetes), and medications affecting healing.</li>
+    </ul>
+
+    <h3>2. Cleaning & Preparation</h3>
+    <ol>
+      <li>Wash hands and wear sterile gloves.</li>
+      <li>Remove debris using sterile saline or antiseptic solution.</li>
+      <li>Gently clean from the center outward to avoid contamination.</li>
+      <li>Pat wound dry with sterile gauze.</li>
+      <li>Apply antiseptic or antibiotic ointment if indicated.</li>
+    </ol>
+
+    <h3>3. Dressing Selection</h3>
+    <table class="wound-table">
+      <thead>
+        <tr>
+          <th>Dressing Type</th>
+          <th>Indication</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Gauze</td>
+          <td>Simple abrasions, secondary layer</td>
+          <td>Absorbent, flexible</td>
+        </tr>
+        <tr>
+          <td>Hydrocolloid</td>
+          <td>Partial-thickness wounds, ulcers</td>
+          <td>Maintains moist environment, protects wound</td>
+        </tr>
+        <tr>
+          <td>Foam</td>
+          <td>Moderate to heavily exuding wounds</td>
+          <td>Cushioning, absorbs exudate</td>
+        </tr>
+        <tr>
+          <td>Transparent Film</td>
+          <td>Superficial wounds, IV sites</td>
+          <td>Allows visualization, protects from contamination</td>
+        </tr>
+        <tr>
+          <td>Alginate</td>
+          <td>Heavily exuding wounds</td>
+          <td>Forms gel, promotes healing</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>4. Dressing Application Steps</h3>
+    <ol>
+      <li>Choose appropriate dressing type and size.</li>
+      <li>Place dressing over wound ensuring complete coverage.</li>
+      <li>Secure with tape, bandage, or adhesive as suitable.</li>
+      <li>Ensure no excessive pressure or constriction.</li>
+      <li>Document wound appearance and dressing applied.</li>
+    </ol>
+
+    <h3>5. Monitoring & Dressing Changes</h3>
+    <ul>
+      <li>Inspect wound for infection or delayed healing every 24–48 hours.</li>
+      <li>Change dressings as indicated: when wet, soiled, or per protocol.</li>
+      <li>Educate patient on signs of infection: redness, swelling, pain, pus, fever.</li>
+      <li>Maintain meticulous hygiene and handwashing.</li>
+    </ul>
+
+    <h3>6. Infection Prevention</h3>
+    <ul>
+      <li>Use sterile gloves and equipment during dressing changes.</li>
+      <li>Dispose of used dressings and materials safely.</li>
+      <li>Consider prophylactic antibiotics in high-risk wounds.</li>
+      <li>Maintain moist wound environment; avoid excessive drying.</li>
+    </ul>
+
+    <!-- 7. Suturing Techniques & Suture Materials -->
+<div class="wound-suturing-info">
+  <h3>7. Suturing Techniques</h3>
+  <p>
+    Suturing is used for deeper or larger wounds to promote healing, reduce infection risk, and optimize cosmetic outcomes.
+  </p>
+
+  <h4>Suture Materials</h4>
+  <table class="suturing-table">
+    <thead>
+      <tr>
+        <th>Material</th>
+        <th>Absorbable?</th>
+        <th>Common Use</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Vicryl (Polyglactin 910)</td>
+        <td>Yes</td>
+        <td>Subcutaneous and soft tissue closures</td>
+      </tr>
+      <tr>
+        <td>Chromic Catgut</td>
+        <td>Yes</td>
+        <td>Mucosa, subcutaneous tissue</td>
+      </tr>
+      <tr>
+        <td>Nylon</td>
+        <td>No</td>
+        <td>Skin closures, general wounds</td>
+      </tr>
+      <tr>
+        <td>Silk</td>
+        <td>No</td>
+        <td>Cardiovascular, ligatures</td>
+      </tr>
+      <tr>
+        <td>Prolene (Polypropylene)</td>
+        <td>No</td>
+        <td>Skin, vascular, plastic surgery</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4>Needle Types</h4>
+  <ul>
+    <li>Reverse Cutting: Tough skin, triangular edge for minimal tissue trauma.</li>
+    <li>Regular Cutting: Soft tissue closure.</li>
+    <li>Blunt: Liver, kidney, friable tissue.</li>
+  </ul>
+
+  <h4>Common Suturing Techniques</h4>
+  <ol>
+    <li>Simple Interrupted: Individual stitches, widely used.</li>
+    <li>Continuous (Running): Faster closure, single thread.</li>
+    <li>Mattress (Horizontal & Vertical): Strong wound edge eversion.</li>
+    <li>Subcuticular: Cosmetic closure, minimal scarring.</li>
+    <li>Figure-of-Eight: Hemostasis in small punctures or vascular bleeds.</li>
+  </ol>
+
+  <h4>Steps for Suturing</h4>
+  <ol>
+    <li>Ensure wound is clean and hemostasis achieved.</li>
+    <li>Select appropriate suture material and needle.</li>
+    <li>Anchor first stitch; approximate wound edges without tension.</li>
+    <li>Tie secure knots and trim excess suture.</li>
+    <li>Apply sterile dressing after closure.</li>
+  </ol>
+
+  <h4>Post-Suturing Care</h4>
+  <ul>
+    <li>Keep wound clean and dry for 24–48 hours.</li>
+    <li>Monitor for signs of infection: redness, swelling, pain, pus.</li>
+    <li>Remove non-absorbable sutures in 5–14 days depending on location.</li>
+    <li>Educate patient on activity restrictions and wound hygiene.</li>
+  </ul>
+
+  <p>
+    For more detailed suturing protocols and visual guides, refer to <a href="https://www.ncbi.nlm.nih.gov/books/NBK558947/" target="_blank">NCBI Clinical Suturing Guide</a> and <a href="https://www.woundcarecenters.org/education/suturing-techniques/" target="_blank">Wound Care Center Suturing Resources</a>.
+  </p>
+</div>
+
+    <p>
+      For detailed wound management protocols, refer to <a href="https://www.woundcarecenters.org/protocols" target="_blank">Wound Care Guidelines</a> and <a href="https://www.cdc.gov/infectioncontrol/guidelines/index.html" target="_blank">CDC Infection Control Guidelines</a>.
+    </p>
+  </div>
+</div>
+<!-- --------------------------------------------------------------------------------------- -->
+
+<!-- ----------------------------------------------------------------- -->
+
+
+
+   <script>
+(() => {
+  const toolTitleElement = document.getElementById('tool-title');
+  const allSections = document.querySelectorAll('.tool-section');
+  const allCards = document.querySelectorAll('.toolkit-card.tp-searchable');
+
+  // Show the selected tool section
+  function activateTool(toolId) {
+    if (!toolTitleElement) return;
+
+    // Hide all sections first
+    allSections.forEach(section => {
+      section.classList.remove('active');
+      section.style.display = 'none';
+    });
+
+    if (!toolId) {
+      toolTitleElement.textContent = "No Tool Selected";
+      console.info("No 'tool' parameter provided.");
+      return;
+    }
+
+    const activeSection = document.getElementById(toolId);
+    if (!activeSection) {
+      toolTitleElement.textContent = "Tool Not Found";
+      console.warn(`Tool with id "${toolId}" not found.`);
+      return;
+    }
+
+    // Show and activate the section
+    activeSection.classList.add('active');
+    activeSection.style.display = 'block';
+
+    // Update title
+    const sectionTitle = activeSection.querySelector('h2');
+    toolTitleElement.textContent = sectionTitle?.textContent || "Unnamed Tool";
+
+    // Smooth scroll
+    requestAnimationFrame(() => {
+      activeSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+
+    // Update URL query param without reload
+    const url = new URL(window.location);
+    url.searchParams.set('tool', toolId);
+    window.history.replaceState({}, '', url);
+  }
+
+  // Activate tool from URL on page load
+  function activateToolFromURL() {
+    fetch(`${window.location.origin}/toolkit${window.location.search}`)
+      .then(() => {
+        const toolId = new URLSearchParams(window.location.search).get('tool');
+        activateTool(toolId);
+      })
+      .catch(err => console.error("Error fetching toolkit route:", err));
+  }
+
+  // Add click events for all cards
+  allCards.forEach(card => {
+    card.addEventListener('click', () => {
+      const toolId = card.dataset.tool;
+      // Redirect via Flask route
+      window.location.href = `/toolkit?tool=${toolId}`;
+    });
+  });
+
+  // ===================== BMI Calculator =====================
+  function calculateBMI() {
+    const heightInput = document.getElementById('bmi-height');
+    const weightInput = document.getElementById('bmi-weight');
+    const resultElement = document.getElementById('bmi-result');
+
+    if (!heightInput || !weightInput || !resultElement) return;
+
+    const heightCm = parseFloat(heightInput.value);
+    const weightKg = parseFloat(weightInput.value);
+
+    if (!heightCm || !weightKg || heightCm <= 0 || weightKg <= 0) {
+      resultElement.textContent = 'Please enter valid height and weight.';
+      return;
+    }
+
+    const heightM = heightCm / 100;
+    const bmi = (weightKg / (heightM * heightM)).toFixed(2);
+    resultElement.textContent = `BMI: ${bmi}`;
+  }
+
+  // ===================== Dosage Calculator =====================
+  function calculateDosage() {
+    const weightInput = document.getElementById('dosage-weight');
+    const dosePerKgInput = document.getElementById('dosage-perkg');
+    const resultElement = document.getElementById('dosage-result');
+
+    if (!weightInput || !dosePerKgInput || !resultElement) return;
+
+    const weightKg = parseFloat(weightInput.value);
+    const dosePerKg = parseFloat(dosePerKgInput.value);
+
+    if (!weightKg || !dosePerKg || weightKg <= 0 || dosePerKg <= 0) {
+      resultElement.textContent = 'Please enter valid weight and dose per kg.';
+      return;
+    }
+
+    const totalDose = (weightKg * dosePerKg).toFixed(2);
+    resultElement.textContent = `Total Dose: ${totalDose} mg`;
+  }
+
+  // Expose calculators globally
+  window.calculateBMI = calculateBMI;
+  window.calculateDosage = calculateDosage;
+
+  // Initialize on page load
+  document.addEventListener('DOMContentLoaded', activateToolFromURL);
+})();
+</script>
+
+
+
+
+</body>
+</html>

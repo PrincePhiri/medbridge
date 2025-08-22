@@ -1,0 +1,1740 @@
+
+    :root {
+      --dark-bg: #0F1516;
+      --gray-light: #C9C2C2;
+      --gray-medium: #7F8C94;
+      --blue-deep: #234C58;
+      --earth-warm: #5E524B;
+      --card-bg: #1b2324;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--dark-bg);
+      color: var(--gray-light);
+      line-height: 1.6;
+    }
+header.med-header {
+  background-color: var(--blue-deep);
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.med-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* space between logo and text */
+}
+
+.med-logo img {
+  height: 50px; /* adjust size */
+  width: auto;
+}
+
+.med-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.med-nav a {
+  text-decoration: none;
+  color: #085e74;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.med-nav a:hover {
+  color: white;
+}
+
+/* Logout button now part of nav */
+.med-logout-btn {
+  background-color: #919191;
+  color: #085e74;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.med-logout-btn:hover {
+  background-color: #085e74;
+  color: #919191;
+}
+
+
+    .hero {
+  background-image: url("/static/medicinePhotos/heroBg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 100px 20px;
+  color: white;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.589); /* Dark overlay for text readability */
+  z-index: -1;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ===================SEARCH BAR==================== */
+.hero {
+  text-align: center;
+  padding: 4rem 1rem;
+  color: #fff;
+}
+
+.tp-search-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1a1f20be;
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  max-width: 500px;
+  margin: 2rem auto 0;
+  box-shadow: 0 0 0.5rem rgba(0,0,0,0.3);
+}
+
+.tp-search-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 0.8rem;
+  filter: brightness(0) invert(1);
+}
+
+.tp-search-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+
+/* ============================================================CARDS */
+.card-tittle{
+    color: #b1b1b1;
+    font-size: 1.5rem;
+}
+
+.cards-slider {
+  position: relative;
+  overflow: hidden;
+  padding: 2rem 0;
+  max-width: 100%;
+}
+
+.cards-carousel {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 0 2.5rem;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.cards-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.update-card {
+  flex: 0 0 260px;
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  scroll-snap-align: start;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  cursor: grab;
+  transition: transform 0.3s ease;
+}
+
+.update-card:active {
+  cursor: grabbing;
+}
+
+.update-card:hover {
+  transform: translateY(-5px);
+}
+
+.card-overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.902), transparent);
+  color: #fff;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.arrow {
+  width: 38px;
+  height: 38px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  cursor: pointer;
+  background-color: rgba(0,0,0,0.4);
+  border-radius: 50%;
+  padding: 6px;
+  transition: opacity 0.3s;
+}
+
+.arrow.left {
+  left: 0;
+}
+
+.arrow.right {
+  right: 0;
+}
+
+/* ======================================CARDS INFO============================== */
+.card-info-container {
+  display: none;
+  max-width: 700px;
+  margin: 30px auto;
+  padding: 25px;
+  border-radius: 12px;
+  background-color: #1b2324;
+  color: #C9C2C2;
+  box-sizing: border-box;
+}
+
+.card-info-container img {
+  max-width: 250px;
+  width: 100%;
+  display: block;
+  margin: 0 auto 20px auto;
+  border-radius: 8px;
+  border: 1px solid #7F8C94;
+}
+
+.card-info-container h2 {
+  color: #234C58;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.card-info-container p {
+  line-height: 1.6;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.card-info-container .close-btn {
+  display: block;
+  margin: 15px auto 0 auto;
+  background-color: transparent;
+  border: 1px solid #234C58;
+  color: #234C58;
+  padding: 8px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.card-info-container .close-btn:hover {
+  background-color: #234C58;
+  color: #0F1516;
+}
+
+/* --------------------------------------------------------------------------- */
+/* ===========================SEARCH=========================== */
+.tp-search-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+.tp-search-suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #2a2f30;
+  border: 1px solid #ccc;
+  max-height: 250px;
+  overflow-y: auto;
+  z-index: 1000;
+  list-style: none;
+  margin: 4px 0 0 0;
+  padding: 0;
+  display: none;
+}
+
+.tp-search-suggestions li {
+  padding: 8px 12px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+}
+
+.tp-search-suggestions li:hover {
+  background-color: #f0f0f0;
+}
+
+/* ------------------------------------------------------------ */
+
+/*===============================MAIN SECTION============================ */
+    main.med-main {
+      padding: 3rem 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    section.med-section {
+      background-color: #1a1f20;
+      padding: 2rem;
+      border-radius: 10px;
+      border-left: 5px solid var(--earth-warm);
+    }
+
+    section.med-section h2 {
+      color: var(--gray-light);
+      font-size: 1.5rem;
+      border-bottom: 1px solid var(--gray-medium);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    ul.med-resources {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul.med-resources li {
+      margin-bottom: 1rem;
+      background-color: #2a2f30;
+      padding: 1rem;
+      border-radius: 8px;
+    }
+
+    ul.med-resources li a {
+      color: var(--gray-light);
+      text-decoration: none;
+    }
+
+    ul.med-resources li a:hover {
+      text-decoration: underline;
+    }
+/* --------------------------------------------------------------------- */
+
+
+/* ====================================RESOURCE CONTENT================================== */
+/* Resource Modal Overlay */
+.resource-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(15, 21, 22, 0.85);
+  justify-content: center;
+  align-items: center;
+  z-index: 1100;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.resource-modal.show {
+  display: flex;
+  opacity: 1;
+}
+
+/* Modal Content */
+.resource-modal__content {
+  background-color: #1b2324;
+  border: 1px solid #234C58;
+  border-radius: 10px;
+  padding: 25px 30px;
+  max-width: 900px;   /* wider for PDFs */
+  width: 100%;
+  color: white;
+  position: relative;
+  box-shadow: 0 0 20px rgba(0,0,0,0.6);
+  font-family: 'Montserrat', sans-serif;
+  max-height: 90vh;   /* taller so PDF fits */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Scrollable body inside modal */
+#resource-modal-body {
+  flex: 1;
+  overflow-y: auto;
+  margin-top: 10px;
+  padding-right: 8px; /* space for scrollbar */
+}
+
+/* Make embeds responsive */
+#resource-modal-body embed {
+  width: 100%;
+  height: 75vh;  /* fills most of modal */
+  border: none;
+  border-radius: 6px;
+}
+
+/* Close Button */
+.resource-modal__close {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #ffffff;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.resource-modal__close:hover,
+.resource-modal__close:focus {
+  color: #ccc;
+  outline: none;
+}
+
+/* Hidden content containers */
+.resource-content.hidden {
+  display: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .resource-modal__content {
+    max-width: 95%;
+    padding: 20px;
+  }
+
+  #resource-modal-body embed {
+    height: 60vh;
+  }
+}
+
+/* -------------------------------------------------------------------------------------- */
+
+
+/* ===================== SECTION SEARCH BAR ON RESOURCES===================== */
+.section-search {
+  width: 100%;
+  max-width: 500px;
+  display: block;
+  margin: 0 auto 20px;
+  padding: 12px 16px;
+  background: #111111;
+  border: 1px solid #2c5c68;
+  border-radius: 10px;
+  color: #f5f5f5;
+  font-size: 15px;
+  font-family: 'Montserrat', sans-serif;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.section-search::placeholder {
+  color: #aaa;
+  font-style: italic;
+}
+
+.section-search:focus {
+  outline: none;
+  border: 1px solid #0078bd;
+  box-shadow: 0 0 10px rgba(1, 92, 197, 0.4);
+}
+
+
+/* -------------------------------------------------------------------------------------- */
+
+/* ===============================PROCEDURES SECTION========================== */
+#procedures {
+  grid-column: 1 / -1;
+  margin-top: 3rem;
+  text-align: left;
+}
+
+#procedures h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+  border-left: 5px solid var(--earth-warm);
+  padding-left: 1rem;
+}
+
+.med-procedures-intro {
+  font-size: 0.95rem;
+  color: #bbb;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+  /* max-width: 600px; */
+}
+
+.med-procedures-button {
+  display: inline-block;
+  margin-left: 1rem;
+  background-color: #2a2f30;
+  color: #ffffff;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.med-procedures-button:hover {
+  background-color: #222222;
+}
+
+
+
+/* =============================== UPDATES SECTION ========================== */
+.med-latest-section {
+  grid-column: 1 / -1;
+  margin-top: 3rem;
+}
+
+.med-latest-section h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  color: #fff;
+  border-left: 4px solid var(--earth-warm);
+  padding-left: 1rem;
+  font-weight: 600;
+}
+
+.med-updates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* =========================================================================== */
+/* ============================ MEDICAL UPDATE CARDS ========================= */
+.med-update-card {
+  display: flex;
+  gap: 1.25rem;
+  background-color: #1f232a; /* modern dark tone */
+  border-radius: 16px;
+  padding: 1.25rem 1.2rem;
+  border: 1px solid #2c3038; /* subtle border */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  opacity: 1;
+  transform: translateY(0);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+  overflow: hidden;
+  max-height: 500px;
+  cursor: default;
+}
+
+/* First 3 cards animation delays */
+.med-update-card:nth-child(1) { animation-delay: 0.1s; }
+.med-update-card:nth-child(2) { animation-delay: 0.2s; }
+.med-update-card:nth-child(3) { animation-delay: 0.3s; }
+
+/* Hover effect - subtle lift with refined shadow */
+.med-update-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* Hide extra cards beyond first 3 */
+.med-update-card.hidden {
+  opacity: 0;
+  transform: translateY(20px);
+  max-height: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* Show cards on search */
+.med-update-card.show {
+  opacity: 1;
+  transform: translateY(0);
+  max-height: 500px;
+  margin: 1rem 0 0 0;
+  padding: 1.25rem 1.2rem;
+  border: 1px solid #2c3038;
+}
+
+/* ============================ ICON & INFO STYLES =========================== */
+.med-update-icon {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #2c3342;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease;
+}
+
+.med-update-icon img {
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  background-color: #2a2f3d;
+  border-radius: 10px;
+  transition: transform 0.25s ease;
+}
+
+.med-update-icon img:hover {
+  transform: scale(1.05);
+}
+
+/* Info text */
+.med-update-info h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+  color: #e0e0e0;
+  font-weight: 600;
+}
+
+.med-update-date {
+  font-size: 0.8rem;
+  color: #a0a0a0;
+  margin-bottom: 0.5rem;
+}
+
+.med-update-info p {
+  font-size: 0.9rem;
+  color: #c0c0c0;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Header and download icon */
+.med-update-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.med-download-icon img {
+  width: 22px;
+  height: 22px;
+  filter: brightness(0.95);
+  transition: transform 0.2s ease;
+}
+
+.med-download-icon img:hover {
+  transform: scale(1.1);
+  filter: brightness(1.1);
+}
+
+
+/* ============================ VIEW ALL UPDATES BUTTON ============================ */
+.med-toggle-btn {
+  display: inline-block;           
+  margin: 2rem 0 0 0;             /* top spacing */
+  padding: 10px 26px;             
+  background-color: #333333;      
+  color: #ddd;
+  font-size: 1rem;
+  font-weight: 500;
+  border: 1px solid #333d4d;
+  border-radius: 6px;            
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  text-align: center;
+  min-width: 200px;               
+}
+
+.med-toggle-btn:hover {
+  background-color: #414141;
+  /* transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25); */
+}
+
+.med-toggle-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.med-toggle-btn:focus {
+  outline: none;
+}
+
+
+
+/* ============================QUICK ACCESS AND POPULAR TOPICS========================== */
+.med-toolkit-section {
+  grid-column: 1 / -1;
+  margin-top: 3rem;
+  margin-bottom: 18px;
+}
+
+.med-toolkit-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #fff;
+  border-left: 5px solid var(--earth-warm);
+  padding-left: 1rem;
+}
+
+.med-toolkit-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.toolkit-card {
+  background-color: #2a2f30;
+  color: var(--gray-light);
+  padding: 1.2rem;
+  text-align: center;
+  border-radius: 8px;
+  font-weight: 500;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.toolkit-card:hover {
+  transform: translateY(-3px);
+  background-color: #1f2526;
+}
+/* ------------------------------------------------------------------------------------- */
+
+/* =======================================HEALTH TIPS========================================= */
+
+.health-tips-section {
+  background: var(--dark-bg);
+  color: var(--gray-light);
+  padding: 60px 20px;
+}
+
+.health-tips-header h2 {
+  color: var(--blue-deep);
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.health-tips-header p {
+  text-align: center;
+  color: var(--gray-medium);
+  font-size: 1rem;
+  margin-bottom: 40px;
+}
+
+.health-tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tip-card {
+  background: var(--card-bg);
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: default;
+}
+
+.tip-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.35); /* subtle shadow, no glow */
+}
+
+.tip-icon {
+  width: 60px;
+  margin-bottom: 15px;
+}
+
+.tip-card h3 {
+  color: var(--gray-light);
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.tip-card p {
+  color: var(--gray-medium);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.healthtipshead{
+  background-color: #a8a8a8;
+}
+
+/* --------------------------------------------------------------------------------------- */
+
+/* ===================================== CONTACT US FORM IN FOOTER ================================== */
+/* ============================ CONTACT MODAL ============================ */
+.contact-modal {
+  display: none; /* hidden by default */
+  position: fixed;
+  inset: 0; /* top, right, bottom, left = 0 */
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.contact-modal__content {
+  background-color: #0b0c17; /* dark card */
+  color: #f5f5f5;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 12px;
+  padding: 2rem;
+  position: relative;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Close Button */
+.contact-modal__close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.6rem;
+  cursor: pointer;
+  color: #f5f5f5;
+  transition: color 0.2s;
+}
+.contact-modal__close-btn:hover {
+  color: #016c8d; /* gold highlight */
+}
+
+/* Title */
+.contact-modal__title {
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Form Fields */
+.contact-modal__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-modal__field {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-modal__label {
+  margin-bottom: 0.4rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.contact-modal__input,
+.contact-modal__textarea,
+.contact-modal__select {
+  padding: 0.6rem 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background-color: #1a1b27;
+  color: #f5f5f5;
+  font-size: 0.95rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.contact-modal__input:focus,
+.contact-modal__textarea:focus,
+.contact-modal__select:focus {
+  outline: none;
+  border-color: #000000;
+  box-shadow: 0 0 5px #000000;
+}
+
+.contact-modal__textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Submit Button */
+.contact-modal__submit {
+  background-color: #085e74;
+  color: #0b0c17;
+  border: none;
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.contact-modal__submit:hover {
+  background-color: #007c85;
+}
+
+/* Feedback Message */
+.contact-modal__feedback {
+  margin-top: 0.8rem;
+  font-size: 0.9rem;
+  text-align: center;
+  min-height: 1.2rem;
+}
+.contact-modal__feedback.success {
+  color: #4caf50;
+}
+.contact-modal__feedback.error {
+  color: #f44336;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .contact-modal__content {
+    padding: 1.5rem;
+  }
+  .contact-modal__title {
+    font-size: 1.4rem;
+  }
+}
+
+/* -------------------------------------------------------------------------------------- */
+
+/* ==============================FOOTER=============================== */
+.med-footer {
+  background-color: var(--blue-deep);
+  padding: 3rem 2rem 2rem;
+  color: var(--gray-light);
+  font-size: 0.95rem;
+  border-top: 2px solid var(--earth-warm);
+}
+
+.med-footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.med-footer-branding {
+  max-width: 350px;
+}
+
+.med-footer-logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.med-logo img,
+.med-footer-logo img {
+  height: 70px;
+  width: auto;
+}
+
+
+.med-footer-tagline {
+  font-size: 0.95rem;
+  color: var(--gray-medium);
+}
+
+.med-footer-links {
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.med-footer-column h3 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.med-footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.med-footer-column ul li {
+  margin-bottom: 0.5rem;
+}
+
+.med-footer-column ul li a {
+  color: var(--gray-light);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.med-footer-column ul li a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.med-footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1rem;
+  color: var(--gray-medium);
+}
+
+@media (max-width: 768px) {
+  .med-footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .med-footer-links {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* ===================================================================================================== */
+/* ===================================================================================================== */
+/* ================================ALL MEDIA QUERIES ON THIS SHEET====================================== */
+/* ===================================================================================================== */
+/* ===================================================================================================== */
+
+/* ===================== MEDIA QUERIES ===================== */
+
+/* Medium devices (up to 720px) */
+@media (max-width: 720px) {
+  body {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* header.med-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  } */
+
+  .med-logo {
+    font-size: 1.5rem;
+  }
+
+  .med-logo img {
+    height: 40px;
+  }
+
+  /* .med-nav {
+    margin-top: 0.5rem;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  } */
+
+  /* .med-nav a {
+    margin-left: 0;
+    font-size: 14px;
+  } */
+
+  .hero {
+    padding: 60px 15px;
+    background-position: center top;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .tp-search-wrapper {
+    max-width: 90%;
+    padding: 0.5rem 0.8rem;
+  }
+
+  .tp-search-input {
+    font-size: 0.9rem;
+  }
+
+  main.med-main {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+
+  section.med-section {
+    padding: 1rem;
+    border-left-width: 4px;
+  }
+
+  section.med-section h2 {
+    font-size: 1.3rem;
+  }
+
+  ul.med-resources li {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  /* Cards */
+  .cards-carousel {
+    padding: 0 1rem;
+  }
+
+  .update-card {
+    flex: 0 0 200px;
+    height: 150px;
+  }
+
+  .card-overlay {
+    padding: 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  .card-info-container {
+    max-width: 90%;
+    padding: 15px;
+  }
+
+  .card-info-container img {
+    max-width: 180px;
+    margin-bottom: 15px;
+  }
+
+  .card-info-container h2 {
+    font-size: 1.2rem;
+  }
+
+  .card-info-container p {
+    font-size: 0.9rem;
+  }
+
+  /* Resource modal */
+  .resource-modal__content {
+    max-width: 95%;
+    padding: 15px 20px;
+  }
+
+  #resource-modal-body embed {
+    height: 50vh;
+  }
+}
+
+/* Small devices (below 480px) */
+@media (max-width: 480px) {
+  .hero {
+    padding: 40px 10px;
+  }
+
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero p {
+    font-size: 0.9rem;
+  }
+}
+
+/* ==================== MODAL RESPONSIVE ==================== */
+
+/* Tablets / medium screens */
+@media (max-width: 992px) {
+  .resource-modal__content {
+    max-width: 85%;
+    padding: 20px 25px;
+  }
+
+  #resource-modal-body {
+    margin-top: 8px;
+    padding-right: 6px;
+  }
+
+  #resource-modal-body embed {
+    height: 55vh; /* reduce height for tablets */
+  }
+
+  .resource-modal__close {
+    font-size: 24px;
+    top: 10px;
+    right: 14px;
+  }
+}
+
+/* Mobiles / small screens */
+@media (max-width: 576px) {
+  .resource-modal__content {
+    max-width: 70%;
+    padding: 15px 18px;
+    border-radius: 6px;
+  }
+
+  #resource-modal-body {
+    margin-top: 6px;
+    padding-right: 4px;
+  }
+
+  #resource-modal-body embed {
+    height: 45vh; /* smaller for mobile screens */
+  }
+
+  .resource-modal__close {
+    font-size: 20px;
+    top: 8px;
+    right: 10px;
+  }
+}
+
+
+/* ===================== MEDIA QUERIES FOR CARDS (ONLY TITLES SHOWN) ===================== */
+
+/* Tablets (768px - 1199px) */
+@media (max-width: 1199px) {
+  .update-card {
+    flex: 0 0 200px;
+    height: 150px;
+  }
+
+  .card-overlay {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .card-overlay p {
+    display: none; /* hide descriptions */
+  }
+}
+
+/* Small Tablets / Large Phones (480px - 767px) */
+@media (max-width: 767px) {
+  .update-card {
+    flex: 0 0 160px;
+    height: 120px;
+  }
+
+  .card-overlay {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .card-overlay p {
+    display: none; /* hide descriptions */
+  }
+
+  .card-tittle {
+    font-size: 1.1rem;
+  }
+}
+
+/* Small Phones (below 480px) */
+@media (max-width: 479px) {
+  .update-card {
+    flex: 0 0 130px;
+    height: 100px;
+  }
+
+  .card-overlay {
+    justify-content: center;
+    text-align: center;
+    padding: 0.5rem;
+  }
+
+  .card-overlay p {
+    display: none; /* hide descriptions */
+  }
+
+  .card-tittle {
+    font-size: 1rem;
+  }
+}
+
+
+/* ====================== MEDIA QUERIES FOR SECTION SEARCH & UPDATES ====================== */
+@media (max-width: 720px) {
+
+  /* Section search */
+  .section-search {
+    max-width: 90%;
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+
+  /* Procedures section */
+  #procedures {
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  #procedures h2 {
+    font-size: 1.3rem;
+    padding-left: 0.5rem;
+    border-left-width: 4px;
+  }
+
+  .med-procedures-intro {
+    font-size: 0.85rem;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .med-procedures-button {
+    margin-left: 0;
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+  }
+
+  /* Updates section */
+  .med-latest-section h2 {
+    font-size: 1.4rem;
+    padding-left: 0.5rem;
+    border-left-width: 4px;
+  }
+
+  .med-updates-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  /* Update cards */
+  .med-update-card {
+    flex-direction: column;
+    padding: 1rem;
+    max-height: none;
+    overflow: visible;
+  }
+
+  .med-update-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 0.5rem;
+  }
+
+  .med-update-icon img {
+    width: 24px;
+    height: 24px;
+    padding: 4px;
+  }
+
+  .med-update-info h3 {
+    font-size: 1rem;
+  }
+
+  .med-update-date {
+    font-size: 0.75rem;
+  }
+
+  .med-update-info p {
+    font-size: 0.85rem;
+  }
+
+  .med-update-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .med-download-icon img {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Very small screens under 480px */
+@media (max-width: 480px) {
+  .section-search {
+    font-size: 13px;
+    padding: 8px 10px;
+  }
+
+  #procedures h2,
+  .med-latest-section h2 {
+    font-size: 1.2rem;
+  }
+
+  .med-update-info h3 {
+    font-size: 0.95rem;
+  }
+
+  .med-update-info p {
+    font-size: 0.8rem;
+  }
+
+  .med-update-date {
+    font-size: 0.7rem;
+  }
+
+  .med-procedures-button {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+/* ================================================================================ */
+
+/* ====================== MEDIA QUERIES FOR BUTTONS, TOOLKIT, HEALTH TIPS, CONTACT MODAL ====================== */
+@media (max-width: 720px) {
+
+  /* View all updates button */
+  .med-toggle-btn {
+    font-size: 0.9rem;
+    padding: 8px 20px;
+    min-width: 150px;
+  }
+
+  /* Toolkit section */
+  .med-toolkit-section h2 {
+    font-size: 1.3rem;
+    padding-left: 0.5rem;
+    border-left-width: 4px;
+  }
+
+  .med-toolkit-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .toolkit-card {
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+
+  /* Health tips section */
+  .health-tips-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .health-tips-header p {
+    font-size: 0.9rem;
+  }
+
+  .health-tips-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .tip-card {
+    padding: 20px;
+  }
+
+  .tip-icon {
+    width: 50px;
+    margin-bottom: 10px;
+  }
+
+  .tip-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .tip-card p {
+    font-size: 0.85rem;
+  }
+
+  /* Contact modal */
+  .contact-modal__content {
+    max-width: 95%;
+    padding: 20px;
+  }
+
+  .contact-modal__title {
+    font-size: 18px;
+  }
+
+  .contact-modal__input,
+  .contact-modal__select,
+  .contact-modal__textarea {
+    font-size: 13px;
+    padding: 8px 10px;
+  }
+
+  .contact-modal__submit {
+    font-size: 14px;
+    padding: 10px 0;
+  }
+}
+
+/* Very small screens under 480px */
+@media (max-width: 480px) {
+
+  .med-toggle-btn {
+    font-size: 0.85rem;
+    padding: 6px 16px;
+    min-width: 130px;
+  }
+
+  .med-toolkit-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .toolkit-card {
+    padding: 0.9rem;
+    font-size: 0.85rem;
+  }
+
+  .health-tips-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .health-tips-header p {
+    font-size: 0.85rem;
+  }
+
+  .tip-card {
+    padding: 18px;
+  }
+
+  .tip-icon {
+    width: 45px;
+    margin-bottom: 8px;
+  }
+
+  .tip-card h3 {
+    font-size: 1rem;
+  }
+
+  .tip-card p {
+    font-size: 0.8rem;
+  }
+
+  .contact-modal__title {
+    font-size: 16px;
+  }
+
+  .contact-modal__input,
+  .contact-modal__select,
+  .contact-modal__textarea {
+    font-size: 12px;
+    padding: 7px 9px;
+  }
+
+  .contact-modal__submit {
+    font-size: 13px;
+    padding: 9px 0;
+  }
+}
+/* ================================================================================ */
+
+/* ====================== MEDIA QUERIES FOR FOOTER ====================== */
+@media (max-width: 720px) {
+
+  .med-footer {
+    padding: 2rem 1rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .med-footer-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .med-footer-branding {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .med-footer-logo {
+    font-size: 1.5rem;
+  }
+
+  .med-logo img,
+  .med-footer-logo img {
+    height: 50px;
+  }
+
+  .med-footer-tagline {
+    font-size: 0.85rem;
+  }
+
+  .med-footer-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .med-footer-column h3 {
+    font-size: 1rem;
+  }
+
+  .med-footer-column ul li a {
+    font-size: 0.85rem;
+  }
+
+  .med-footer-bottom {
+    font-size: 0.8rem;
+    margin-top: 1.5rem;
+    padding-top: 0.8rem;
+  }
+}
+
+/* Very small screens under 480px */
+@media (max-width: 480px) {
+
+  .med-footer {
+    padding: 1.5rem 0.8rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .med-footer-logo {
+    font-size: 1.3rem;
+  }
+
+  .med-logo img,
+  .med-footer-logo img {
+    height: 45px;
+  }
+
+  .med-footer-tagline {
+    font-size: 0.8rem;
+  }
+
+  .med-footer-column h3 {
+    font-size: 0.95rem;
+  }
+
+  .med-footer-column ul li a {
+    font-size: 0.8rem;
+  }
+
+  .med-footer-bottom {
+    font-size: 0.75rem;
+    margin-top: 1rem;
+    padding-top: 0.6rem;
+  }
+}
+/* ====================================================================== */
+
+/* ============================ CONTACT MODAL RESPONSIVE MEDIA QUERIES ============================ */
+
+/* Extra small devices (phones, <480px) */
+@media (max-width: 479px) {
+  .contact-modal__content {
+    width: 90%;
+    padding: 1.2rem;
+    border-radius: 10px;
+  }
+  .contact-modal__title {
+    font-size: 1.3rem;
+  }
+  .contact-modal__input,
+  .contact-modal__textarea,
+  .contact-modal__select {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.6rem;
+  }
+  .contact-modal__submit {
+    padding: 0.7rem 0.9rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Small devices (phones in landscape, 480px–767px) */
+@media (min-width: 480px) and (max-width: 767px) {
+  .contact-modal__content {
+    width: 85%;
+    padding: 1.5rem;
+    border-radius: 12px;
+  }
+  .contact-modal__title {
+    font-size: 1.4rem;
+  }
+  .contact-modal__input,
+  .contact-modal__textarea,
+  .contact-modal__select {
+    font-size: 0.95rem;
+    padding: 0.55rem 0.7rem;
+  }
+  .contact-modal__submit {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+  }
+}
+
+/* Medium devices (tablets, 768px–991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .contact-modal__content {
+    width: 70%;
+    padding: 1.8rem;
+    border-radius: 12px;
+  }
+  .contact-modal__title {
+    font-size: 1.5rem;
+  }
+  .contact-modal__input,
+  .contact-modal__textarea,
+  .contact-modal__select {
+    font-size: 1rem;
+    padding: 0.6rem 0.8rem;
+  }
+  .contact-modal__submit {
+    padding: 0.8rem 1.1rem;
+    font-size: 1.05rem;
+  }
+}
+
+/* Large devices (desktops, 992px–1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .contact-modal__content {
+    width: 55%;
+    padding: 2rem;
+    border-radius: 14px;
+  }
+  .contact-modal__title {
+    font-size: 1.6rem;
+  }
+  .contact-modal__input,
+  .contact-modal__textarea,
+  .contact-modal__select {
+    font-size: 1rem;
+    padding: 0.65rem 0.85rem;
+  }
+  .contact-modal__submit {
+    padding: 0.85rem 1.2rem;
+    font-size: 1.1rem;
+  }
+}
+
+/* E*

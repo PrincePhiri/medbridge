@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en" class="updates-root">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MedBridge Updates</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='icons/medbridge-logo.png') }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='icons/medbridge-logo.png') }}">
+
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yourwebsite.com/">
+  <meta property="og:title" content="MedBridge">
+  <meta property="og:description" content="MedBridge - Your trusted medical resource.">
+  <meta property="og:image" content="{{ url_for('static', filename='icons/medbridge-logo.png') }}">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://yourwebsite.com/">
+  <meta property="twitter:title" content="MedBridge">
+  <meta property="twitter:description" content="MedBridge - Your trusted medical resource.">
+  <meta property="twitter:image" content="{{ url_for('static', filename='icons/medbridge-logo.png') }}">
+
+  <!-- WhatsApp / General Share -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yourwebsite.com/">
+  <meta property="og:title" content="MedBridge">
+  <meta property="og:description" content="MedBridge - Your trusted medical resource.">
+  <meta property="og:image" content="{{ url_for('static', filename='icons/medbridge-logo.png') }}">
+  <meta property="og:image:alt" content="MedBridge Logo">
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='CSS Sheets/medupdates.css') }}" />
+</head>
+
+<body class="updates-body">
+  <!-- ==================== HEADER ==================== -->
+  <header class="updates-header">
+    <div class="updates-logo">
+      <img src="/static/medicinePhotos/medbridge%20logo.png" alt="The MedBridge Logo" />
+    </div>
+    <nav class="updates-nav">
+      <a href="javascript:history.back()" class="updates-nav-link active">Home</a>
+      <a href="{{ url_for('medupdates') }}" class="updates-nav-link active">Updates</a>
+
+    </nav>
+  </header>
+
+  <!-- ==================== HERO SECTION ==================== -->
+<section class="updates-hero">
+  <div class="updates-hero-overlay">
+    <h1 class="updates-hero-title">MedBridge Updates Section</h1>
+    <p class="updates-hero-subtitle">Stay informed with the latest medical guidelines and protocols.</p>
+  </div>
+  
+</section>
+<!-- ==================== SEARCH BAR ==================== -->
+        <div class="updates-search-container">
+            <input 
+                type="text" 
+                id="updatesSearchInput" 
+                placeholder="Search updates..." 
+                class="updates-search-input" 
+                autocomplete="off" 
+            />
+            <button class="updates-search-btn">
+                <img src="{{ url_for('static', filename='icons/search.png') }}" alt="Search" />
+            </button>
+            <ul class="updates-search-suggestions" id="updatesSuggestions"></ul>
+        </div>
+
+
+  <!-- ==================== MAIN SECTION ==================== -->
+  <main class="updates-main">
+    <section class="updates-section">
+      <h2 class="updates-title">All Medical Updates</h2>
+
+      <!-- Updates list -->
+        <div class="updates-list" id="updatesList"></div>
+         <!-- Example card -->
+            <div class="updates-card updates-searchable">
+            <div class="updates-card-info">
+                <div class="updates-card-header">
+                <h3>Updated Asthma Management</h3>
+                <a href="{{ url_for('static', filename='downloads/asthma-management.pdf') }}" class="updates-card-download" download title="Download PDF">
+                    <img src="{{ url_for('static', filename='icons/download.png') }}" alt="Download">
+                </a>
+                </div>
+                
+            </div>
+            </div>   
+            
+            <div class="med-update-card tp-searchable"> 
+                <div class="med-update-info">
+                    <div class="med-update-header">
+                    <h3>Childhood Blindess</h3>
+                    <a href="{{ url_for('static', filename='Medical-Updates/childhood_blindess.ppt') }}" 
+                        class="med-download-icon" download title="Download PPT">
+                        <img src="{{ url_for('static', filename='icons/download.png') }}" alt="Download">
+                    </a>
+                    </div>
+                    <p>Download this presentation for reference.</p>
+                </div>
+            </div>
+
+            <div class="med-update-card tp-searchable"> 
+                <div class="med-update-info">
+                    <div class="med-update-header">
+                    <h3>Amoebic Dysentery</h3>
+                    <a href="{{ url_for('static', filename='Medical-Updates/amoebic_dysentery.ppt') }}" 
+                        class="med-download-icon" download title="Download PPT">
+                        <img src="{{ url_for('static', filename='icons/download.png') }}" alt="Download">
+                    </a>
+                    </div>
+                    <p>Download this presentation for reference.</p>
+                </div>
+            </div>
+
+            <div class="med-update-card tp-searchable"> 
+            <div class="med-update-info">
+                <div class="med-update-header">
+                <h3>Common Eye Conditions</h3>
+                <a href="{{ url_for('static', filename='Medical-Updates/common_eye_conditions.ppt') }}" 
+                    class="med-download-icon" download title="Download PPT">
+                    <img src="{{ url_for('static', filename='icons/download.png') }}" alt="Download">
+                </a>
+                </div>
+                <p>Download this presentation for reference.</p>
+            </div>
+            </div>
+
+            <div class="med-update-card tp-searchable"> 
+            <div class="med-update-info">
+                <div class="med-update-header">
+                <h3>Common Obstetric Terminology</h3>
+                <a href="{{ url_for('static', filename='Medical-Updates/common_obstetric_terminology.pptx') }}" 
+                    class="med-download-icon" download title="Download PPTX">
+                    <img src="{{ url_for('static', filename='icons/download.png') }}" alt="Download">
+                </a>
+                </div>
+                <p>Download this presentation for reference.</p>
+            </div>
+            </div>
+
+            <div class="med-update-card tp-searchable"> 
+            <div class="med-update-info">
+                <div class="med-update-header">
+                <h3>Diarrhoea</h3>
+                <a href="{{ url_for('static', filename='Medical-Updates/diarrhoea.ppt') }}" 
+                    class="med-download-icon" download title="Download PPT">
+                    <img src="{{ url_for('static', filename='icons/download.png') }}" alt="Download">
+                </a>
+                </div>
+                <p>Download this presentation for reference.</p>
+            </div>
+            </div>
+
+            <div class="med-update-card tp-searchable"> 
+            <div class="med-update-info">
+                <div class="med-update-header">
+                <h3>Diseases Of The Cornea</h3>
+                <a href="{{ url_for('static', filename='Medical-Updates/diseases_of_the_cornea.pptx') }}" 
+                    class="med-download-icon" download title="Download PPTX">
+                    <img src="{{ url_for('static', filename='icons/download.png') }}" alt="Download">
+                </a>
+                </div>
+                <p>Download this presentation for reference.</p>
+            </div>
+            </div>
+
+            <div class="med-update-card tp-searchable"> 
+            <div class="med-update-info">
+                <div class="med-update-header">
+                <h3>Fetal Circulation DCM</h3>
+                <a href="{{ url_for('static', filename='Medical-Updates/fetal_circulation_dcm_.pptx') }}" 
+                    class="med-download-icon" download title="Download PPTX">
+                    <img src="{{ url_for('static', filename='icons/download.png') }}" alt="Download">
+                </a>
+                </div>
+                <p>Download this presentation for reference.</p>
+            </div>
+            </div>
+
+            <div class="med-update-card tp-searchable"> 
+            <div class="med-update-info">
+                <div class="med-update-header">
+                <h3>Fetus In Utero</h3>
+                <a href="{{ url_for('static', filename='Medical-Updates/fetus_in_utero.pptx') }}" 
+                    class="med-download-icon" download title="Download PPTX">
+                    <img src="{{ url_for('static', filename='icons/download.png') }}" alt="Download">
+                </a>
+                </div>
+                <p>Download this presentation for reference.</p>
+            </div>
+            </div>
+
+            <div class="med-update-card tp-searchable"> 
+            <div class="med-update-info">
+                <div class="med-update-header">
+                <h3>Filariasis</h3>
+                <a href="{{ url_for('static', filename='Medical-Updates/filariasis.ppt') }}" 
+                    class="med-download-icon" download title="Download PPT">
+                    <img src="{{ url_for('static', filename='icons/download.png') }}" alt="Download">
+                </a>
+                </div>
+                <p>Download this presentation for reference.</p>
+            </div>
+            </div>
+
+            <div class="med-update-card tp-searchable"> 
+            <div class="med-update-info">
+                <div class="med-update-header">
+                <h3>Gestational Trophoblastic Disease</h3>
+                <a href="{{ url_for('static', filename='Medical-Updates/gestational_trophoblastic_disease.pptx') }}" 
+                    class="med-download-icon" download title="Download PPTX">
+                    <img src="{{ url_for('static', filename='icons/download.png') }}" alt="Download">
+                </a>
+                </div>
+                <p>Download this presentation for reference.</p>
+            </div>
+            </div>
+
+            <div class="med-update-card tp-searchable"> 
+            <div class="med-update-info">
+                <div class="med-update-header">
+                <h3>Grandular Fever</h3>
+                <a href="{{ url_for('static', filename='Medical-Updates/grandular_fever.ppt') }}" 
+                    class="med-download-icon" download title="Download PPT">
+                    <img src="{{ url_for('static', filename='icons/download.png') }}" alt="Download">
+                </a>
+                </div>
+                <p>Download this presentation for reference.</p>
+            </div>
+            </div>
+
+            <div class="med-update-card tp-searchable"> 
+            <div class="med-update-info">
+                <div class="med-update-header">
+                <h3>Hypertensive Emergency</h3>
+                <a href="{{ url_for('static', filename='Medical-Updates/hypertensive_emergency.pptx') }}" 
+                    class="med-download-icon" download title="Download PPTX">
+                    <img src="{{ url_for('static', filename='icons/download.png') }}" alt="Download">
+                </a>
+                </div>
+                <p>Download this presentation for reference.</p>
+            </div>
+            </div>
+
+            <div class="med-update-card tp-searchable"> 
+            <div class="med-update-info">
+                <div class="med-update-header">
+                <h3>Infections In Gynae</h3>
+                <a href="{{ url_for('static', filename='Medical-Updates/infections_in_gynae.pptx') }}" 
+                    class="med-download-icon" download title="Download PPTX">
+                    <img src="{{ url_for('static', filename='icons/download.png') }}" alt="Download">
+                </a>
+                </div>
+                <p>Download this presentation for reference.</p>
+            </div>
+            </div>
+
+            <div class="med-update-card tp-searchable"> 
+            <div class="med-update-info">
+                <div class="med-update-header">
+                <h3>Infertility</h3>
+                <a href="{{ url_for('static', filename='Medical-Updates/infertility.pptm') }}" 
+                    class="med-download-icon" download title="Download PPTM">
+                    <img src="{{ url_for('static', filename='icons/download.png') }}" alt="Download">
+                </a>
+                </div>
+                <p>Download this presentation for reference.</p>
+            </div>
+            </div>
+
+            <div class="med-update-card tp-searchable"> 
+            <div class="med-update-info">
+                <div class="med-update-header">
+                <h3>Infestations</h3>
+                <a href="{{ url_for('static', filename='Medical-Updates/infestations.ppt') }}" 
+                    class="med-download-icon" download title="Download PPT">
+                    <img src="{{ url_for('static', filename='icons/download.png') }}" alt="Download">
+                </a>
+                </div>
+                <p>Download this presentation for reference.</p>
+            </div>
+            </div>
+
+            <div class="med-update-card tp-searchable"> 
+            <div class="med-update-info">
+                <div class="med-update-header">
+                <h3>Infuenza</h3>
+                <a href="{{ url_for('static', filename='Medical-Updates/infuenza.ppt') }}" 
+                    class="med-download-icon" download title="Download PPT">
+                    <img src="{{ url_for('static', filename='icons/download.png') }}" alt="Download">
+                </a>
+                </div>
+                <p>Download this presentation for reference.</p>
+            </div>
+            </div>
+
+            <div class="med-update-card tp-searchable"> 
+            <div class="med-update-info">
+                <div class="med-update-header">
+                <h3>Interstitial Lung Disease</h3>
+                <a href="{{ url_for('static', filename='Medical-Updates/interstitial_lung_disease.pptx') }}" 
+                    class="med-download-icon" download title="Download PPTX">
+                    <img src="{{ url_for('static', filename='icons/download.png') }}" alt="Download">
+                </a>
+                </div>
+                <p>Download this presentation for reference.</p>
+            </div>
+            </div>
+
+            <div class="med-update-card tp-searchable"> 
+            <div class="med-update-info">
+                <div class="med-update-header">
+                <h3>Maternal Adaptation To Pregnancy</h3>
+                <a href="{{ url_for('static', filename='Medical-Updates/maternal_adaptation_to_pregnancy.pptx') }}" 
+                    class="med-download-icon" download title="Download PPTX">
+                    <img src="{{ url_for('static', filename='icons/download.png') }}" alt="Download">
+                </a>
+                </div>
+                <p>Download this presentation for reference.</p>
+            </div>
+            </div>
+
+            <div class="med-update-card tp-searchable"> 
+            <div class="med-update-info">
+                <div class="med-update-header">
+                <h3>Miscarriages</h3>
+                <a href="{{ url_for('static', filename='Medical-Updates/miscarriages.pptx') }}" 
+                    class="med-download-icon" download title="Download PPTX">
+                    <img src="{{ url_for('static', filename='icons/download.png') }}" alt="Download">
+                </a>
+                </div>
+                <p>Download this presentation for reference.</p>
+            </div>
+            </div>
+
+            <div class="med-update-card tp-searchable"> 
+            <div class="med-update-info">
+                <div class="med-update-header">
+                <h3>Normal Labour</h3>
+                <a href="{{ url_for('static', filename='Medical-Updates/normal_labour.pptx') }}" 
+                    class="med-download-icon" download title="Download PPTX">
+                    <img src="{{ url_for('static', filename='icons/download.png') }}" alt="Download">
+                </a>
+                </div>
+                <p>Download this presentation for reference.</p>
+            </div>
+            </div>
+
+            <div class="med-update-card tp-searchable"> 
+            <div class="med-update-info">
+                <div class="med-update-header">
+                <h3>Normal Pregnancy</h3>
+                <a href="{{ url_for('static', filename='Medical-Updates/normal_pregnancy.ppt') }}" 
+                    class="med-download-icon" download title="Download PPT">
+                    <img src="{{ url_for('static', filename='icons/download.png') }}" alt="Download">
+                </a>
+                </div>
+                <p>Download this presentation for reference.</p>
+            </div>
+            </div>
+
+            <div class="med-update-card tp-searchable"> 
+            <div class="med-update-info">
+                <div class="med-update-header">
+                <h3>Organophosphate Poisoning</h3>
+                <a href="{{ url_for('static', filename='Medical-Updates/organophsophate_poisoning.pptx') }}" 
+                    class="med-download-icon" download title="Download PPTX">
+                    <img src="{{ url_for('static', filename='icons/download.png') }}" alt="Download">
+                </a>
+                </div>
+                <p>Download this presentation for reference.</p>
+            </div>
+            </div>
+
+            <div class="med-update-card tp-searchable"> 
+            <div class="med-update-info">
+                <div class="med-update-header">
+                <h3>Otitis</h3>
+                <a href="{{ url_for('static', filename='Medical-Updates/otitis.ppt') }}" 
+                    class="med-download-icon" download title="Download PPT">
+                    <img src="{{ url_for('static', filename='icons/download.png') }}" alt="Download">
+                </a>
+                </div>
+                <p>Download this presentation for reference.</p>
+            </div>
+            </div>
+
+            <div class="med-update-card tp-searchable"> 
+            <div class="med-update-info">
+                <div class="med-update-header">
+                <h3>Pelvic Assessment</h3>
+                <a href="{{ url_for('static', filename='Medical-Updates/pelvic_assessment.pptx') }}" 
+                    class="med-download-icon" download title="Download PPTX">
+                    <img src="{{ url_for('static', filename='icons/download.png') }}" alt="Download">
+                </a>
+                </div>
+                <p>Download this presentation for reference.</p>
+            </div>
+            </div>
+
+            <div class="med-update-card tp-searchable"> 
+            <div class="med-update-info">
+                <div class="med-update-header">
+                <h3>Pleural Effusion</h3>
+                <a href="{{ url_for('static', filename='Medical-Updates/pleural_effusion.ppt') }}" 
+                    class="med-download-icon" download title="Download PPT">
+                    <img src="{{ url_for('static', filename='icons/download.png') }}" alt="Download">
+                </a>
+                </div>
+                <p>Download this presentation for reference.</p>
+            </div>
+            </div>
+
+            <div class="med-update-card tp-searchable"> 
+            <div class="med-update-info">
+                <div class="med-update-header">
+                <h3>Pneumonia</h3>
+                <a href="{{ url_for('static', filename='Medical-Updates/pneumonia.pptx') }}" 
+                    class="med-download-icon" download title="Download PPTX">
+                    <img src="{{ url_for('static', filename='icons/download.png') }}" alt="Download">
+                </a>
+                </div>
+                <p>Download this presentation for reference.</p>
+            </div>
+            </div>
+
+            <div class="med-update-card tp-searchable"> 
+            <div class="med-update-info">
+                <div class="med-update-header">
+                <h3>Retinal Disease</h3>
+                <a href="{{ url_for('static', filename='Medical-Updates/retinal_disease.ppt') }}" 
+                    class="med-download-icon" download title="Download PPT">
+                    <img src="{{ url_for('static', filename='icons/download.png') }}" alt="Download">
+                </a>
+                </div>
+                <p>Download this presentation for reference.</p>
+            </div>
+            </div>
+
+            <div class="med-update-card tp-searchable"> 
+            <div class="med-update-info">
+                <div class="med-update-header">
+                <h3>Rheumatoid Arthritis</h3>
+                <a href="{{ url_for('static', filename='Medical-Updates/rheumatoid_arthritis.ppt') }}" 
+                    class="med-download-icon" download title="Download PPT">
+                    <img src="{{ url_for('static', filename='icons/download.png') }}" alt="Download">
+                </a>
+                </div>
+                <p>Download this presentation for reference.</p>
+            </div>
+            </div>
+
+            <div class="med-update-card tp-searchable"> 
+            <div class="med-update-info">
+                <div class="med-update-header">
+                <h3>Schizophrenia And Pueperal Psychosis</h3>
+                <a href="{{ url_for('static', filename='Medical-Updates/schizophrenia_and_pueperal_psychosis_.ppt') }}" 
+                    class="med-download-icon" download title="Download PPT">
+                    <img src="{{ url_for('static', filename='icons/download.png') }}" alt="Download">
+                </a>
+                </div>
+                <p>Download this presentation for reference.</p>
+            </div>
+            </div>
+
+            <div class="med-update-card tp-searchable"> 
+            <div class="med-update-info">
+                <div class="med-update-header">
+                <h3>Sickle Cell Disease</h3>
+                <a href="{{ url_for('static', filename='Medical-Updates/sickle_cell_disease.pptx') }}" 
+                    class="med-download-icon" download title="Download PPTX">
+                    <img src="{{ url_for('static', filename='icons/download.png') }}" alt="Download">
+                </a>
+                </div>
+                <p>Download this presentation for reference.</p>
+            </div>
+            </div>
+
+            <div class="med-update-card tp-searchable"> 
+            <div class="med-update-info">
+                <div class="med-update-header">
+                <h3>STI</h3>
+                <a href="{{ url_for('static', filename='Medical-Updates/sti.pptx') }}" 
+                    class="med-download-icon" download title="Download PPTX">
+                    <img src="{{ url_for('static', filename='icons/download.png') }}" alt="Download">
+                </a>
+                </div>
+                <p>Download this presentation for reference.</p>
+            </div>
+            </div>
+
+            <div class="med-update-card tp-searchable"> 
+            <div class="med-update-info">
+                <div class="med-update-header">
+                <h3>Stroke</h3>
+                <a href="{{ url_for('static', filename='Medical-Updates/stroke.pptx') }}" 
+                    class="med-download-icon" download title="Download PPTX">
+                    <img src="{{ url_for('static', filename='icons/download.png') }}" alt="Download">
+                </a>
+                </div>
+                <p>Download this presentation for reference.</p>
+            </div>
+            </div>
+
+            <div class="med-update-card tp-searchable"> 
+            <div class="med-update-info">
+                <div class="med-update-header">
+                <h3>Surgical Instruments</h3>
+                <a href="{{ url_for('static', filename='Medical-Updates/surgical_instruments.ppt') }}" 
+                    class="med-download-icon" download title="Download PPT">
+                    <img src="{{ url_for('static', filename='icons/download.png') }}" alt="Download">
+                </a>
+                </div>
+                <p>Download this presentation for reference.</p>
+            </div>
+            </div>
+
+            <div class="med-update-card tp-searchable"> 
+            <div class="med-update-info">
+                <div class="med-update-header">
+                <h3>Thread Worm Infection</h3>
+                <a href="{{ url_for('static', filename='Medical-Updates/thread_worm_infection.ppt') }}" 
+                    class="med-download-icon" download title="Download PPT">
+                    <img src="{{ url_for('static', filename='icons/download.png') }}" alt="Download">
+                </a>
+                </div>
+                <p>Download this presentation for reference.</p>
+            </div>
+            </div>
+
+            <div class="med-update-card tp-searchable"> 
+            <div class="med-update-info">
+                <div class="med-update-header">
+                <h3>UTI In Adults</h3>
+                <a href="{{ url_for('static', filename='Medical-Updates/uti_in_adults.ppt') }}" 
+                    class="med-download-icon" download title="Download PPT">
+                    <img src="{{ url_for('static', filename='icons/download.png') }}" alt="Download">
+                </a>
+                </div>
+                <p>Download this presentation for reference.</p>
+            </div>
+            </div>
+        </div>
+
+<!-- Continue in the same pattern for the remaining files... -->
+
+        <div class="updates-show-more-container">
+            <button id="showMoreBtn" class="updates-show-more-btn">Show More</button>
+        </div>
+
+
+    </section>
+  </main>
+
+
+  <!-- ====================== FOOTER ====================== -->
+  <footer class="med-footer">
+  <div class="med-footer-container">
+        <div class="med-footer-branding">
+          <h2 class="med-footer-logo">
+           <img src="{{ url_for('static', filename='medicinePhotos/medbridge logo.png') }}" alt="The MedBridge Logo" />
+          </h2>
+          <p class="med-footer-tagline">
+            Empowering Nurses & Doctors with trusted, accessible medical resources.
+          </p>
+        </div>
+
+      <div class="med-footer-links">
+        <div class="med-footer-column">
+          <h3>Resources</h3>
+          <ul>
+            <li><a href="#">Clinical Guidelines</a></li>
+            <li><a href="#">Medical PDFs</a></li>
+            <li><a href="#">Updates & Bulletins</a></li>
+          </ul>
+        </div>
+
+        <div class="med-footer-column">
+          <h3>Professionals</h3>
+          <ul>
+            <li><a href="#nurse">For Nurses</a></li>
+            <li><a href="#doctor">For Doctors</a></li>
+            <li><a href="{{ url_for('static', filename='LinkingPages/OSCE.html') }}">OSCE Tools</a></li>
+          </ul>
+        </div>
+
+        <!-- <div class="med-footer-column">
+          <h3>About</h3>
+          <ul>
+            <li><a href="/medicalweb/WhoWeAre/who-we-are.html">Who We Are</a></li>
+            <li><a href="#" id="contact-toggle-btn">Contact</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div> -->
+      </div>
+    </div>
+
+    <div class="med-footer-bottom">
+      <p>&copy; 2025 The MedBridge. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ---------------------------------------------------- -->
+
+
+
+  <!-- ==================== SCRIPT ==================== -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+  const searchInput = document.querySelector('.updates-search-input');
+  const suggestionsList = document.querySelector('.updates-search-suggestions');
+
+  // Select all cards (both types)
+  const cards = Array.from(document.querySelectorAll('.updates-card, .med-update-card'));
+
+  // ==================== SEARCH FUNCTION ====================
+  function updateSearch() {
+    const query = searchInput.value.toLowerCase().trim();
+    suggestionsList.innerHTML = '';
+
+    if (!query) {
+      suggestionsList.style.display = 'none';
+      cards.forEach(card => card.style.display = 'flex');
+      return;
+    }
+
+    const matchingCards = cards.filter(card => {
+      const title = card.querySelector('h3').textContent.toLowerCase();
+      return title.includes(query);
+    });
+
+    cards.forEach(card => {
+      card.style.display = matchingCards.includes(card) ? 'flex' : 'none';
+    });
+
+    matchingCards.forEach(card => {
+      const title = card.querySelector('h3').textContent;
+      const li = document.createElement('li');
+      li.textContent = title;
+      li.addEventListener('click', () => {
+        searchInput.value = title;
+        suggestionsList.style.display = 'none';
+        updateSearch();
+        card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+      suggestionsList.appendChild(li);
+    });
+
+    suggestionsList.style.display = matchingCards.length ? 'block' : 'none';
+  }
+
+  searchInput.addEventListener('input', updateSearch);
+
+  // Show suggestions on focus (even empty input)
+  searchInput.addEventListener('focus', () => {
+    if (!searchInput.value) {
+      suggestionsList.innerHTML = '';
+      cards.forEach(card => {
+        const title = card.querySelector('h3').textContent;
+        const li = document.createElement('li');
+        li.textContent = title;
+        li.addEventListener('click', () => {
+          searchInput.value = title;
+          suggestionsList.style.display = 'none';
+          updateSearch();
+          card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+        suggestionsList.appendChild(li);
+      });
+      suggestionsList.style.display = 'block';
+    }
+  });
+
+  // Hide suggestions when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.updates-search-container')) {
+      suggestionsList.style.display = 'none';
+    }
+  });
+
+  // ==================== SHOW MORE FUNCTION ====================
+  const updatesList = document.getElementById('updatesList');
+  const showMoreBtn = document.getElementById('showMoreBtn');
+
+  if (updatesList && showMoreBtn) {
+    const allCards = Array.from(updatesList.querySelectorAll('.updates-card, .med-update-card'));
+    const initialVisible = 5;
+    let showingAll = false;
+
+    // Hide cards beyond initialVisible
+    allCards.forEach((card, index) => {
+      if (index >= initialVisible) card.style.display = 'none';
+    });
+
+    showMoreBtn.addEventListener('click', () => {
+      showingAll = !showingAll;
+      allCards.forEach((card, index) => {
+        if (index >= initialVisible) card.style.display = showingAll ? 'flex' : 'none';
+      });
+      showMoreBtn.textContent = showingAll ? 'Show Less' : 'Show More';
+    });
+  }
+
+});
+</script>
+
+
+
+</body>
+</html>

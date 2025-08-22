@@ -1,0 +1,772 @@
+:root {
+  --dark-bg: #0F1516;
+  --gray-light: #C9C2C2;
+  --gray-medium: #7F8C94;
+  --blue-deep: #234C58;
+  --earth-warm: #5E524B;
+  --card-bg: #1b2324;
+}
+
+/* Base body */
+/* ================= BODY ================= */
+.mb-body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #0c0f17;
+  color: #e0e6ed;
+}
+
+/* ================= HEADER ================= */
+.mb-header {
+  background-color: #10141c;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+  border-bottom: 1px solid #1e2533;
+}
+
+.mb-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #f9f9f9;
+}
+
+    .med-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px; /* space between logo and text */
+    }
+
+    .med-logo img {
+      height: 50px; /* adjust size */
+      width: auto;
+    }
+.mb-nav {
+  display: flex;
+  gap: 24px;
+}
+
+.mb-nav-link {
+  color: #a0a9ba;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.mb-nav-link:hover,
+.mb-nav-link.active {
+  color: #ffffff;
+}
+
+/* ================= HERO ================= */
+.mb-hero {
+  position: relative;
+  height: 340px;
+  background: url("/static/medicinePhotos/ProceduresPhotos/wallpaperForProcedures.jpg") center/cover no-repeat;
+}
+
+.mb-hero-overlay {
+  background: rgba(0, 0, 0, 0.65);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.mb-hero-content {
+  text-align: center;
+  max-width: 800px;
+}
+
+.mb-hero-title {
+  font-size: 2.5rem;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.mb-hero-subtitle {
+  font-size: 1.1rem;
+  color: #d1d6de;
+}
+
+/* ====================== SEARCH WRAPPER ====================== */
+.mb-search-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 600px;
+  width: 100%;
+  margin: 32px auto;
+  padding: 10px 16px;
+  background-color: #1b2230;
+  border: 1px solid #2b354a;
+  border-radius: 8px;
+  position: relative;
+  z-index: 5;
+}
+
+/* ====================== SEARCH INPUT ====================== */
+.mb-search-input {
+  flex: 1;
+  font-size: 1rem;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #e0e6ed;
+  padding: 6px 0;
+}
+
+/* ====================== SEARCH ICON ====================== */
+.mb-search-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: brightness(0.85);
+  transition: filter 0.2s ease;
+}
+.mb-search-icon:hover {
+  filter: brightness(1);
+}
+.mb-search-icon img {
+  width: 18px;
+  height: 18px;
+}
+
+/* ====================== SUGGESTIONS DROPDOWN ====================== */
+.mb-search-suggestions {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  width: 100%;
+  max-height: 180px;
+  overflow-y: auto;
+  background-color: #1c1f2a;
+  color: #fff;
+  border: 1px solid #2c3444;
+  border-radius: 6px;
+  padding: 4px 0;
+  font-size: 14px;
+  list-style: none;
+  display: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  z-index: 10;
+}
+
+.mb-search-suggestions li {
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  border-bottom: 1px solid #2a2d39;
+}
+.mb-search-suggestions li:last-child {
+  border-bottom: none;
+}
+.mb-search-suggestions li:hover {
+  background-color: #2b2f3e;
+}
+
+/* ====================== ANIMATION ====================== */
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ================= PROCEDURE CARDS ================= */
+.mb-procedure-list { 
+  display: flex;
+  flex-direction: column;
+  gap: 24px; /* reduced gap for tighter layout */
+  padding: 32px 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.mb-procedure-card {
+  background-color: #151a23;
+  padding: 16px 20px;
+  border-radius: 12px;
+  border: 1px solid #2a313f;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mb-procedure-card:hover {
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
+}
+
+.mb-procedure-title {
+  font-size: 1.3rem;
+  margin-bottom: 6px;
+  color: #ffffff;
+}
+
+.mb-procedure-desc {
+  font-size: 0.9rem;
+  color: #aab5c8;
+  margin-bottom: 12px;
+}
+
+/* Toggle button */
+.mb-toggle-button {
+  background-color: #1f6feb;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-self: flex-start;
+}
+
+.mb-toggle-button:hover {
+  background-color: #1b60d1;
+}
+
+/* Show more link */
+.mb-show-more {
+  background: none;
+  border: none;
+  color: #1f6feb;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  margin: 0 auto;
+  display: block;
+  padding: 10px 0;
+  transition: color 0.3s ease;
+}
+
+.mb-show-more:hover {
+  color: #1b60d1;
+}
+
+.mb-procedure-card.hidden {
+  display: none;
+}
+
+
+/* ================= PROCEDURE DETAILS ================= */
+.mb-procedure-details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+  padding-top: 0;
+  opacity: 0;
+  visibility: hidden;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.mb-procedure-details.open {
+  max-height: 2000px;
+  padding-top: 20px;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Align image left and make it cleaner */
+.mb-procedure-img {
+  width: 200px;
+  max-width: 200px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  border: 1px solid #2d3342;
+  background-color: #0f141b;
+  flex-shrink: 0;
+  display: block;
+}
+
+/* Textual detail beside image */
+.mb-procedure-text {
+  flex: 1;
+}
+
+.mb-procedure-details p {
+  font-size: 0.95rem;
+  color: #c0cadb;
+  margin-bottom: 16px;
+}
+
+.mb-detail-steps {
+  padding-left: 20px;
+  line-height: 1.7;
+  color: #d4dce6;
+}
+
+.mb-detail-steps li {
+  margin-bottom: 10px;
+}
+
+.mb-procedure-hint {
+  text-align: center;
+  font-size: 0.95rem;
+  color: #9baac6;
+  margin: 24px 0 8px;
+  font-style: italic;
+}
+
+.mb-show-more {
+  background: none;
+  border: none;
+  color: #1f6feb;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  margin: 0 auto;
+  display: block;
+  padding: 10px 0 30px;
+  transition: color 0.3s ease;
+}
+
+.mb-show-more:hover {
+  color: #1b60d1;
+}
+
+.mb-procedure-card.hidden {
+  display: none;
+}
+
+/* ================= FOOTER ================= */
+.mb-footer {
+  background-color: #10141c;
+  text-align: center;
+  padding: 20px 0;
+  border-top: 1px solid #1e2533;
+  margin-top: 60px;
+}
+
+.mb-footer-text {
+  color: #7f8ba3;
+  font-size: 0.9rem;
+}
+
+/* =======================================FOOTER====================================== */
+.mb-footer {
+  background-color: #12161c; /* very dark, not pure black */
+  color: #cbd1dc; /* soft gray */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 40px 20px 20px;
+  user-select: none;
+}
+
+.mb-footer-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 36px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #2a2f3a;
+}
+
+.mb-footer-section h4 {
+  font-weight: 600;
+  font-size: 1.15rem;
+  margin-bottom: 14px;
+  color: #f0f2f5; /* off-white */
+  border-left: 3px solid #7e7e7e; /* subtle vertical line */
+  padding-left: 10px;
+}
+
+.mb-footer-about p {
+  line-height: 1.6;
+  color: #a2a9b8;
+  max-width: 280px;
+}
+
+.mb-footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mb-footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.mb-footer-section ul li a {
+  color: #a2a9b8;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.25s ease;
+}
+
+.mb-footer-section ul li a:hover,
+.mb-footer-section ul li a:focus {
+  color: #d1d7e0;
+  outline: none;
+}
+
+.mb-footer-contact p,
+.mb-footer-contact a {
+  font-size: 0.95rem;
+  color: #a2a9b8;
+  margin: 0 0 8px 0;
+  display: inline-block;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.mb-footer-contact a:hover,
+.mb-footer-contact a:focus {
+  color: #d1d7e0;
+  outline: none;
+}
+
+.mb-footer-bottom {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 0.9rem;
+  color: #6b7082;
+}
+
+/* Responsive tweaks */
+@media (max-width: 480px) {
+  .mb-footer-container {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .mb-footer-about p {
+    max-width: 100%;
+  }
+}
+
+/* Back to Top button */
+#backToTopBtn {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  background-color: #1e2330;
+  color: #cbd1dc;
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+}
+
+#backToTopBtn:hover,
+#backToTopBtn:focus {
+  background-color: #3a4152;
+  outline: none;
+}
+
+#backToTopBtn.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ===================================================================================================== */
+/* ===================================================================================================== */
+/* ================================ALL MEDIA QUERIES ON THIS SHEET====================================== */
+/* ===================================================================================================== */
+/* ===================================================================================================== */
+
+/* ==================== PROCEDURES MEDIA QUERIES ==================== */
+
+/* Medium screens / tablets */
+@media (max-width: 992px) {
+  .mb-header {
+    /* flex-direction: column; */
+    align-items: flex-start;
+    padding: 12px 20px;
+    margin-top: 12px;
+  }
+
+  .mb-logo {
+    font-size: 1.3rem;
+  }
+
+  .mb-nav {
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 8px;
+  }
+
+  .mb-hero {
+    height: 280px;
+    background-size: cover;
+    background-position: center top;
+  }
+
+  .mb-hero-overlay {
+    padding: 30px;
+  }
+
+  .mb-hero-title {
+    font-size: 2rem;
+  }
+
+  .mb-hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .mb-search-wrapper {
+    max-width: 70%;
+    padding: 8px 12px;
+  }
+
+  .mb-search-input {
+    font-size: 0.4rem;
+  }
+
+  .mb-procedure-list {
+    padding: 24px 16px;
+    gap: 20px;
+  }
+
+  .mb-procedure-card {
+    padding: 14px 16px;
+    gap: 10px;
+  }
+
+  .mb-procedure-title {
+    font-size: 1.1rem;
+  }
+
+  .mb-procedure-desc {
+    font-size: 0.85rem;
+  }
+
+  .mb-toggle-button {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+  }
+
+  .mb-show-more {
+    font-size: 0.95rem;
+  }
+}
+
+/* Small screens / mobiles */
+@media (max-width: 576px) {
+  .mb-header {
+    /* flex-direction: column; */
+    align-items: flex-start;
+    padding: 10px 12px;
+  }
+
+  .mb-logo {
+    font-size: 1.1rem;
+  }
+
+  .mb-nav {
+    /* flex-direction: column; */
+    gap: 10px;
+    margin-top: 6px;
+  }
+
+  .mb-hero {
+    height: 220px;
+    background-size: cover;
+    background-position: center top;
+  }
+
+  .mb-hero-overlay {
+    padding: 20px;
+  }
+
+  .mb-hero-title {
+    font-size: 1.5rem;
+  }
+
+  .mb-hero-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .mb-search-wrapper {
+    width: 80%;
+    max-width: 90%;
+    /* flex-direction: column; */
+    /* gap: 6px; */
+    padding: 6px 10px;
+  }
+
+  .mb-search-input {
+    font-size: 0.85rem;
+    width: 100%;
+  }
+
+  .mb-procedure-list {
+    padding: 16px 12px;
+    gap: 16px;
+  }
+
+  .mb-procedure-card {
+    padding: 12px 14px;
+    gap: 8px;
+  }
+
+  .mb-procedure-title {
+    font-size: 1rem;
+  }
+
+  .mb-procedure-desc {
+    font-size: 0.8rem;
+  }
+
+  .mb-toggle-button {
+    padding: 5px 10px;
+    font-size: 0.8rem;
+  }
+
+  .mb-show-more {
+    font-size: 0.9rem;
+  }
+}
+
+/* ================= PROCEDURE DETAILS MEDIA QUERIES ================= */
+
+/* Medium screens / tablets */
+@media (max-width: 992px) {
+  .mb-procedure-details {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .mb-procedure-img {
+    width: 150px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .mb-procedure-text {
+    width: 100%;
+  }
+
+  .mb-procedure-details p,
+  .mb-detail-steps li {
+    font-size: 0.9rem;
+  }
+
+  .mb-procedure-hint {
+    font-size: 0.9rem;
+  }
+}
+
+/* Small screens / mobiles */
+@media (max-width: 576px) {
+  .mb-procedure-details {
+    flex-direction: column;
+    gap: 12px;
+    padding-top: 12px;
+  }
+
+  .mb-procedure-img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .mb-procedure-text {
+    width: 100%;
+  }
+
+  .mb-procedure-details p,
+  .mb-detail-steps li {
+    font-size: 0.85rem;
+  }
+
+  .mb-detail-steps {
+    padding-left: 10px;
+  }
+
+  .mb-procedure-hint {
+    font-size: 0.85rem;
+    margin: 16px 0 6px;
+  }
+
+  .mb-show-more {
+    font-size: 0.9rem;
+    padding: 8px 0 20px;
+  }
+}
+
+/* ================= FOOTER MEDIA QUERIES ================= */
+
+/* Medium screens / tablets */
+@media (max-width: 992px) {
+  .mb-footer-container {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 28px;
+  }
+
+  .mb-footer-section h4 {
+    font-size: 1.05rem;
+  }
+
+  .mb-footer-about p {
+    max-width: 220px;
+  }
+}
+
+/* Small screens / mobiles */
+@media (max-width: 576px) {
+  .mb-footer-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding-bottom: 16px;
+  }
+
+  .mb-footer-section h4 {
+    font-size: 1rem;
+  }
+
+  .mb-footer-about p {
+    max-width: 100%;
+  }
+
+  .mb-footer-section ul li a,
+  .mb-footer-contact p,
+  .mb-footer-contact a {
+    font-size: 0.85rem;
+  }
+
+  .mb-footer-bottom {
+    font-size: 0.8rem;
+  }
+}
+
+/* ================= BACK TO TOP BUTTON MEDIA QUERIES ================= */
+@media (max-width: 576px) {
+  #backToTopBtn {
+    width: 38px;
+    height: 38px;
+    font-size: 20px;
+    bottom: 20px;
+    right: 20px;
+  }
+}

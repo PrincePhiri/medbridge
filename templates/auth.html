@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MedBridge Auth</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='icons/medbridge-logo.png') }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='icons/medbridge-logo.png') }}">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='CSS Sheets/auth.css') }}" />
+</head>
+
+<body class="doctor-auth-body">
+
+  <div class="doctor-auth-overlay">
+    <div class="doctor-auth-wrapper">
+
+      <!-- Image Side -->
+      <div class="doctor-auth-image">
+        <img src="{{ url_for('static', filename='loginPhotos/loginDoctor.png') }}" alt="Doctor Image" />
+      </div>
+
+      <!-- Auth Card -->
+      <div class="doctor-auth-card">
+
+        <!-- Flash messages -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            <div class="flash-messages">
+              {% for category, message in messages %}
+                <div class="flash {{ category }}">{{ message }}</div>
+              {% endfor %}
+            </div>
+          {% endif %}
+        {% endwith %}
+
+        <!-- Toggle -->
+        <div class="auth-toggle">
+          <p>Already a member? <button id="showLogin" class="active">Login</button></p>
+          <p>New here? <button id="showRegister">Register</button></p>
+        </div>
+
+        <!-- LOGIN FORM -->
+        <form id="loginForm" class="auth-form" method="POST" action="{{ url_for('auth') }}">
+          {{ form.hidden_tag() }}
+          <input type="hidden" name="action" value="login">
+
+          <h2>Member Login</h2>
+          <p>Enter your registered email and password</p>
+
+          <div class="auth-grid">
+            <div>
+              <label for="loginEmail">Email Address</label>
+              {{ form.login_email(class="form-control", id="loginEmail", placeholder="Enter your email") }}
+            </div>
+          </div>
+
+          <div class="auth-grid">
+            <div>
+              <label for="loginPass">Password</label>
+              {{ form.login_password(class="form-control", id="loginPass", placeholder="Enter your password") }}
+            </div>
+          </div>
+
+          <button type="submit">Login</button>
+        </form>
+
+        <!-- REGISTER FORM -->
+        <form id="registerForm" class="auth-form hidden" method="POST" action="{{ url_for('auth') }}">
+          {{ form.hidden_tag() }}
+          <input type="hidden" name="action" value="register">
+
+          <h2>Create Account</h2>
+          <p>Create an account</p>
+
+            <div class="auth-grid2">
+              <div class="auth-grid">
+                <label for="regName">Full Name</label>
+                {{ form.reg_username(class="form-control", id="regName", placeholder="Full Name") }}
+              </div>
+
+              <div class="auth-grid">
+                <label for="regEmail">Email Address</label>
+                {{ form.reg_email(class="form-control", id="regEmail", placeholder="you@example.com") }}
+              </div>
+
+              <div class="auth-grid">
+                <label for="regPass">Password</label>
+                {{ form.reg_password(class="form-control", id="regPass", placeholder="Password") }}
+              </div>
+
+              <div class="auth-grid">
+                <label for="regRole">Role</label>
+                {{ form.reg_role(class="form-control", id="regRole") }}
+              </div>
+            
+
+              <button type="submit">Register</button>
+            </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const loginBtn = document.getElementById("showLogin");
+  const registerBtn = document.getElementById("showRegister");
+  const loginForm = document.getElementById("loginForm");
+  const registerForm = document.getElementById("registerForm");
+
+  // Toggle login/register forms
+  loginBtn.addEventListener("click", () => {
+    loginBtn.classList.add("active");
+    registerBtn.classList.remove("active");
+    loginForm.classList.remove("hidden");
+    registerForm.classList.add("hidden");
+  });
+  registerBtn.addEventListener("click", () => {
+    registerBtn.classList.add("active");
+    loginBtn.classList.remove("active");
+    registerForm.classList.remove("hidden");
+    loginForm.classList.add("hidden");
+  });
+
+  // Default to login
+  loginBtn.click();
+});
+</script>
+
+</body>
+</html>
